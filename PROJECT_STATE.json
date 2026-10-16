@@ -6,7 +6,7 @@
   "new_engineering_attribution": "100% GPT-generated; human authorization, compute and hosting acknowledged",
   "github_owner": "wubingshuazi",
   "intended_repository": "math-to-code",
-  "publication_status": "released_v0.2.0_with_six_CI_jobs_passed",
+  "publication_status": "v0.3.0_ready_for_CI",
   "repository_url": "https://github.com/wubingshuazi/math-to-code",
   "release_url": "https://github.com/wubingshuazi/math-to-code/releases/tag/v0.2.0",
   "release_confirmed_published": true,
@@ -51,12 +51,15 @@
     "scientific_figure",
     "31_local_tests",
     "v0.2.0_public_release",
-    "six_CI_jobs_passed"
+    "six_CI_jobs_passed",
+    "graph_sampler",
+    "graph_exact_state_audit",
+    "graph_benchmark",
+    "44_local_tests"
   ],
   "next": [
-    "choose_sharper_bound_or_equality_classification",
-    "or_formalize_short_corollary",
-    "or_select_next_constructive_family"
+    "finish_v0.3.0_CI_and_publication",
+    "extend_real_network_null_model_workflow"
   ],
   "research_limits": [
     "no_global_novelty_claim",
@@ -70,10 +73,11 @@
     "worklogs/2026-10-17-03-publication.md",
     "worklogs/2026-10-17-04-release-confirmed.md",
     "worklogs/2026-10-17-05-sharpness-study.md",
-    "worklogs/2026-10-17-06-v0.2-publication.md"
+    "worklogs/2026-10-17-06-v0.2-publication.md",
+    "worklogs/2026-10-17-07-network-pilot.md"
   ],
-  "current_phase": "stage_2_quantitative_bound_and_sharpness",
-  "current_version": "0.2.0",
+  "current_phase": "stage_3_degree_preserving_network_sampling",
+  "current_version": "0.3.0",
   "second_phase": {
     "quantitative_bound": "R >= beta*eta/(2*U0*U1)*trace_norm(A-B)^2, nats",
     "derivation": "docs/thermal-stability-derivation.md",
@@ -91,5 +95,26 @@
     "full_worker_journal_zip_sha256": "668c04e6747cd06d178f070fab3674b39065135cc347b640e377f7e994810fc7"
   },
   "previous_release_checkpoint_commit": "3e8c4e7bc80e478a0cc2793abbe6a9374105908b",
-  "release_code_commit": "000e934b79abab14b80321c760c6ef83bac2642d"
+  "release_code_commit": "000e934b79abab14b80321c760c6ef83bac2642d",
+  "third_phase": {
+    "family": "131",
+    "artifact": "degree-preserving graph sampler and exact finite-state audit",
+    "backends": [
+      "switch",
+      "curveball"
+    ],
+    "exact_degree_vectors": 9,
+    "exact_kernels": 18,
+    "exact_production_rows": 28,
+    "local_tests_passed": 44,
+    "six_vertex_tmix_to_tv_quarter": {
+      "switch": 38,
+      "curveball": 4
+    },
+    "jump_chain_bias": {
+      "uniform_two_triangles": "1/7",
+      "changed_only_two_triangles": "1/5"
+    },
+    "results": "docs/GRAPH_RESULTS.md"
+  }
 }

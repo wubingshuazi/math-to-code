@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "family": "131",
+  "title": "Polynomial mixing of the switch chain for every graphical degree sequence",
+  "upstream_repository": "https://github.com/openai/math",
+  "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "retrieved_utc": "2026-10-16T23:31:40.4967629Z",
+  "license": "Apache-2.0",
+  "preservation": "Unmodified upstream bytes",
+  "files": [
+    {
+      "file": "README.md",
+      "upstream_path": "preprints/Polynomial-Mixing-of-the-Switch-Chain-for-Every-Graphical-Degree-Sequence-September-25-2026/README.md",
+      "source_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Polynomial-Mixing-of-the-Switch-Chain-for-Every-Graphical-Degree-Sequence-September-25-2026/README.md",
+      "raw_url": "https://raw.githubusercontent.com/openai/math/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Polynomial-Mixing-of-the-Switch-Chain-for-Every-Graphical-Degree-Sequence-September-25-2026/README.md",
+      "sha256": "c843b6e9097e56738b273acf3b5685dc91851eb793ff914ad666e42d77e5f19a",
+      "bytes": 723
+    },
+    {
+      "file": "setup.tex",
+      "upstream_path": "preprints/Polynomial-Mixing-of-the-Switch-Chain-for-Every-Graphical-Degree-Sequence-September-25-2026/build/sections/setup.tex",
+      "source_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Polynomial-Mixing-of-the-Switch-Chain-for-Every-Graphical-Degree-Sequence-September-25-2026/build/sections/setup.tex",
+      "raw_url": "https://raw.githubusercontent.com/openai/math/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Polynomial-Mixing-of-the-Switch-Chain-for-Every-Graphical-Degree-Sequence-September-25-2026/build/sections/setup.tex",
+      "sha256": "0395b99be0ea02763e92785bff613c1cbf1b65a5e6adfcf295dbe3a07004f8da",
+      "bytes": 1931
+    },
+    {
+      "file": "introduction.tex",
+      "upstream_path": "preprints/Polynomial-Mixing-of-the-Switch-Chain-for-Every-Graphical-Degree-Sequence-September-25-2026/build/sections/introduction.tex",
+      "source_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Polynomial-Mixing-of-the-Switch-Chain-for-Every-Graphical-Degree-Sequence-September-25-2026/build/sections/introduction.tex",
+      "raw_url": "https://raw.githubusercontent.com/openai/math/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Polynomial-Mixing-of-the-Switch-Chain-for-Every-Graphical-Degree-Sequence-September-25-2026/build/sections/introduction.tex",
+      "sha256": "7c4684d2d3b698bf2be17088c17575e72a4588faf667bd71e2743430911a106f",
+      "bytes": 9633
+    },
+    {
+      "file": "mixing.tex",
+      "upstream_path": "preprints/Polynomial-Mixing-of-the-Switch-Chain-for-Every-Graphical-Degree-Sequence-September-25-2026/build/sections/mixing.tex",
+      "source_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Polynomial-Mixing-of-the-Switch-Chain-for-Every-Graphical-Degree-Sequence-September-25-2026/build/sections/mixing.tex",
+      "raw_url": "https://raw.githubusercontent.com/openai/math/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Polynomial-Mixing-of-the-Switch-Chain-for-Every-Graphical-Degree-Sequence-September-25-2026/build/sections/mixing.tex",
+      "sha256": "2b9d197997ca8126347c3ad93360243e55d6d0f761f1e02f8687023657b0fa55",
+      "bytes": 10426
+    },
+    {
+      "file": "references.tex",
+      "upstream_path": "preprints/Polynomial-Mixing-of-the-Switch-Chain-for-Every-Graphical-Degree-Sequence-September-25-2026/build/sources/references.tex",
+      "source_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Polynomial-Mixing-of-the-Switch-Chain-for-Every-Graphical-Degree-Sequence-September-25-2026/build/sources/references.tex",
+      "raw_url": "https://raw.githubusercontent.com/openai/math/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Polynomial-Mixing-of-the-Switch-Chain-for-Every-Graphical-Degree-Sequence-September-25-2026/build/sources/references.tex",
+      "sha256": "fcf0bf7d98cc2a6ecaaccc2ad2f983bfa4296f691299d469d746175a556b546a",
+      "bytes": 7983
+    }
+  ]
+}

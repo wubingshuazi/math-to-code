@@ -7,7 +7,11 @@ Repository: https://github.com/wubingshuazi/math-to-code
 
 First release: https://github.com/wubingshuazi/math-to-code/releases/tag/v0.1.0
 
-Current release: https://github.com/wubingshuazi/math-to-code/releases/tag/v0.2.0
+Current published release: https://github.com/wubingshuazi/math-to-code/releases/tag/v0.2.0
+
+Third pilot ready for release: degree-preserving graph sampling, family131.
+See docs/GRAPH_RESULTS.md and worklogs/stage07. Core and exact-state audit
+are implemented; 44 local tests pass. Publication/CI status is in state JSON.
 
 Current validated code: `000e934b79abab14b80321c760c6ef83bac2642d`.
 All six CI jobs passed:
@@ -49,6 +53,12 @@ for these handoff logs because model usage may run out.
   replay. Reports, figure and research artifact manifest are in results/.
 - 31 local tests pass, including high-precision, record-preservation and
   extreme small-row arithmetic tests.
+- GraphSampler with source switch/Curveball kernels, attempted-step clock,
+  Havel-Hakimi initialization, JSON export and conservative step-bound API.
+- Exact reference on 9 degree vectors /18 rational kernels, with 28 actual
+  production rows matched by exhaustive scripted random choices.
+- Six-vertex mixing example:38switch steps versus4Curveball steps at TV1/4;
+  accepted-only recording changes two-triangle mass1/7to1/5.
 
 ## Commands
 
@@ -74,6 +84,9 @@ python scripts/check_thermal_stability.py
 python scripts/thermal_perturbations.py
 python scripts/confirm_thermal.py
 python scripts/plot_thermal_sharpness.py
+python scripts/audit_graphs.py
+python scripts/benchmark_graphs.py
+python scripts/plot_graphs.py
 ```
 
 Search journals are retained locally and in the v0.2.0 release ZIP. Rerunning
@@ -93,6 +106,11 @@ short corollary, or choose another practically constructive family from
 the screened list. The constrained search used its evaluation budget on
 127/128 starts, so targeted refinement is possible; all best feasible points
 are saved. Read stage05 before doing more runs. Preserve useful failures.
+
+For the graph pilot, finish publication checkpoint after six CI jobs.
+Future useful extensions include edge-list input/export formats, real-data
+null-model statistics with uncertainty estimates, and large-state sparse
+spectral checks. Keep the clock and state-space definitions explicit.
 
 ## Claims to avoid
 

@@ -1,13 +1,14 @@
 # Math to Code · 从数学手稿到可复现实验
 
-**当前成果：GAD 计算工具、一个由原证明推导的定量下界，以及取等号附近的高精度实验。**
+**当前成果：保留节点连接数的网络采样器、GAD 计算工具，以及可调用的熵差下界。**
 
-[第二阶段结果](docs/SHARPNESS_RESULTS.md) · [推导全文](docs/thermal-stability-derivation.md) · [版本下载](https://github.com/wubingshuazi/math-to-code/releases/tag/v0.2.0) · [AI 续接入口](HANDOFF.md)
+[网络采样与偏差实验](docs/GRAPH_RESULTS.md) · [熵的定量分析](docs/SHARPNESS_RESULTS.md) · [版本下载](https://github.com/wubingshuazi/math-to-code/releases/tag/v0.3.0) · [AI 续接入口](HANDOFF.md)
 
 本项目的新代码、文档与实验由 GPT 完成（100% GPT 贡献）；人类提供选题授权、计算资源与 GitHub 托管。数学成果及已有算法归原作者，不计作本项目原创。详见 [贡献说明](CREDITS.md)。本项目独立于 OpenAI 官方研究仓库。
 
 ## 能用来做什么
 
+- 为网络分析生成随机对照网络，精确保留每个节点的连接数。提供论文原始交换规则和 Curveball 两种后端，并用可穷举的小网络检查整个采样分布。
 - 输入阻尼强度 `gamma` 与平衡激发态占据率 `nu`，计算单次使用的 Holevo 信息最优值（bit/次）和对应的两种信号态。
 - 批量扫描噪声参数，导出 CSV，供量子通信仿真、参数敏感性分析使用。
 - 独立使用 Kraus 算符、密度矩阵和特征值计算，检查论文的公式、纠缠输入熵界与矩形热熵不等式是否在所测实例上数值一致。
@@ -16,6 +17,31 @@
 这不是量子纠错器或真实硬件的通信协议，也不计算量子信息容量。将单次 Holevo 值解释为任意长度编码的无辅助经典容量，依赖原手稿的可加性定理；本项目的随机实验不构成该定理的证明。
 
 ## 快速使用
+
+### 随机网络对照实验
+
+```console
+python -m math_to_code sample-graphs --degrees 2,2,2,2,2,2 --backend curveball --count 100 --burn-in 128 --spacing 10 --seed 131 --output results/networks.json
+```
+
+输出 JSON 包含每个网络的边列表、随机种子、尝试次数和变化次数，节点编号从 0 开始。两种后端均按**所有尝试**计时，包含原地停留和失败交换。样本允许重复，连通性可以变化。
+
+```python
+from math_to_code.graphs import GraphSampler
+sampler = GraphSampler([2, 2, 2, 2, 2, 2], seed=131, backend="curveball")
+networks = sampler.sample(100, burn_in=128, spacing=10)
+print(sampler.statistics())
+```
+
+保守的论文推导步数界可单独查询；命令只报告步数，不自动执行：
+
+```console
+python -m math_to_code graph-bound --vertices 6 --states 70 --backend curveball --epsilon 0.25
+```
+
+[网络实验报告](docs/GRAPH_RESULTS.md) 展示了忽略失败交换为什么会把一个类别的概率从 `1/7` 改成 `1/5`。
+
+### GAD 公式计算
 
 运行计算器只需要 Python 3.10+，不需要 GPU、API 密钥或网络：
 
@@ -84,6 +110,8 @@ Linux/macOS 将 `.venv\Scripts\python.exe` 换成 `.venv/bin/python`。固定种
 .venv\Scripts\python.exe scripts/thermal_perturbations.py
 .venv\Scripts\python.exe scripts/confirm_thermal.py
 .venv\Scripts\python.exe scripts/plot_thermal_sharpness.py
+.venv\Scripts\python.exe scripts/audit_graphs.py
+.venv\Scripts\python.exe scripts/benchmark_graphs.py
 ```
 
 已保存的并行搜索包含 128 个起点、191,995 次目标函数评估。重新搜索请使用新的输出目录，避免覆盖旧记录：

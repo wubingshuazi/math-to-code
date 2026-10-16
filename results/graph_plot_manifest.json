@@ -1,0 +1,16 @@
+{
+  "input": "results/graph_audit.json",
+  "sha256": "90a0d5402269f5b4280d8403e19e5e07578986f3c79bb2b9452b8d73d116e0f1",
+  "case": "six_vertex_two_regular",
+  "states": 70,
+  "mixing_steps_to_tv_quarter": {
+    "switch": 38,
+    "curveball": 4
+  },
+  "stationary_two_triangles_probabilities": [
+    0.14285714285714285,
+    0.2
+  ],
+  "figure": "results/graph_sampling.png",
+  "matplotlib": "3.11.2"
+}

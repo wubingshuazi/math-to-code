@@ -4,12 +4,15 @@ research/gad-thermal.tex -text
 research/upstream-contents.md -text
 research/upstream-overview.tex -text
 research/upstream-readme.md -text
+research/graph131/* -text -whitespace
 # Inputs named by SHA-256 in the high-precision confirmation report.
 results/sharpness_search.json -text
 results/thermal_perturbations_selected.json -text
 results/thermal_high_precision.json -text
 results/thermal_perturbations.json -text
+results/graph_audit.json -text
 # Matplotlib-generated vector paths retain their original formatting.
 results/thermal_sharpness.svg -whitespace linguist-generated=true
+results/graph_sampling.svg -whitespace linguist-generated=true
 results/*.json linguist-generated=true
 results/*.csv linguist-generated=true

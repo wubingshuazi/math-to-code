@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "math-to-code-gad"
-version = "0.2.0"
-description = "GAD Holevo optimization, quantitative thermal entropy-gap bounds, and reproducible matrix experiments"
+version = "0.3.0"
+description = "Reproducible mathematical software: degree-preserving network sampling, GAD optimization, and entropy bounds"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "Apache-2.0"}
