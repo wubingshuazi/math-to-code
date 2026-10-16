@@ -1,0 +1,6 @@
+* text=auto eol=lf
+# These bytes are hashed as source provenance. Preserve them across checkout.
+research/gad-thermal.tex -text
+research/upstream-contents.md -text
+research/upstream-overview.tex -text
+research/upstream-readme.md -text

@@ -1,0 +1,19 @@
+{
+  "seed": 2762026,
+  "python": "3.14.3",
+  "platform": "Windows",
+  "machine": "AMD64",
+  "logical_cpus_available": 32,
+  "parameter_pairs_per_run": 4281,
+  "runs_seconds": [
+    0.3477202999929432,
+    0.33863370001199655,
+    0.3429044999938924
+  ],
+  "median_seconds": 0.3429044999938924,
+  "dense_grid_comparisons": 300,
+  "points_per_dense_grid": 2049,
+  "max_dense_grid_excess_bits": 2.591646566491377e-15,
+  "status": "PASS",
+  "limitations": "Local wall time only; no comparison with another package or speedup claim. Floating-point consistency is not a proof."
+}

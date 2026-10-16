@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-10-16T18:41:52.620721+00:00",
+  "status": "passed",
+  "scope": "Numerical consistency audit only; not a proof of additivity, capacity, or correctness of the source paper.",
+  "parameter_convention": "nu is stationary excited-state population; all information and entropy values in bits",
+  "method": "Four Kraus matrices and Hermitian eigenvalue entropies; no scalar determinant entropy formula in the reference calculation",
+  "seed": 276,
+  "samples_per_random_check": 24,
+  "absolute_tolerance": 2e-10,
+  "environment": {
+    "python": "3.14.3",
+    "numpy": "2.5.4",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "checks": {
+    "kraus_completeness_and_channel_definition": {
+      "cases": 36,
+      "max_completeness_error": 2.220446049250313e-16,
+      "max_channel_entry_error": 4.445172146958554e-16,
+      "max_output_trace_error": 4.447507212030901e-16,
+      "minimum_output_eigenvalue": 0.0
+    },
+    "phase_pair_and_optimizer": {
+      "cases": 36,
+      "grid_points_per_case": 201,
+      "max_scalar_matrix_error_bits": 1.5543122344752192e-15,
+      "max_optimum_matrix_error_bits": 5.551115123125783e-16,
+      "max_grid_excess_bits": 2.220446049250313e-16
+    },
+    "analytic_limits_and_thermal_symmetry": {
+      "max_analytic_error_bits": 1.1102230246251565e-16,
+      "max_complement_capacity_error_bits": 0.0
+    },
+    "entangled_blocks_and_ensembles": {
+      "cases": [
+        {
+          "qubits": 2,
+          "pure_entropy_bound_cases": 216,
+          "random_ensemble_cases": 36,
+          "product_phase_pair_cases": 36
+        },
+        {
+          "qubits": 3,
+          "pure_entropy_bound_cases": 216,
+          "random_ensemble_cases": 36,
+          "product_phase_pair_cases": 36
+        }
+      ],
+      "minimum_entropy_bound_slack_bits": -6.048462664779955e-15,
+      "max_random_ensemble_above_capacity_bits": 2.220446049250313e-16,
+      "max_product_phase_pair_error_bits": 8.43769498715119e-15,
+      "limitation": "Finite random samples cannot establish any universal inequality or exclude unsampled counterexamples."
+    }
+  },
+  "failures": []
+}

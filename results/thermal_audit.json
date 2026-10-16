@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "title": "Numerical audit of the rectangular thermal entropy inequality",
+  "created_utc": "2026-10-16T18:43:52.666882+00:00",
+  "status": "no_sampled_violation",
+  "claim_limit": "Finite floating-point tests only. This does not prove the lemma, verify its Lean formalization, or establish a new theorem.",
+  "source": {
+    "repository": "https://github.com/openai/math",
+    "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Classical-capacity-and-entropy-inequalities-for-generalized-amplitude-damping-September-24-2026/build/sections/thermal.tex",
+    "local_path": "research/gad-thermal.tex",
+    "sha256": "52a3470b411125ba69e7f39cc78c611695c895059288e212e3c5407a69882d14",
+    "theorem_label": "thm:thermal",
+    "equation_labels": [
+      "eq:thermal-condition",
+      "eq:thermal-state",
+      "eq:thermal-bound"
+    ]
+  },
+  "implementation": {
+    "independent_of_package_capacity_code": true,
+    "entropy_units": "nats (natural logarithm)",
+    "eigenvalue_solver": "numpy.linalg.eigvalsh",
+    "entropy_handling": "Hermitian residual checked before symmetric averaging; eigenvalues below zero are ignored only after PSD tolerance passes; no trace renormalization.",
+    "determinant_entropy": "small eigenvalue 2u/(1+sqrt(1-4u)), avoiding subtraction near zero",
+    "source_hash_checked_before_run": true
+  },
+  "reproducibility": {
+    "seed": 20261017,
+    "generator": "PCG64",
+    "python": "3.14.3",
+    "numpy": "2.5.4",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "command": "python scripts/validate_thermal.py --samples 10000 --seed 20261017 --out results/thermal_audit.json"
+  },
+  "sample_counts": {
+    "seeded_random": 10000,
+    "explicit_boundary": 240,
+    "total": 10240,
+    "by_type": {
+      "explicit_coefficient_boundary": 120,
+      "independent_complex_gaussian": 6500,
+      "near_equal": 1000,
+      "near_rank_one": 1000,
+      "orthogonal_hilbert_schmidt": 500,
+      "saturation_x_equals_y": 1120
+    },
+    "by_matrix_shape": {
+      "1x1": 1707,
+      "2x3": 1707,
+      "3x2": 1707,
+      "4x5": 1707,
+      "5x3": 1706,
+      "6x2": 1706
+    },
+    "boundary_cases": {
+      "k_zero_maximum_u": 12,
+      "near_k_zero_1e-06": 12,
+      "near_k_zero_1e-10": 12,
+      "near_k_zero_1e-14": 12,
+      "near_u_zero_1e-06": 12,
+      "near_u_zero_1e-10": 12,
+      "near_u_zero_1e-14": 12,
+      "near_zero_row_1e-06": 12,
+      "near_zero_row_1e-10": 12,
+      "near_zero_row_1e-14": 12,
+      "only_alpha": 12,
+      "only_beta": 12,
+      "only_delta": 12,
+      "only_eta": 12,
+      "u_zero": 12,
+      "u_zero_balanced": 12,
+      "vanishing_bottom_row": 12,
+      "vanishing_top_row": 12,
+      "zero_beta": 12,
+      "zero_eta": 12
+    },
+    "noncommuting_gram_cases_at_norm_gt_1e_minus_10": 7299
+  },
+  "tolerances": {
+    "inequality_and_saturation_absolute_nats": 2e-10,
+    "state_and_coefficient_absolute": 2e-12
+  },
+  "summary": {
+    "violation_count": 0,
+    "minimum_inequality_residual_nats": -8.770761894538737e-15,
+    "maximum_saturation_absolute_residual_nats": 1.1013759348976748e-14,
+    "maximum_trace_error": 7.771561172376096e-16,
+    "maximum_hermitian_error": 6.206335383118183e-17,
+    "maximum_coefficient_identity_or_sum_error": 3.3306690738754696e-16,
+    "minimum_eigenvalue_observed": -4.712352003661814e-16,
+    "maximum_gram_commutator_frobenius_norm": 0.7071058762353325,
+    "wall_seconds": 1.1326721999794245
+  },
+  "worst_inequality_case": {
+    "lhs_entropy_nats": 0.605782116066626,
+    "rhs_entropy_nats": 0.6057821160666348,
+    "residual_nats": -8.770761894538737e-15,
+    "coefficients_alpha_beta_eta_delta": [
+      0.3350135308753263,
+      0.11727870470174677,
+      0.027280807630815185,
+      0.5204269567921116
+    ],
+    "K": 0.4137035346422202,
+    "u": 0.07657335463829978,
+    "coefficient_identity_error": 0.0,
+    "coefficient_sum_error": 1.1102230246251565e-16,
+    "maximum_trace_error": 2.220446049250313e-16,
+    "maximum_hermitian_error": 0.0,
+    "minimum_eigenvalue": -6.905073635680956e-17,
+    "sample_type": "near_equal",
+    "case": "random_6056",
+    "shape": [
+      3,
+      2
+    ],
+    "X": {
+      "real": [
+        [
+          -0.11979602065502457,
+          0.1942991441669212
+        ],
+        [
+          0.04877823196546695,
+          0.16414981455823702
+        ],
+        [
+          0.4666321691032711,
+          0.299317508991572
+        ]
+      ],
+      "imag": [
+        [
+          -0.038111876214435916,
+          0.1914353066457756
+        ],
+        [
+          0.48142474952706343,
+          0.30357629327404745
+        ],
+        [
+          -0.4456772341339441,
+          -0.2248981591464533
+        ]
+      ]
+    },
+    "Y": {
+      "real": [
+        [
+          -0.11979602061700098,
+          0.19429914415911115
+        ],
+        [
+          0.048778231988301626,
+          0.16414981460969452
+        ],
+        [
+          0.4666321691163194,
+          0.2993175089697473
+        ]
+      ],
+      "imag": [
+        [
+          -0.038111876233976605,
+          0.1914353066374363
+        ],
+        [
+          0.4814247495130203,
+          0.30357629332307984
+        ],
+        [
+          -0.44567723410703985,
+          -0.22489815915389608
+        ]
+      ]
+    }
+  },
+  "worst_saturation_case": {
+    "lhs_entropy_nats": 0.007873213434453975,
+    "rhs_entropy_nats": 0.007873213434442961,
+    "residual_nats": 1.1013759348976748e-14,
+    "coefficients_alpha_beta_eta_delta": [
+      0.25,
+      0.0,
+      0.0,
+      0.75
+    ],
+    "K": 0.4330127018922193,
+    "u": 2.7755575615628914e-17,
+    "coefficient_identity_error": 2.7755575615628914e-17,
+    "coefficient_sum_error": 0.0,
+    "maximum_trace_error": 1.3810772550179475e-18,
+    "maximum_hermitian_error": 3.1031676915590914e-17,
+    "minimum_eigenvalue": -2.0063780643705006e-16,
+    "sample_type": "saturation_x_equals_y",
+    "case": "boundary_saturation_u_zero",
+    "shape": [
+      6,
+      2
+    ]
+  },
+  "violations": []
+}

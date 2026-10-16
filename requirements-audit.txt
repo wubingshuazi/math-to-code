@@ -1,0 +1,2 @@
+# Version used for the checked-in numerical audit, on Python 3.14.
+numpy==2.5.4

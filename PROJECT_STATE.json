@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "checkpoint_client_date": "2026-10-17",
+  "timezone": "Asia/Shanghai",
+  "user_goal": "Turn OpenAI math manuscripts into useful tested open-source engineering artifacts; publish completed results on user GitHub.",
+  "new_engineering_attribution": "100% GPT-generated; human authorization, compute and hosting acknowledged",
+  "github_owner": "wubingshuazi",
+  "intended_repository": "math-to-code",
+  "publication_status": "pending_final_verification",
+  "upstream_repository": "openai/math",
+  "upstream_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "catalogue": {
+    "manuscripts": 719,
+    "families": 372,
+    "broad_keyword_hit_families": 72,
+    "manual_followup_families": 16,
+    "practically_useful_count": null,
+    "useful_and_unimplemented_count": null
+  },
+  "first_pilot": "276: GAD scalar optimizer and independent finite numerical entropy-inequality audits",
+  "completed": ["source_verification", "metadata_catalogue", "prior_art_search", "runtime_calculator", "15_unit_tests", "initial_quantum_audit", "local_benchmark", "handoff_logs"],
+  "next": ["review_thermal_audit", "review_code", "final_validation_and_packaging", "publish_repository", "record_remote_commit_and_CI"],
+  "research_limits": ["no_global_novelty_claim", "no_new_mathematical_proof", "no_certified_arithmetic", "no_speedup_claim"],
+  "logs": ["worklogs/2026-10-17-01-source-triage.md", "worklogs/2026-10-17-02-engineering.md"]
+}
