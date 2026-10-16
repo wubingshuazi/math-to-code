@@ -7,6 +7,13 @@ Repository: https://github.com/wubingshuazi/math-to-code
 
 First release: https://github.com/wubingshuazi/math-to-code/releases/tag/v0.1.0
 
+Current release: https://github.com/wubingshuazi/math-to-code/releases/tag/v0.2.0
+
+Current validated code: `000e934b79abab14b80321c760c6ef83bac2642d`.
+All six CI jobs passed:
+https://github.com/wubingshuazi/math-to-code/actions/runs/38954294850
+The v0.2.0 release has nine verified attachments, including the full journals.
+
 Second phase: see `docs/SHARPNESS_RESULTS.md` and stage05 in `worklogs/`.
 v0.2.0 adds a proof-derived quantitative thermal bound, structured equality
 families, 191,995 parallel-search evaluations and 80/160-digit confirmation.

@@ -6,18 +6,17 @@
   "new_engineering_attribution": "100% GPT-generated; human authorization, compute and hosting acknowledged",
   "github_owner": "wubingshuazi",
   "intended_repository": "math-to-code",
-  "publication_status": "v0.2.0_ready_for_CI",
+  "publication_status": "released_v0.2.0_with_six_CI_jobs_passed",
   "repository_url": "https://github.com/wubingshuazi/math-to-code",
-  "release_url": "https://github.com/wubingshuazi/math-to-code/releases/tag/v0.1.0",
+  "release_url": "https://github.com/wubingshuazi/math-to-code/releases/tag/v0.2.0",
   "release_confirmed_published": true,
-  "release_asset_count": 5,
-  "release_checkpoint_commit": "3e8c4e7bc80e478a0cc2793abbe6a9374105908b",
-  "validated_code_commit": "4572d1eda3a0e014b475264e5f23838ed68bdad7",
+  "release_asset_count": 9,
+  "validated_code_commit": "000e934b79abab14b80321c760c6ef83bac2642d",
   "ci": {
-    "url": "https://github.com/wubingshuazi/math-to-code/actions/runs/38949983630",
+    "url": "https://github.com/wubingshuazi/math-to-code/actions/runs/38954294850",
     "status": "success",
-    "jobs_passed": 4,
-    "matrix": "Windows/Linux x Python 3.10/3.14; NumPy audits on 3.14"
+    "jobs_passed": 6,
+    "matrix": "4 runtime/audit Windows/Linux x Python3.10/3.14,2research Windows/Linux Python3.14"
   },
   "upstream_repository": "openai/math",
   "upstream_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
@@ -50,11 +49,14 @@
     "parallel_sharpness_search",
     "high_precision_replay",
     "scientific_figure",
-    "31_local_tests"
+    "31_local_tests",
+    "v0.2.0_public_release",
+    "six_CI_jobs_passed"
   ],
   "next": [
-    "finish_v0.2.0_CI_and_publication",
-    "choose_sharper_bound_or_next_constructive_family"
+    "choose_sharper_bound_or_equality_classification",
+    "or_formalize_short_corollary",
+    "or_select_next_constructive_family"
   ],
   "research_limits": [
     "no_global_novelty_claim",
@@ -67,7 +69,8 @@
     "worklogs/2026-10-17-02-engineering.md",
     "worklogs/2026-10-17-03-publication.md",
     "worklogs/2026-10-17-04-release-confirmed.md",
-    "worklogs/2026-10-17-05-sharpness-study.md"
+    "worklogs/2026-10-17-05-sharpness-study.md",
+    "worklogs/2026-10-17-06-v0.2-publication.md"
   ],
   "current_phase": "stage_2_quantitative_bound_and_sharpness",
   "current_version": "0.2.0",
@@ -86,5 +89,7 @@
     ],
     "local_tests_passed": 31,
     "full_worker_journal_zip_sha256": "668c04e6747cd06d178f070fab3674b39065135cc347b640e377f7e994810fc7"
-  }
+  },
+  "previous_release_checkpoint_commit": "3e8c4e7bc80e478a0cc2793abbe6a9374105908b",
+  "release_code_commit": "000e934b79abab14b80321c760c6ef83bac2642d"
 }
