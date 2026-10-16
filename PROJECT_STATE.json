@@ -6,14 +6,14 @@
   "new_engineering_attribution": "100% GPT-generated; human authorization, compute and hosting acknowledged",
   "github_owner": "wubingshuazi",
   "intended_repository": "math-to-code",
-  "publication_status": "v0.3.0_ready_for_CI",
+  "publication_status": "v0.3.0_published_and_assets_verified",
   "repository_url": "https://github.com/wubingshuazi/math-to-code",
-  "release_url": "https://github.com/wubingshuazi/math-to-code/releases/tag/v0.2.0",
+  "release_url": "https://github.com/wubingshuazi/math-to-code/releases/tag/v0.3.0",
   "release_confirmed_published": true,
-  "release_asset_count": 9,
-  "validated_code_commit": "000e934b79abab14b80321c760c6ef83bac2642d",
+  "release_asset_count": 7,
+  "validated_code_commit": "501615c6da380f08e6cdf1e3dd6336f8fe30407f",
   "ci": {
-    "url": "https://github.com/wubingshuazi/math-to-code/actions/runs/38954294850",
+    "url": "https://github.com/wubingshuazi/math-to-code/actions/runs/38982929854",
     "status": "success",
     "jobs_passed": 6,
     "matrix": "4 runtime/audit Windows/Linux x Python3.10/3.14,2research Windows/Linux Python3.14"
@@ -55,11 +55,13 @@
     "graph_sampler",
     "graph_exact_state_audit",
     "graph_benchmark",
-    "44_local_tests"
+    "44_local_tests",
+    "v0.3.0_public_release",
+    "seven_graph_release_assets_verified"
   ],
   "next": [
-    "finish_v0.3.0_CI_and_publication",
-    "extend_real_network_null_model_workflow"
+    "edge_list_input_and_null_model_statistics",
+    "compare_uncertainty_and_dependence_with_small_state_exact_results"
   ],
   "research_limits": [
     "no_global_novelty_claim",
@@ -74,7 +76,8 @@
     "worklogs/2026-10-17-04-release-confirmed.md",
     "worklogs/2026-10-17-05-sharpness-study.md",
     "worklogs/2026-10-17-06-v0.2-publication.md",
-    "worklogs/2026-10-17-07-network-pilot.md"
+    "worklogs/2026-10-17-07-network-pilot.md",
+    "worklogs/2026-10-17-08-v0.3-publication.md"
   ],
   "current_phase": "stage_3_degree_preserving_network_sampling",
   "current_version": "0.3.0",
@@ -94,8 +97,8 @@
     "local_tests_passed": 31,
     "full_worker_journal_zip_sha256": "668c04e6747cd06d178f070fab3674b39065135cc347b640e377f7e994810fc7"
   },
-  "previous_release_checkpoint_commit": "3e8c4e7bc80e478a0cc2793abbe6a9374105908b",
-  "release_code_commit": "000e934b79abab14b80321c760c6ef83bac2642d",
+  "previous_release_checkpoint_commit": "f8a9ac3a88eaa384ea17528303681f13a80275f2",
+  "release_code_commit": "501615c6da380f08e6cdf1e3dd6336f8fe30407f",
   "third_phase": {
     "family": "131",
     "artifact": "degree-preserving graph sampler and exact finite-state audit",
@@ -115,6 +118,9 @@
       "uniform_two_triangles": "1/7",
       "changed_only_two_triangles": "1/5"
     },
-    "results": "docs/GRAPH_RESULTS.md"
-  }
+    "results": "docs/GRAPH_RESULTS.md",
+    "artifact_manifest": "results/graph_release_artifacts.json",
+    "wheel_sha256": "ab8d219dfc344b9c6ce5281f12ba07c6e79df9b6082ca56a4594ac63ceb5a9af"
+  },
+  "previous_release_url": "https://github.com/wubingshuazi/math-to-code/releases/tag/v0.2.0"
 }

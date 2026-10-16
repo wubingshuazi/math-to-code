@@ -7,16 +7,17 @@ Repository: https://github.com/wubingshuazi/math-to-code
 
 First release: https://github.com/wubingshuazi/math-to-code/releases/tag/v0.1.0
 
-Current published release: https://github.com/wubingshuazi/math-to-code/releases/tag/v0.2.0
+Current published release: https://github.com/wubingshuazi/math-to-code/releases/tag/v0.3.0
 
-Third pilot ready for release: degree-preserving graph sampling, family131.
-See docs/GRAPH_RESULTS.md and worklogs/stage07. Core and exact-state audit
-are implemented; 44 local tests pass. Publication/CI status is in state JSON.
+Third pilot published: degree-preserving graph sampling, family 131.
+See docs/GRAPH_RESULTS.md and worklogs/2026-10-17-08-v0.3-publication.md.
+44 local tests pass. Seven release assets have verified SHA-256 hashes in
+results/graph_release_artifacts.json. Publication/CI status is in state JSON.
 
-Current validated code: `000e934b79abab14b80321c760c6ef83bac2642d`.
+Current validated code: `501615c6da380f08e6cdf1e3dd6336f8fe30407f`.
 All six CI jobs passed:
-https://github.com/wubingshuazi/math-to-code/actions/runs/38954294850
-The v0.2.0 release has nine verified attachments, including the full journals.
+https://github.com/wubingshuazi/math-to-code/actions/runs/38982929854
+The older v0.2.0 release has nine attachments, including full search journals.
 
 Second phase: see `docs/SHARPNESS_RESULTS.md` and stage05 in `worklogs/`.
 v0.2.0 adds a proof-derived quantitative thermal bound, structured equality
@@ -26,7 +27,7 @@ The initial engineering phase is complete and published. All four CI jobs
 (Windows/Linux, Python 3.10/3.14) passed for code commit
 `4572d1eda3a0e014b475264e5f23838ed68bdad7`:
 https://github.com/wubingshuazi/math-to-code/actions/runs/38949983630
-Those checks describe the first release. Current second-phase validation
+Those checks describe the first release. Current third-phase validation
 and publication status are recorded in `PROJECT_STATE.json`.
 
 ## User goal and standing authorization
@@ -51,14 +52,14 @@ for these handoff logs because model usage may run out.
   endpoint-mixture/Pinsker derivation in docs/thermal-stability-derivation.md.
 - Completed perturbation study and independent factor/SVD +80/160-digit
   replay. Reports, figure and research artifact manifest are in results/.
-- 31 local tests pass, including high-precision, record-preservation and
-  extreme small-row arithmetic tests.
+- By the end of the second phase, 31 local tests passed, including high-precision,
+  record-preservation and extreme small-row arithmetic tests.
 - GraphSampler with source switch/Curveball kernels, attempted-step clock,
   Havel-Hakimi initialization, JSON export and conservative step-bound API.
 - Exact reference on 9 degree vectors /18 rational kernels, with 28 actual
   production rows matched by exhaustive scripted random choices.
-- Six-vertex mixing example:38switch steps versus4Curveball steps at TV1/4;
-  accepted-only recording changes two-triangle mass1/7to1/5.
+- Six-vertex mixing example: 38 switch steps versus 4 Curveball steps at
+  TV 1/4; changed-only recording of switch changes two-triangle mass 1/7 to 1/5.
 
 ## Commands
 
@@ -107,10 +108,12 @@ the screened list. The constrained search used its evaluation budget on
 127/128 starts, so targeted refinement is possible; all best feasible points
 are saved. Read stage05 before doing more runs. Preserve useful failures.
 
-For the graph pilot, finish publication checkpoint after six CI jobs.
-Future useful extensions include edge-list input/export formats, real-data
-null-model statistics with uncertainty estimates, and large-state sparse
-spectral checks. Keep the clock and state-space definitions explicit.
+The graph pilot is published as v0.3.0. The next useful extension is an
+edge-list-to-null-model workflow: preserve isolated vertex labels, compute
+observed and simulated network statistics, and assess dependence before
+reporting uncertainty. Check the workflow against small-state exact results
+first, then use openly licensed data. Large-state sparse spectral checks
+are another option. Keep clock and state-space definitions explicit.
 
 ## Claims to avoid
 

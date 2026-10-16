@@ -1,0 +1,50 @@
+{
+  "release": "https://github.com/wubingshuazi/math-to-code/releases/tag/v0.3.0",
+  "tag_commit": "501615c6da380f08e6cdf1e3dd6336f8fe30407f",
+  "ci": "https://github.com/wubingshuazi/math-to-code/actions/runs/38982929854",
+  "verification": "GitHub asset SHA-256 digest, or downloaded bytes when digest is unavailable",
+  "assets": [
+    {
+      "name": "math_to_code_gad-0.3.0-py3-none-any.whl",
+      "bytes": 18635,
+      "sha256": "ab8d219dfc344b9c6ce5281f12ba07c6e79df9b6082ca56a4594ac63ceb5a9af",
+      "download_url": "https://github.com/wubingshuazi/math-to-code/releases/download/v0.3.0/math_to_code_gad-0.3.0-py3-none-any.whl"
+    },
+    {
+      "name": "graph_audit.json",
+      "bytes": 306754,
+      "sha256": "90a0d5402269f5b4280d8403e19e5e07578986f3c79bb2b9452b8d73d116e0f1",
+      "download_url": "https://github.com/wubingshuazi/math-to-code/releases/download/v0.3.0/graph_audit.json"
+    },
+    {
+      "name": "graph_benchmark.json",
+      "bytes": 4684,
+      "sha256": "062793791ca065be6ff0249d2b57a8e0228a2b0d381b09f0ae8e5ad418394c6e",
+      "download_url": "https://github.com/wubingshuazi/math-to-code/releases/download/v0.3.0/graph_benchmark.json"
+    },
+    {
+      "name": "graph_samples_example.json",
+      "bytes": 27147,
+      "sha256": "b18cda1aaea82a22d95887e38c0a03409e133685d10f595d04da9dae75653eb9",
+      "download_url": "https://github.com/wubingshuazi/math-to-code/releases/download/v0.3.0/graph_samples_example.json"
+    },
+    {
+      "name": "graph_sampling.png",
+      "bytes": 96868,
+      "sha256": "452bf1cc673bd48abd8b2fd44b0316bea55053fbcfc523c85e3c32a0e328df16",
+      "download_url": "https://github.com/wubingshuazi/math-to-code/releases/download/v0.3.0/graph_sampling.png"
+    },
+    {
+      "name": "graph_sampling.svg",
+      "bytes": 111395,
+      "sha256": "f175e0edf952cce786f9b4db6b35a8d0ed98637bdc9bc2fc8db5ce7da5fdf54c",
+      "download_url": "https://github.com/wubingshuazi/math-to-code/releases/download/v0.3.0/graph_sampling.svg"
+    },
+    {
+      "name": "SHA256SUMS-v0.3.0.txt",
+      "bytes": 545,
+      "sha256": "c4d92fcd4b06a56be58d0c32c96502eb3210465e41dddd8d89006ec6bc686680",
+      "download_url": "https://github.com/wubingshuazi/math-to-code/releases/download/v0.3.0/SHA256SUMS-v0.3.0.txt"
+    }
+  ]
+}
