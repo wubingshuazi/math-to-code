@@ -16,6 +16,7 @@ jobs:
           python-version: ${{ matrix.python }}
       - run: python -m pip install .
       - run: math-to-code gad --gamma 0.35 --nu 0.2
+      - run: math-to-code thermal-bound --coefficients 0.4 0.1 0.15 0.35 --gram-trace-norm 0.5
       - run: python -m unittest discover -s tests -v
       - if: matrix.python == '3.14'
         run: python -m pip install -r requirements-audit.txt
@@ -23,3 +24,18 @@ jobs:
         run: python scripts/validate_quantum.py
       - if: matrix.python == '3.14'
         run: python scripts/validate_thermal.py
+  research:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+      - run: python -m pip install -r requirements-research.txt
+      - run: python -m unittest discover -s tests -v
+      - run: python scripts/check_thermal_stability.py --samples 128 --output .ci_results/stability.json
+      - run: python scripts/confirm_thermal.py --out .ci_results/high_precision.json
+      - run: python scripts/search_thermal.py --starts 2 --workers 2 --max-evals 100 --seconds 20 --output .ci_results/search.json

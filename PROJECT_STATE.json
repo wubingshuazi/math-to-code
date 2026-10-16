@@ -6,7 +6,7 @@
   "new_engineering_attribution": "100% GPT-generated; human authorization, compute and hosting acknowledged",
   "github_owner": "wubingshuazi",
   "intended_repository": "math-to-code",
-  "publication_status": "released_v0.1.0_with_initial_CI_passed",
+  "publication_status": "v0.2.0_ready_for_CI",
   "repository_url": "https://github.com/wubingshuazi/math-to-code",
   "release_url": "https://github.com/wubingshuazi/math-to-code/releases/tag/v0.1.0",
   "release_confirmed_published": true,
@@ -30,8 +30,61 @@
     "useful_and_unimplemented_count": null
   },
   "first_pilot": "276: GAD scalar optimizer and independent finite numerical entropy-inequality audits",
-  "completed": ["source_verification", "metadata_catalogue", "prior_art_search", "runtime_calculator", "15_unit_tests", "quantum_audit", "10240_case_thermal_audit", "independent_code_review", "clean_export_source_hash_check", "wheel_installation_and_CLI_check", "local_benchmark", "handoff_logs", "public_repository", "four_CI_jobs_passed"],
-  "next": ["inspect_docs_NEXT_RESEARCH", "choose_bounded_adversarial_or_next_family_study", "preserve_failures_and_publish_completed_results"],
-  "research_limits": ["no_global_novelty_claim", "no_new_mathematical_proof", "no_certified_arithmetic", "no_speedup_claim"],
-  "logs": ["worklogs/2026-10-17-01-source-triage.md", "worklogs/2026-10-17-02-engineering.md", "worklogs/2026-10-17-03-publication.md", "worklogs/2026-10-17-04-release-confirmed.md"]
+  "completed": [
+    "source_verification",
+    "metadata_catalogue",
+    "prior_art_search",
+    "runtime_calculator",
+    "15_unit_tests",
+    "quantum_audit",
+    "10240_case_thermal_audit",
+    "independent_code_review",
+    "clean_export_source_hash_check",
+    "wheel_installation_and_CLI_check",
+    "local_benchmark",
+    "handoff_logs",
+    "public_repository",
+    "four_CI_jobs_passed",
+    "proof_derived_quantitative_bound",
+    "equality_families",
+    "parallel_sharpness_search",
+    "high_precision_replay",
+    "scientific_figure",
+    "31_local_tests"
+  ],
+  "next": [
+    "finish_v0.2.0_CI_and_publication",
+    "choose_sharper_bound_or_next_constructive_family"
+  ],
+  "research_limits": [
+    "no_global_novelty_claim",
+    "no_independent_proof_of_source_endpoint_theorem",
+    "no_certified_arithmetic",
+    "no_speedup_claim"
+  ],
+  "logs": [
+    "worklogs/2026-10-17-01-source-triage.md",
+    "worklogs/2026-10-17-02-engineering.md",
+    "worklogs/2026-10-17-03-publication.md",
+    "worklogs/2026-10-17-04-release-confirmed.md",
+    "worklogs/2026-10-17-05-sharpness-study.md"
+  ],
+  "current_phase": "stage_2_quantitative_bound_and_sharpness",
+  "current_version": "0.2.0",
+  "second_phase": {
+    "quantitative_bound": "R >= beta*eta/(2*U0*U1)*trace_norm(A-B)^2, nats",
+    "derivation": "docs/thermal-stability-derivation.md",
+    "matrix_stability_cases": 4146,
+    "perturbation_paths": 396,
+    "perturbation_evaluations": 3168,
+    "parallel_starts": 128,
+    "objective_evaluations": 191995,
+    "high_precision_evaluations": 90,
+    "high_precision_digits": [
+      80,
+      160
+    ],
+    "local_tests_passed": 31,
+    "full_worker_journal_zip_sha256": "668c04e6747cd06d178f070fab3674b39065135cc347b640e377f7e994810fc7"
+  }
 }

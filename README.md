@@ -1,8 +1,8 @@
 # Math to Code · 从数学手稿到可复现实验
 
-**首个成果：OpenAI 数学手稿第 276 组的广义振幅阻尼（GAD）计算工具与独立数值审计。**
+**当前成果：GAD 计算工具、一个由原证明推导的定量下界，以及取等号附近的高精度实验。**
 
-[实验结果](docs/RESULTS.md) · [版本下载](https://github.com/wubingshuazi/math-to-code/releases/tag/v0.1.0) · [AI 续接入口](HANDOFF.md)
+[第二阶段结果](docs/SHARPNESS_RESULTS.md) · [推导全文](docs/thermal-stability-derivation.md) · [版本下载](https://github.com/wubingshuazi/math-to-code/releases/tag/v0.2.0) · [AI 续接入口](HANDOFF.md)
 
 本项目的新代码、文档与实验由 GPT 完成（100% GPT 贡献）；人类提供选题授权、计算资源与 GitHub 托管。数学成果及已有算法归原作者，不计作本项目原创。详见 [贡献说明](CREDITS.md)。本项目独立于 OpenAI 官方研究仓库。
 
@@ -11,6 +11,7 @@
 - 输入阻尼强度 `gamma` 与平衡激发态占据率 `nu`，计算单次使用的 Holevo 信息最优值（bit/次）和对应的两种信号态。
 - 批量扫描噪声参数，导出 CSV，供量子通信仿真、参数敏感性分析使用。
 - 独立使用 Kraus 算符、密度矩阵和特征值计算，检查论文的公式、纠缠输入熵界与矩形热熵不等式是否在所测实例上数值一致。
+- 由两个输入状态的差异，计算熵不等式差值的定量下界，给数值仿真增加一条更强的校验条件。配套提供取等号构造、扰动实验、并行搜索及 80／160 位复核。
 
 这不是量子纠错器或真实硬件的通信协议，也不计算量子信息容量。将单次 Holevo 值解释为任意长度编码的无辅助经典容量，依赖原手稿的可加性定理；本项目的随机实验不构成该定理的证明。
 
@@ -43,6 +44,20 @@ result = optimize(gamma=0.35, nu=0.2)
 print(result.capacity_bits, result.p)
 ```
 
+第二阶段新增的下界接口同样无运行依赖，返回单位为 nats：
+
+```python
+from math_to_code.thermal import gap_lower_bound
+print(gap_lower_bound((0.4, 0.1, 0.15, 0.35), gram_trace_norm=0.5))
+# 0.0075
+```
+
+```console
+python -m math_to_code thermal-bound --coefficients 0.4 0.1 0.15 0.35 --gram-trace-norm 0.5
+```
+
+数学推导见 [定量下界与取等号情形](docs/thermal-stability-derivation.md)。第一阶段的 [基础审计结果](docs/RESULTS.md) 也保留在仓库中。
+
 `nu` 始终表示**平衡激发态**占据率。有些库使用基态权重，转换时要取 `1-nu`。输出的搜索区间属于浮点优化结果；`tolerance` 控制 `p` 搜索区间宽度，并非经过认证的容量误差界。尤其在阻尼接近 1、目标近乎平坦时，最优值比最优 `p` 更稳定。
 
 ## 复现实验
@@ -60,13 +75,32 @@ python -m venv .venv
 
 Linux/macOS 将 `.venv\Scripts\python.exe` 换成 `.venv/bin/python`。固定种子、精度、样本数量和残差见 `results/`。审计采用 CPU 和 NumPy；矩阵规模很小，GPU 对这项工作没有必要。通过结果只覆盖所测样本，不验证全部数学证明，也不提供严格浮点区间证书。
 
+复现第二阶段实验时，使用 Python 3.12+ 并安装研究依赖：
+
+```console
+.venv\Scripts\python.exe -m pip install -r requirements-research.txt
+.venv\Scripts\python.exe -m unittest discover -s tests -v
+.venv\Scripts\python.exe scripts/check_thermal_stability.py
+.venv\Scripts\python.exe scripts/thermal_perturbations.py
+.venv\Scripts\python.exe scripts/confirm_thermal.py
+.venv\Scripts\python.exe scripts/plot_thermal_sharpness.py
+```
+
+已保存的并行搜索包含 128 个起点、191,995 次目标函数评估。重新搜索请使用新的输出目录，避免覆盖旧记录：
+
+```console
+.venv\Scripts\python.exe scripts/search_thermal.py --starts 128 --workers 24 --output results/run-002/search.json
+```
+
+完整工作进程日志保存在版本附件 `thermal_search_journals.zip`，其逐文件校验值见 `results/research_artifacts.json`。
+
 ## 722 篇里面，有多少值得做、又没人做？
 
 **目前无法给出经过验证的总数。** 当前固定版本列出 719 篇手稿、372 组结果；初始 722 篇中有 3 篇撤回。分组编号最大值也不是结果组数。
 
 本项目的 [筛查报告](research/screening.md) 和 [机器可读目录](research/catalogue.json) 提供可追踪的初筛，不把关键词命中当作实际可用，更不把搜索未命中当作“无人实现”。[已有工作调查](research/prior-art.md) 记录已找到的实现。第 128 组最短超串已有多个实现；GAD 的单次公式与通用信道库也早已存在。
 
-本次新增的具体工作是：一个无运行依赖的专用公式实现，以及针对这篇手稿的独立、固定种子数值审计。我们不声称这是首个 GAD 计算器、数学新发现或工程性能突破。
+当前新增工作包括专用公式实现、由原证明和量子 Pinsker 不等式推导的定量下界、取等号构造，以及可复现的数值研究。已有公式和原数学成果均在相关文档中注明来源。
 
 ## 来源与许可证
 

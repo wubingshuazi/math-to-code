@@ -18,6 +18,10 @@ The user requests stage-by-stage AI-readable work logs because a future
 chat may need to inherit this work after usage limits. Record evidence and
 commands at each meaningful checkpoint, then update the handoff and state.
 
+The user prefers straightforward research updates with little defensive
+language. Lead with concrete work, findings and difficulties. Explain a
+material limit where it matters; avoid repeating disclaimers in each update.
+
 ## Research integrity
 
 - Distinguish source assertions, formal verification, numerical sampling,

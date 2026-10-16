@@ -11,3 +11,6 @@ research/gad-*.tex
 research/prior-*.py
 .buildcheck/
 .verification/
+.ci_results/
+# Full append-only journals are preserved locally and as a release ZIP.
+results/sharpness_journals/

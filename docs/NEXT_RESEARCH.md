@@ -1,6 +1,12 @@
 # Proposed next study: sharpness of the thermal entropy inequality
 
-**Status: proposed, not implemented or executed.** The existing random audit is a separate completed experiment. No optimization results, high-precision confirmations, or mathematical advances are claimed by this plan.
+**Original status when written: proposed.** The plan below records the
+design before the second-stage experiments; see the execution update next.
+
+**Execution update, 2026-10-17:** This original plan is retained for comparison.
+The three numerical tracks have since been executed, with an additional
+quantitative corollary. Read [second-phase results](SHARPNESS_RESULTS.md)
+and stage05 in `worklogs/` for the completed work and the next open questions.
 
 ## Research question
 

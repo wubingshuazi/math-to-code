@@ -1,0 +1,3308 @@
+{
+  "title": "Selected normalized thermal perturbation paths for high precision replay",
+  "source_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Classical-capacity-and-entropy-inequalities-for-generalized-amplitude-damping-September-24-2026/build/sections/thermal.tex",
+  "source_sha256": "52a3470b411125ba69e7f39cc78c611695c895059288e212e3c5407a69882d14",
+  "path_definition": "Y(epsilon) = normalize_HS(X + epsilon H)",
+  "paths": [
+    {
+      "path_id": "2x2__full_rank__interior_asymmetric__generic_complex_orthogonal_tangent",
+      "shape": [
+        2,
+        2
+      ],
+      "rank_kind": "full_rank",
+      "direction": "generic_complex_orthogonal_tangent",
+      "coefficient_regime": "interior_asymmetric",
+      "coefficients_alpha_beta_eta_delta": [
+        0.4,
+        0.1,
+        0.15,
+        0.35
+      ],
+      "K": 0.35355339059327373,
+      "u": 0.12500000000000003,
+      "X": {
+        "real": [
+          [
+            -0.4167480572363047,
+            -0.07782737885268318
+          ],
+          [
+            -0.4130488435423744,
+            -0.20435531850685246
+          ]
+        ],
+        "imag": [
+          [
+            -0.478352241529631,
+            0.2990231019295632
+          ],
+          [
+            0.34510492711277235,
+            -0.4129896116798146
+          ]
+        ]
+      },
+      "H": {
+        "real": [
+          [
+            -0.341716859699833,
+            -0.07364568476552537
+          ],
+          [
+            0.4591056444718921,
+            0.46885137037893326
+          ]
+        ],
+        "imag": [
+          [
+            0.08259944671946283,
+            0.51717515443796
+          ],
+          [
+            -0.2911074391824773,
+            -0.2969342528346594
+          ]
+        ]
+      },
+      "x_hilbert_schmidt_norm": 0.9999999999999999,
+      "h_hilbert_schmidt_norm": 1.0,
+      "x_h_complex_inner_product": {
+        "real": 5.551115123125783e-17,
+        "imag": 9.71445146547012e-17
+      },
+      "x_singular_values": [
+        0.876215908676647,
+        0.4819187497721559
+      ],
+      "generic_tangent_gram_derivative_trace_norm": 1.2586475228495884,
+      "quantitative_bound_prefactor": 0.03,
+      "baseline_residual_nats": 3.3306690738754696e-16,
+      "baseline_lhs_entropy_nats": 0.958471148536743,
+      "baseline_rhs_entropy_nats": 0.9584711485367426,
+      "gauge_max_absolute_residual_nats": 3.3306690738754696e-16,
+      "roundoff_scale_nats": 1.4210854715202004e-14,
+      "numerical_floor_nats": 1.4210854715202004e-14,
+      "samples": [
+        {
+          "epsilon": 0.1,
+          "residual_nats": 0.003599351084140001,
+          "residual_over_epsilon_squared": 0.35993510841400006,
+          "gram_difference_trace_norm": 0.12559202485359766,
+          "quantitative_lower_bound_nats": 0.0004732007012048008,
+          "residual_minus_quantitative_bound_nats": 0.0031261503829352003,
+          "lhs_entropy_nats": 0.9677000047158678,
+          "rhs_entropy_nats": 0.9641006536317278,
+          "minimum_eigenvalue": 0.034876483564478325,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 7.606394231825548,
+          "quantitative_bound_fraction_of_residual": 0.1314683369704857,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 0.01,
+          "residual_nats": 3.6693894580608344e-05,
+          "residual_over_epsilon_squared": 0.36693894580608344,
+          "gram_difference_trace_norm": 0.012593791500834967,
+          "quantitative_lower_bound_nats": 4.758107530995091e-06,
+          "residual_minus_quantitative_bound_nats": 3.193578704961325e-05,
+          "lhs_entropy_nats": 0.959447907682225,
+          "rhs_entropy_nats": 0.9594112137876444,
+          "minimum_eigenvalue": 0.03409970183762173,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 7.711867447630872,
+          "quantitative_bound_fraction_of_residual": 0.12967027854027827,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 0.001,
+          "residual_nats": 3.672576839308661e-07,
+          "residual_over_epsilon_squared": 0.3672576839308661,
+          "gram_difference_trace_norm": 0.0012587307552560506,
+          "quantitative_lower_bound_nats": 4.753209342682403e-08,
+          "residual_minus_quantitative_bound_nats": 3.1972559050404205e-07,
+          "lhs_entropy_nats": 0.9585692799549512,
+          "rhs_entropy_nats": 0.9585689126972673,
+          "minimum_eigenvalue": 0.034020393531817704,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 7.7265202824752865,
+          "quantitative_bound_fraction_of_residual": 0.12942436743072105,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 0.0001,
+          "residual_nats": 3.6728563523880098e-09,
+          "residual_over_epsilon_squared": 0.367285635238801,
+          "gram_difference_trace_norm": 0.00012586559467141708,
+          "quantitative_lower_bound_nats": 4.752644376596836e-10,
+          "residual_minus_quantitative_bound_nats": 3.197591914728326e-09,
+          "lhs_entropy_nats": 0.9584809661377116,
+          "rhs_entropy_nats": 0.9584809624648553,
+          "minimum_eigenvalue": 0.03401247255414443,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 7.728026886408832,
+          "quantitative_bound_fraction_of_residual": 0.12939913573006395,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-05,
+          "residual_nats": 3.672850912295189e-11,
+          "residual_over_epsilon_squared": 0.36728509122951886,
+          "gram_difference_trace_norm": 1.2586483662361226e-05,
+          "quantitative_lower_bound_nats": 4.752587129486582e-12,
+          "residual_minus_quantitative_bound_nats": 3.197592199346531e-11,
+          "lhs_entropy_nats": 0.9584721303413337,
+          "rhs_entropy_nats": 0.9584721303046052,
+          "minimum_eigenvalue": 0.03401168058307434,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 7.728108527474728,
+          "quantitative_bound_fraction_of_residual": 0.12939776873536799,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-06,
+          "residual_nats": 3.672617765460018e-13,
+          "residual_over_epsilon_squared": 0.3672617765460018,
+          "gram_difference_trace_norm": 1.2586476071957655e-06,
+          "quantitative_lower_bound_nats": 4.752581397298878e-14,
+          "residual_minus_quantitative_bound_nats": 3.1973596257301303e-13,
+          "lhs_entropy_nats": 0.9584712467176466,
+          "rhs_entropy_nats": 0.9584712467172793,
+          "minimum_eigenvalue": 0.03401160138726263,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-07,
+          "residual_nats": 3.6637359812630166e-15,
+          "residual_over_epsilon_squared": 0.3663735981263017,
+          "gram_difference_trace_norm": 1.2586475303389357e-07,
+          "quantitative_lower_bound_nats": 4.752580816884906e-16,
+          "residual_minus_quantitative_bound_nats": 3.188477899574526e-15,
+          "lhs_entropy_nats": 0.9584711583548375,
+          "rhs_entropy_nats": 0.9584711583548339,
+          "minimum_eigenvalue": 0.034011593467694445,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": false,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-08,
+          "residual_nats": -1.1102230246251565e-16,
+          "residual_over_epsilon_squared": -1.1102230246251563,
+          "gram_difference_trace_norm": 1.2586475070592322e-08,
+          "quantitative_lower_bound_nats": 4.7525806410792594e-18,
+          "residual_minus_quantitative_bound_nats": -1.1577488310359491e-16,
+          "lhs_entropy_nats": 0.9584711495185521,
+          "rhs_entropy_nats": 0.9584711495185522,
+          "minimum_eigenvalue": 0.034011592675737674,
+          "maximum_trace_error": 4.440892098500626e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": false,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        }
+      ],
+      "slope_estimate": {
+        "fit_range_requested": [
+          0.0001,
+          0.01
+        ],
+        "resolved_epsilon_values": [
+          0.01,
+          0.001,
+          0.0001
+        ],
+        "resolved_point_count": 3,
+        "estimated_log_log_slope": 1.9997949328820643,
+        "adjacent_resolved_slopes": [
+          {
+            "epsilon_high": 0.01,
+            "epsilon_low": 0.001,
+            "slope": 1.9996229178619047
+          },
+          {
+            "epsilon_high": 0.001,
+            "epsilon_low": 0.0001,
+            "slope": 1.999966947902221
+          }
+        ]
+      }
+    },
+    {
+      "path_id": "2x2__full_rank__k_zero_maximum_u__generic_complex_orthogonal_tangent",
+      "shape": [
+        2,
+        2
+      ],
+      "rank_kind": "full_rank",
+      "direction": "generic_complex_orthogonal_tangent",
+      "coefficient_regime": "k_zero_maximum_u",
+      "coefficients_alpha_beta_eta_delta": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "K": 0.0,
+      "u": 0.25,
+      "X": {
+        "real": [
+          [
+            -0.4167480572363047,
+            -0.07782737885268318
+          ],
+          [
+            -0.4130488435423744,
+            -0.20435531850685246
+          ]
+        ],
+        "imag": [
+          [
+            -0.478352241529631,
+            0.2990231019295632
+          ],
+          [
+            0.34510492711277235,
+            -0.4129896116798146
+          ]
+        ]
+      },
+      "H": {
+        "real": [
+          [
+            -0.341716859699833,
+            -0.07364568476552537
+          ],
+          [
+            0.4591056444718921,
+            0.46885137037893326
+          ]
+        ],
+        "imag": [
+          [
+            0.08259944671946283,
+            0.51717515443796
+          ],
+          [
+            -0.2911074391824773,
+            -0.2969342528346594
+          ]
+        ]
+      },
+      "x_hilbert_schmidt_norm": 0.9999999999999999,
+      "h_hilbert_schmidt_norm": 1.0,
+      "x_h_complex_inner_product": {
+        "real": 5.551115123125783e-17,
+        "imag": 9.71445146547012e-17
+      },
+      "x_singular_values": [
+        0.876215908676647,
+        0.4819187497721559
+      ],
+      "generic_tangent_gram_derivative_trace_norm": 1.2586475228495884,
+      "quantitative_bound_prefactor": 0.125,
+      "baseline_residual_nats": -2.220446049250313e-16,
+      "baseline_lhs_entropy_nats": 1.2351227983970003,
+      "baseline_rhs_entropy_nats": 1.2351227983970006,
+      "gauge_max_absolute_residual_nats": 2.220446049250313e-16,
+      "roundoff_scale_nats": 1.755215064345351e-14,
+      "numerical_floor_nats": 1.755215064345351e-14,
+      "samples": [
+        {
+          "epsilon": 0.1,
+          "residual_nats": 0.0022038038594172082,
+          "residual_over_epsilon_squared": 0.22038038594172077,
+          "gram_difference_trace_norm": 0.12559202485359766,
+          "quantitative_lower_bound_nats": 0.0019716695883533366,
+          "residual_minus_quantitative_bound_nats": 0.0002321342710638716,
+          "lhs_entropy_nats": 1.2435816079175124,
+          "rhs_entropy_nats": 1.2413778040580952,
+          "minimum_eigenvalue": 0.11972037201094368,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.755215064345351e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 1.11773487425839,
+          "quantitative_bound_fraction_of_residual": 0.8946665466293996,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 0.01,
+          "residual_nats": 2.2549702083374257e-05,
+          "residual_over_epsilon_squared": 0.22549702083374257,
+          "gram_difference_trace_norm": 0.012593791500834967,
+          "quantitative_lower_bound_nats": 1.982544804581288e-05,
+          "residual_minus_quantitative_bound_nats": 2.7242540375613757e-06,
+          "lhs_entropy_nats": 1.2361898650445302,
+          "rhs_entropy_nats": 1.2361673153424468,
+          "minimum_eigenvalue": 0.11656999743535973,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.755215064345351e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 1.1374119783455152,
+          "quantitative_bound_fraction_of_residual": 0.8791889122309092,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 0.001,
+          "residual_nats": 2.2579759306751157e-07,
+          "residual_over_epsilon_squared": 0.22579759306751157,
+          "gram_difference_trace_norm": 0.0012587307552560506,
+          "quantitative_lower_bound_nats": 1.9805038927843345e-07,
+          "residual_minus_quantitative_bound_nats": 2.7747203789078118e-08,
+          "lhs_entropy_nats": 1.235231651039621,
+          "rhs_entropy_nats": 1.235231425242028,
+          "minimum_eigenvalue": 0.11616836977799067,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.755215064345351e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 1.140101738199914,
+          "quantitative_bound_fraction_of_residual": 0.8771147052006797,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 0.0001,
+          "residual_nats": 2.2582549163985277e-09,
+          "residual_over_epsilon_squared": 0.22582549163985277,
+          "gram_difference_trace_norm": 0.00012586559467141708,
+          "quantitative_lower_bound_nats": 1.980268490248682e-09,
+          "residual_minus_quantitative_bound_nats": 2.7798642614984587e-10,
+          "lhs_entropy_nats": 1.235133705019825,
+          "rhs_entropy_nats": 1.23513370276157,
+          "minimum_eigenvalue": 0.11612740165665189,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.755215064345351e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 1.1403781494876668,
+          "quantitative_bound_fraction_of_residual": 0.8769021051913929,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-05,
+          "residual_nats": 2.258304654390031e-11,
+          "residual_over_epsilon_squared": 0.22583046543900306,
+          "gram_difference_trace_norm": 1.2586483662361226e-05,
+          "quantitative_lower_bound_nats": 1.9802446372860756e-11,
+          "residual_minus_quantitative_bound_nats": 2.7806001710395535e-12,
+          "lhs_entropy_nats": 1.235123889272764,
+          "rhs_entropy_nats": 1.235123889250181,
+          "minimum_eigenvalue": 0.11612329686803727,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.755215064345351e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 1.1404170029643592,
+          "quantitative_bound_fraction_of_residual": 0.8768722295446628,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-06,
+          "residual_nats": 2.2604140781368187e-13,
+          "residual_over_epsilon_squared": 0.22604140781368187,
+          "gram_difference_trace_norm": 1.2586476071957655e-06,
+          "quantitative_lower_bound_nats": 1.9802422488745327e-13,
+          "residual_minus_quantitative_bound_nats": 2.8017182926228605e-14,
+          "lhs_entropy_nats": 1.2351229074867116,
+          "rhs_entropy_nats": 1.2351229074864856,
+          "minimum_eigenvalue": 0.11612288630948965,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.755215064345351e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 1.141483613644503,
+          "quantitative_bound_fraction_of_residual": 0.876052873687098,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-07,
+          "residual_nats": 1.9984014443252818e-15,
+          "residual_over_epsilon_squared": 0.1998401444325282,
+          "gram_difference_trace_norm": 1.2586475303389357e-07,
+          "quantitative_lower_bound_nats": 1.9802420070353775e-15,
+          "residual_minus_quantitative_bound_nats": 1.815943728990424e-17,
+          "lhs_entropy_nats": 1.2351228093059927,
+          "rhs_entropy_nats": 1.2351228093059907,
+          "minimum_eigenvalue": 0.11612284525283798,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.755215064345351e-14,
+          "positive_resolved": false,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-08,
+          "residual_nats": 0.0,
+          "residual_over_epsilon_squared": 0.0,
+          "gram_difference_trace_norm": 1.2586475070592322e-08,
+          "quantitative_lower_bound_nats": 1.980241933783025e-17,
+          "residual_minus_quantitative_bound_nats": -1.980241933783025e-17,
+          "lhs_entropy_nats": 1.2351227994879,
+          "rhs_entropy_nats": 1.2351227994879,
+          "minimum_eigenvalue": 0.11612284114716492,
+          "maximum_trace_error": 4.440892098500626e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.755215064345351e-14,
+          "positive_resolved": false,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        }
+      ],
+      "slope_estimate": {
+        "fit_range_requested": [
+          0.0001,
+          0.01
+        ],
+        "resolved_epsilon_values": [
+          0.01,
+          0.001,
+          0.0001
+        ],
+        "resolved_point_count": 3,
+        "estimated_log_log_slope": 1.9996839220738962,
+        "adjacent_resolved_slopes": [
+          {
+            "epsilon_high": 0.01,
+            "epsilon_low": 0.001,
+            "slope": 1.9994215003777143
+          },
+          {
+            "epsilon_high": 0.001,
+            "epsilon_low": 0.0001,
+            "slope": 1.999946343770075
+          }
+        ]
+      }
+    },
+    {
+      "path_id": "2x2__near_rank_one__interior_asymmetric__generic_complex_orthogonal_tangent",
+      "shape": [
+        2,
+        2
+      ],
+      "rank_kind": "near_rank_one",
+      "direction": "generic_complex_orthogonal_tangent",
+      "coefficient_regime": "interior_asymmetric",
+      "coefficients_alpha_beta_eta_delta": [
+        0.4,
+        0.1,
+        0.15,
+        0.35
+      ],
+      "K": 0.35355339059327373,
+      "u": 0.12500000000000003,
+      "X": {
+        "real": [
+          [
+            0.28217875518938806,
+            0.47650428988459786
+          ],
+          [
+            -0.34406459913687687,
+            -0.4166625878625514
+          ]
+        ],
+        "imag": [
+          [
+            0.4858776891003875,
+            0.34835252929439603
+          ],
+          [
+            -0.20334946773320048,
+            -0.05052753585019337
+          ]
+        ]
+      },
+      "H": {
+        "real": [
+          [
+            0.13389804408357348,
+            0.06309325791698178
+          ],
+          [
+            -0.23777921928276385,
+            0.4158247799839826
+          ]
+        ],
+        "imag": [
+          [
+            -0.09881493344275735,
+            -0.2671225823608947
+          ],
+          [
+            -0.8165619959929866,
+            0.02736770808940417
+          ]
+        ]
+      },
+      "x_hilbert_schmidt_norm": 0.9999999999999999,
+      "h_hilbert_schmidt_norm": 1.0,
+      "x_h_complex_inner_product": {
+        "real": -2.42861286636753e-17,
+        "imag": 0.0
+      },
+      "x_singular_values": [
+        0.9999999949999998,
+        9.999999949990289e-05
+      ],
+      "generic_tangent_gram_derivative_trace_norm": 1.0711919619430392,
+      "quantitative_bound_prefactor": 0.03,
+      "baseline_residual_nats": -2.609024107869118e-15,
+      "baseline_lhs_entropy_nats": 0.4164957249064912,
+      "baseline_rhs_entropy_nats": 0.41649572490649384,
+      "gauge_max_absolute_residual_nats": 5.051514762044462e-15,
+      "roundoff_scale_nats": 1.4210854715202004e-14,
+      "numerical_floor_nats": 1.4210854715202004e-14,
+      "samples": [
+        {
+          "epsilon": 0.1,
+          "residual_nats": 0.005135103573313593,
+          "residual_over_epsilon_squared": 0.5135103573313592,
+          "gram_difference_trace_norm": 0.10886917016165693,
+          "quantitative_lower_bound_nats": 0.0003555748863506343,
+          "residual_minus_quantitative_bound_nats": 0.004779528686962959,
+          "lhs_entropy_nats": 0.4332231320164374,
+          "rhs_entropy_nats": 0.4280880284431238,
+          "minimum_eigenvalue": 9.99999993922529e-09,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 14.44169363594998,
+          "quantitative_bound_fraction_of_residual": 0.06924395609048797,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 0.01,
+          "residual_nats": 6.665560497387535e-05,
+          "residual_over_epsilon_squared": 0.6665560497387535,
+          "gram_difference_trace_norm": 0.010729377230403448,
+          "quantitative_lower_bound_nats": 3.4535860725689988e-06,
+          "residual_minus_quantitative_bound_nats": 6.320201890130635e-05,
+          "lhs_entropy_nats": 0.416768405333939,
+          "rhs_entropy_nats": 0.4167017497289651,
+          "minimum_eigenvalue": 9.99999993922529e-09,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 19.300403572768822,
+          "quantitative_bound_fraction_of_residual": 0.05181238807933075,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 0.001,
+          "residual_nats": 8.220292231908566e-07,
+          "residual_over_epsilon_squared": 0.8220292231908566,
+          "gram_difference_trace_norm": 0.0010713661258065377,
+          "quantitative_lower_bound_nats": 3.44347612657713e-08,
+          "residual_minus_quantitative_bound_nats": 7.875944619250852e-07,
+          "lhs_entropy_nats": 0.41649975429802066,
+          "rhs_entropy_nats": 0.4164989322687975,
+          "minimum_eigenvalue": 9.99999993922529e-09,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 23.872075570564988,
+          "quantitative_bound_fraction_of_residual": 0.041889947819745976,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 0.0001,
+          "residual_nats": 8.55375031916239e-09,
+          "residual_over_epsilon_squared": 0.855375031916239,
+          "gram_difference_trace_norm": 0.00010712093738840667,
+          "quantitative_lower_bound_nats": 3.4424685680912824e-10,
+          "residual_minus_quantitative_bound_nats": 8.209503462353261e-09,
+          "lhs_entropy_nats": 0.4164958087527215,
+          "rhs_entropy_nats": 0.4164958001989712,
+          "minimum_eigenvalue": 2.3218810999469275e-09,
+          "maximum_trace_error": 1.1102230246251565e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 24.8477223538024,
+          "quantitative_bound_fraction_of_residual": 0.04024513739171638,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-05,
+          "residual_nats": 8.219591673963578e-11,
+          "residual_over_epsilon_squared": 0.8219591673963577,
+          "gram_difference_trace_norm": 1.0711937030963253e-05,
+          "quantitative_lower_bound_nats": 3.442367848659655e-12,
+          "residual_minus_quantitative_bound_nats": 7.875354889097612e-11,
+          "lhs_entropy_nats": 0.41649572961488224,
+          "rhs_entropy_nats": 0.4164957295326863,
+          "minimum_eigenvalue": 1.4950271944393312e-09,
+          "maximum_trace_error": 0.0,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 23.87772613308603,
+          "quantitative_bound_fraction_of_residual": 0.041880034741430254,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-06,
+          "residual_nats": 8.152367669822524e-13,
+          "residual_over_epsilon_squared": 0.8152367669822524,
+          "gram_difference_trace_norm": 1.0711921362256602e-06,
+          "quantitative_lower_bound_nats": 3.4423577781350804e-14,
+          "residual_minus_quantitative_bound_nats": 7.808131892009016e-13,
+          "lhs_entropy_nats": 0.41649572534007917,
+          "rhs_entropy_nats": 0.41649572533926393,
+          "minimum_eigenvalue": 1.4670194528712593e-09,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-07,
+          "residual_nats": 7.716050021144838e-15,
+          "residual_over_epsilon_squared": 0.7716050021144839,
+          "gram_difference_trace_norm": 1.0711919789387487e-07,
+          "quantitative_lower_bound_nats": 3.442356767228138e-16,
+          "residual_minus_quantitative_bound_nats": 7.371814344422024e-15,
+          "lhs_entropy_nats": 0.41649572494947906,
+          "rhs_entropy_nats": 0.41649572494947135,
+          "minimum_eigenvalue": 1.4647164367887146e-09,
+          "maximum_trace_error": 0.0,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": false,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-08,
+          "residual_nats": 2.1094237467877974e-15,
+          "residual_over_epsilon_squared": 21.09423746787797,
+          "gram_difference_trace_norm": 1.071191958092788e-08,
+          "quantitative_lower_bound_nats": 3.4423566332479834e-18,
+          "residual_minus_quantitative_bound_nats": 2.1059813901545494e-15,
+          "lhs_entropy_nats": 0.41649572491079234,
+          "rhs_entropy_nats": 0.41649572491079023,
+          "minimum_eigenvalue": 1.4644911491866095e-09,
+          "maximum_trace_error": 0.0,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": false,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        }
+      ],
+      "slope_estimate": {
+        "fit_range_requested": [
+          0.0001,
+          0.01
+        ],
+        "resolved_epsilon_values": [
+          0.01,
+          0.001,
+          0.0001
+        ],
+        "resolved_point_count": 3,
+        "estimated_log_log_slope": 1.9458400526371118,
+        "adjacent_resolved_slopes": [
+          {
+            "epsilon_high": 0.01,
+            "epsilon_low": 0.001,
+            "slope": 1.90894941747245
+          },
+          {
+            "epsilon_high": 0.001,
+            "epsilon_low": 0.0001,
+            "slope": 1.9827306878017683
+          }
+        ]
+      }
+    },
+    {
+      "path_id": "2x2__near_rank_one__u_zero_balanced__generic_complex_orthogonal_tangent",
+      "shape": [
+        2,
+        2
+      ],
+      "rank_kind": "near_rank_one",
+      "direction": "generic_complex_orthogonal_tangent",
+      "coefficient_regime": "u_zero_balanced",
+      "coefficients_alpha_beta_eta_delta": [
+        0.5,
+        0.0,
+        0.0,
+        0.5
+      ],
+      "K": 0.5,
+      "u": 0.0,
+      "X": {
+        "real": [
+          [
+            0.28217875518938806,
+            0.47650428988459786
+          ],
+          [
+            -0.34406459913687687,
+            -0.4166625878625514
+          ]
+        ],
+        "imag": [
+          [
+            0.4858776891003875,
+            0.34835252929439603
+          ],
+          [
+            -0.20334946773320048,
+            -0.05052753585019337
+          ]
+        ]
+      },
+      "H": {
+        "real": [
+          [
+            0.13389804408357348,
+            0.06309325791698178
+          ],
+          [
+            -0.23777921928276385,
+            0.4158247799839826
+          ]
+        ],
+        "imag": [
+          [
+            -0.09881493344275735,
+            -0.2671225823608947
+          ],
+          [
+            -0.8165619959929866,
+            0.02736770808940417
+          ]
+        ]
+      },
+      "x_hilbert_schmidt_norm": 0.9999999999999999,
+      "h_hilbert_schmidt_norm": 1.0,
+      "x_h_complex_inner_product": {
+        "real": -2.42861286636753e-17,
+        "imag": 0.0
+      },
+      "x_singular_values": [
+        0.9999999949999998,
+        9.999999949990289e-05
+      ],
+      "generic_tangent_gram_derivative_trace_norm": 1.0711919619430392,
+      "quantitative_bound_prefactor": 0.0,
+      "baseline_residual_nats": 9.362689799782842e-16,
+      "baseline_lhs_entropy_nats": 1.9420680731730341e-07,
+      "baseline_rhs_entropy_nats": 1.9420680638103443e-07,
+      "gauge_max_absolute_residual_nats": 6.528424437585314e-15,
+      "roundoff_scale_nats": 1.4210854715202004e-14,
+      "numerical_floor_nats": 1.4210854715202004e-14,
+      "samples": [
+        {
+          "epsilon": 0.1,
+          "residual_nats": 0.006113872131649345,
+          "residual_over_epsilon_squared": 0.6113872131649344,
+          "gram_difference_trace_norm": 0.10886917016165693,
+          "quantitative_lower_bound_nats": 0.0,
+          "residual_minus_quantitative_bound_nats": 0.006113872131649345,
+          "lhs_entropy_nats": 0.01899440360137792,
+          "rhs_entropy_nats": 0.012880531469728574,
+          "minimum_eigenvalue": -1.0109137662403621e-16,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 0.01,
+          "residual_nats": 9.539077891887817e-05,
+          "residual_over_epsilon_squared": 0.9539077891887817,
+          "gram_difference_trace_norm": 0.010729377230403448,
+          "quantitative_lower_bound_nats": 0.0,
+          "residual_minus_quantitative_bound_nats": 9.539077891887817e-05,
+          "lhs_entropy_nats": 0.00032450145513778883,
+          "rhs_entropy_nats": 0.00022911067621891065,
+          "minimum_eigenvalue": -9.349485414272044e-17,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 0.001,
+          "residual_nats": 1.29205716925949e-06,
+          "residual_over_epsilon_squared": 1.2920571692594902,
+          "gram_difference_trace_norm": 0.0010713661258065377,
+          "quantitative_lower_bound_nats": 0.0,
+          "residual_minus_quantitative_bound_nats": 1.29205716925949e-06,
+          "lhs_entropy_nats": 5.049999868527657e-06,
+          "rhs_entropy_nats": 3.7579426992681673e-06,
+          "minimum_eigenvalue": -6.865652232822587e-17,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 0.0001,
+          "residual_nats": 1.4462870116477638e-08,
+          "residual_over_epsilon_squared": 1.4462870116477637,
+          "gram_difference_trace_norm": 0.00010712093738840667,
+          "quantitative_lower_bound_nats": 0.0,
+          "residual_minus_quantitative_bound_nats": 1.4462870116477638e-08,
+          "lhs_entropy_nats": 2.923279846408372e-07,
+          "rhs_entropy_nats": 2.7786511452435955e-07,
+          "minimum_eigenvalue": -2.63291989718159e-17,
+          "maximum_trace_error": 1.1102230246251565e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-05,
+          "residual_nats": 1.438504148299552e-10,
+          "residual_over_epsilon_squared": 1.4385041482995518,
+          "gram_difference_trace_norm": 1.0711937030963253e-05,
+          "quantitative_lower_bound_nats": 0.0,
+          "residual_minus_quantitative_bound_nats": 1.438504148299552e-10,
+          "lhs_entropy_nats": 1.9949087065513726e-07,
+          "rhs_entropy_nats": 1.993470202403073e-07,
+          "minimum_eigenvalue": -4.513459468897316e-17,
+          "maximum_trace_error": 0.0,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-06,
+          "residual_nats": 1.4378966950959187e-12,
+          "residual_over_epsilon_squared": 1.4378966950959187,
+          "gram_difference_trace_norm": 1.0711921362256602e-06,
+          "quantitative_lower_bound_nats": 0.0,
+          "residual_minus_quantitative_bound_nats": 1.4378966950959187e-12,
+          "lhs_entropy_nats": 1.9468909992110669e-07,
+          "rhs_entropy_nats": 1.946876620244116e-07,
+          "minimum_eigenvalue": -4.865540682074509e-17,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-07,
+          "residual_nats": 1.8307086434017115e-14,
+          "residual_over_epsilon_squared": 1.830708643401712,
+          "gram_difference_trace_norm": 1.0711919789387487e-07,
+          "quantitative_lower_bound_nats": 0.0,
+          "residual_minus_quantitative_bound_nats": 1.8307086434017115e-14,
+          "lhs_entropy_nats": 1.942545774366163e-07,
+          "rhs_entropy_nats": 1.9425455912952987e-07,
+          "minimum_eigenvalue": -4.611691243262106e-17,
+          "maximum_trace_error": 0.0,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": false,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-08,
+          "residual_nats": -1.9878759482249038e-16,
+          "residual_over_epsilon_squared": -1.9878759482249035,
+          "gram_difference_trace_norm": 1.071191958092788e-08,
+          "quantitative_lower_bound_nats": 0.0,
+          "residual_minus_quantitative_bound_nats": -1.9878759482249038e-16,
+          "lhs_entropy_nats": 1.9421157995707828e-07,
+          "rhs_entropy_nats": 1.9421158015586587e-07,
+          "minimum_eigenvalue": -7.077596055881292e-17,
+          "maximum_trace_error": 0.0,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": false,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        }
+      ],
+      "slope_estimate": {
+        "fit_range_requested": [
+          0.0001,
+          0.01
+        ],
+        "resolved_epsilon_values": [
+          0.01,
+          0.001,
+          0.0001
+        ],
+        "resolved_point_count": 3,
+        "estimated_log_log_slope": 1.909625954505658,
+        "adjacent_resolved_slopes": [
+          {
+            "epsilon_high": 0.01,
+            "epsilon_low": 0.001,
+            "slope": 1.8682246648787058
+          },
+          {
+            "epsilon_high": 0.001,
+            "epsilon_low": 0.0001,
+            "slope": 1.9510272441326058
+          }
+        ]
+      }
+    },
+    {
+      "path_id": "2x3__full_rank__interior_asymmetric__generic_complex_orthogonal_tangent",
+      "shape": [
+        2,
+        3
+      ],
+      "rank_kind": "full_rank",
+      "direction": "generic_complex_orthogonal_tangent",
+      "coefficient_regime": "interior_asymmetric",
+      "coefficients_alpha_beta_eta_delta": [
+        0.4,
+        0.1,
+        0.15,
+        0.35
+      ],
+      "K": 0.35355339059327373,
+      "u": 0.12500000000000003,
+      "X": {
+        "real": [
+          [
+            -0.18500504672909943,
+            -0.060076702415929634,
+            -0.13314285925644045
+          ],
+          [
+            -0.4784548231751862,
+            -0.028913000486856313,
+            0.15584824280656936
+          ]
+        ],
+        "imag": [
+          [
+            -0.10551996009376759,
+            0.1895280541199802,
+            0.4571026764306418
+          ],
+          [
+            -0.6484771795430606,
+            0.08961845562305684,
+            0.07642594641106513
+          ]
+        ]
+      },
+      "H": {
+        "real": [
+          [
+            0.08567407024367493,
+            0.16788875206542508,
+            -0.11639856311954304
+          ],
+          [
+            0.17983778371013057,
+            -0.3087398934454312,
+            0.4802852169984034
+          ]
+        ],
+        "imag": [
+          [
+            0.17808397117501684,
+            0.18710396760546316,
+            0.09397334201196136
+          ],
+          [
+            -0.038894152445031735,
+            -0.22296544889395278,
+            -0.6825025452061434
+          ]
+        ]
+      },
+      "x_hilbert_schmidt_norm": 0.9999999999999999,
+      "h_hilbert_schmidt_norm": 1.0,
+      "x_h_complex_inner_product": {
+        "real": 0.0,
+        "imag": -2.7755575615628914e-17
+      },
+      "x_singular_values": [
+        0.8762159086766468,
+        0.4819187497721561
+      ],
+      "generic_tangent_gram_derivative_trace_norm": 1.185106445511443,
+      "quantitative_bound_prefactor": 0.03,
+      "baseline_residual_nats": -2.220446049250313e-16,
+      "baseline_lhs_entropy_nats": 0.9584711485367428,
+      "baseline_rhs_entropy_nats": 0.958471148536743,
+      "gauge_max_absolute_residual_nats": 5.551115123125783e-16,
+      "roundoff_scale_nats": 1.4210854715202004e-14,
+      "numerical_floor_nats": 1.4210854715202004e-14,
+      "samples": [
+        {
+          "epsilon": 0.1,
+          "residual_nats": 0.004308836724991383,
+          "residual_over_epsilon_squared": 0.43088367249913817,
+          "gram_difference_trace_norm": 0.12453101994727303,
+          "quantitative_lower_bound_nats": 0.00046523924787324336,
+          "residual_minus_quantitative_bound_nats": 0.0038435974771181395,
+          "lhs_entropy_nats": 0.9849983942814828,
+          "rhs_entropy_nats": 0.9806895575564915,
+          "minimum_eigenvalue": 0.03674057482808881,
+          "maximum_trace_error": 1.1102230246251565e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 9.26155036293358,
+          "quantitative_bound_fraction_of_residual": 0.10797328317753181,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 0.01,
+          "residual_nats": 4.288017391673726e-05,
+          "residual_over_epsilon_squared": 0.42880173916737263,
+          "gram_difference_trace_norm": 0.011921624378617286,
+          "quantitative_lower_bound_nats": 4.263753834745259e-06,
+          "residual_minus_quantitative_bound_nats": 3.8616420081992e-05,
+          "lhs_entropy_nats": 0.9610810354390086,
+          "rhs_entropy_nats": 0.9610381552650918,
+          "minimum_eigenvalue": 0.03424948109325287,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 10.056906561374964,
+          "quantitative_bound_fraction_of_residual": 0.09943415441887943,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 0.001,
+          "residual_nats": 4.2808960298845733e-07,
+          "residual_over_epsilon_squared": 0.42808960298845733,
+          "gram_difference_trace_norm": 0.0011858218212348914,
+          "quantitative_lower_bound_nats": 4.218520175150504e-08,
+          "residual_minus_quantitative_bound_nats": 3.859044012369523e-07,
+          "lhs_entropy_nats": 0.958731318910427,
+          "rhs_entropy_nats": 0.958730890820824,
+          "minimum_eigenvalue": 0.03403495065159216,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 10.147861932962888,
+          "quantitative_bound_fraction_of_residual": 0.09854292525913667,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 0.0001,
+          "residual_nats": 4.2801315824902986e-09,
+          "residual_over_epsilon_squared": 0.42801315824902986,
+          "gram_difference_trace_norm": 0.00011851780801637503,
+          "quantitative_lower_bound_nats": 4.213941245101899e-10,
+          "residual_minus_quantitative_bound_nats": 3.858737457980109e-09,
+          "lhs_entropy_nats": 0.9584971569976073,
+          "rhs_entropy_nats": 0.9584971527174757,
+          "minimum_eigenvalue": 0.03401392401145867,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 10.15707465657082,
+          "quantitative_bound_fraction_of_residual": 0.09845354433356257,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-05,
+          "residual_nats": 4.280031884462687e-11,
+          "residual_over_epsilon_squared": 0.42800318844626867,
+          "gram_difference_trace_norm": 1.1851136099426026e-05,
+          "quantitative_lower_bound_nats": 4.213482805413562e-12,
+          "residual_minus_quantitative_bound_nats": 3.858683603921331e-11,
+          "lhs_entropy_nats": 0.958473749296671,
+          "rhs_entropy_nats": 0.9584737492538706,
+          "minimum_eigenvalue": 0.034011825686213526,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 10.157943160379395,
+          "quantitative_bound_fraction_of_residual": 0.09844512655873637,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-06,
+          "residual_nats": 4.2787995369053533e-13,
+          "residual_over_epsilon_squared": 0.42787995369053533,
+          "gram_difference_trace_norm": 1.185107161836365e-06,
+          "quantitative_lower_bound_nats": 4.213436955107532e-14,
+          "residual_minus_quantitative_bound_nats": 3.8574558413946e-13,
+          "lhs_entropy_nats": 0.9584714086118735,
+          "rhs_entropy_nats": 0.9584714086114456,
+          "minimum_eigenvalue": 0.03401161589715062,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-07,
+          "residual_nats": 4.218847493575595e-15,
+          "residual_over_epsilon_squared": 0.42188474935755954,
+          "gram_difference_trace_norm": 1.1851065156902244e-07,
+          "quantitative_lower_bound_nats": 4.213432360594272e-16,
+          "residual_minus_quantitative_bound_nats": 3.797504257516168e-15,
+          "lhs_entropy_nats": 0.9584711745442472,
+          "rhs_entropy_nats": 0.958471174544243,
+          "minimum_eigenvalue": 0.03401159491867897,
+          "maximum_trace_error": 1.1102230246251565e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": false,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-08,
+          "residual_nats": -4.440892098500626e-16,
+          "residual_over_epsilon_squared": -4.440892098500625,
+          "gram_difference_trace_norm": 1.1851064460799349e-08,
+          "quantitative_lower_bound_nats": 4.213431865620641e-18,
+          "residual_minus_quantitative_bound_nats": -4.483026417156833e-16,
+          "lhs_entropy_nats": 0.9584711511374927,
+          "rhs_entropy_nats": 0.9584711511374931,
+          "minimum_eigenvalue": 0.034011592820836184,
+          "maximum_trace_error": 1.1102230246251565e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": false,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        }
+      ],
+      "slope_estimate": {
+        "fit_range_requested": [
+          0.0001,
+          0.01
+        ],
+        "resolved_epsilon_values": [
+          0.01,
+          0.001,
+          0.0001
+        ],
+        "resolved_point_count": 3,
+        "estimated_log_log_slope": 2.0003997087808645,
+        "adjacent_resolved_slopes": [
+          {
+            "epsilon_high": 0.01,
+            "epsilon_low": 0.001,
+            "slope": 2.0007218578805843
+          },
+          {
+            "epsilon_high": 0.001,
+            "epsilon_low": 0.0001,
+            "slope": 2.0000775596811393
+          }
+        ]
+      }
+    },
+    {
+      "path_id": "2x3__full_rank__k_zero_maximum_u__generic_complex_orthogonal_tangent",
+      "shape": [
+        2,
+        3
+      ],
+      "rank_kind": "full_rank",
+      "direction": "generic_complex_orthogonal_tangent",
+      "coefficient_regime": "k_zero_maximum_u",
+      "coefficients_alpha_beta_eta_delta": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "K": 0.0,
+      "u": 0.25,
+      "X": {
+        "real": [
+          [
+            -0.18500504672909943,
+            -0.060076702415929634,
+            -0.13314285925644045
+          ],
+          [
+            -0.4784548231751862,
+            -0.028913000486856313,
+            0.15584824280656936
+          ]
+        ],
+        "imag": [
+          [
+            -0.10551996009376759,
+            0.1895280541199802,
+            0.4571026764306418
+          ],
+          [
+            -0.6484771795430606,
+            0.08961845562305684,
+            0.07642594641106513
+          ]
+        ]
+      },
+      "H": {
+        "real": [
+          [
+            0.08567407024367493,
+            0.16788875206542508,
+            -0.11639856311954304
+          ],
+          [
+            0.17983778371013057,
+            -0.3087398934454312,
+            0.4802852169984034
+          ]
+        ],
+        "imag": [
+          [
+            0.17808397117501684,
+            0.18710396760546316,
+            0.09397334201196136
+          ],
+          [
+            -0.038894152445031735,
+            -0.22296544889395278,
+            -0.6825025452061434
+          ]
+        ]
+      },
+      "x_hilbert_schmidt_norm": 0.9999999999999999,
+      "h_hilbert_schmidt_norm": 1.0,
+      "x_h_complex_inner_product": {
+        "real": 0.0,
+        "imag": -2.7755575615628914e-17
+      },
+      "x_singular_values": [
+        0.8762159086766468,
+        0.4819187497721561
+      ],
+      "generic_tangent_gram_derivative_trace_norm": 1.185106445511443,
+      "quantitative_bound_prefactor": 0.125,
+      "baseline_residual_nats": -4.440892098500626e-16,
+      "baseline_lhs_entropy_nats": 1.2351227983970003,
+      "baseline_rhs_entropy_nats": 1.2351227983970008,
+      "gauge_max_absolute_residual_nats": 4.440892098500626e-16,
+      "roundoff_scale_nats": 1.7552150643453512e-14,
+      "numerical_floor_nats": 1.7552150643453512e-14,
+      "samples": [
+        {
+          "epsilon": 0.1,
+          "residual_nats": 0.0023561036993386963,
+          "residual_over_epsilon_squared": 0.23561036993386958,
+          "gram_difference_trace_norm": 0.12453101994727303,
+          "quantitative_lower_bound_nats": 0.0019384968661385143,
+          "residual_minus_quantitative_bound_nats": 0.0004176068332001821,
+          "lhs_entropy_nats": 1.2621660232293932,
+          "rhs_entropy_nats": 1.2598099195300545,
+          "minimum_eigenvalue": 0.1280879215260742,
+          "maximum_trace_error": 1.1102230246251565e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.7552150643453512e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 1.215428170400943,
+          "quantitative_bound_fraction_of_residual": 0.82275532553283,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 0.01,
+          "residual_nats": 2.3026853293028893e-05,
+          "residual_over_epsilon_squared": 0.23026853293028893,
+          "gram_difference_trace_norm": 0.011921624378617286,
+          "quantitative_lower_bound_nats": 1.776564097810525e-05,
+          "residual_minus_quantitative_bound_nats": 5.261212314923644e-06,
+          "lhs_entropy_nats": 1.2379980549484593,
+          "rhs_entropy_nats": 1.2379750280951662,
+          "minimum_eigenvalue": 0.11733204049841714,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.7552150643453512e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 1.2961453696721483,
+          "quantitative_bound_fraction_of_residual": 0.7715183986291165,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 0.001,
+          "residual_nats": 2.2945938837892754e-07,
+          "residual_over_epsilon_squared": 0.22945938837892754,
+          "gram_difference_trace_norm": 0.0011858218212348914,
+          "quantitative_lower_bound_nats": 1.7577167396460435e-07,
+          "residual_minus_quantitative_bound_nats": 5.3687714414323194e-08,
+          "lhs_entropy_nats": 1.2354116303942568,
+          "rhs_entropy_nats": 1.2354114009348685,
+          "minimum_eigenvalue": 0.11624369126300915,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.7552150643453512e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 1.3054400814612168,
+          "quantitative_bound_fraction_of_residual": 0.7660252003911747,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 0.0001,
+          "residual_nats": 2.2937567401015713e-09,
+          "residual_over_epsilon_squared": 0.22937567401015713,
+          "gram_difference_trace_norm": 0.00011851780801637503,
+          "quantitative_lower_bound_nats": 1.7558088521257911e-09,
+          "residual_minus_quantitative_bound_nats": 5.379478879757802e-10,
+          "lhs_entropy_nats": 1.235151694224905,
+          "rhs_entropy_nats": 1.2351516919311483,
+          "minimum_eigenvalue": 0.11613492486515742,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.7552150643453512e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 1.306381806495893,
+          "quantitative_bound_fraction_of_residual": 0.7654729995684029,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-05,
+          "residual_nats": 2.293654155494096e-11,
+          "residual_over_epsilon_squared": 0.22936541554940956,
+          "gram_difference_trace_norm": 1.1851136099426026e-05,
+          "quantitative_lower_bound_nats": 1.755617835588984e-11,
+          "residual_minus_quantitative_bound_nats": 5.3803631990511186e-12,
+          "lhs_entropy_nats": 1.2351256881056347,
+          "rhs_entropy_nats": 1.2351256880826982,
+          "minimum_eigenvalue": 0.1161240490993785,
+          "maximum_trace_error": 1.1102230246251565e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.7552150643453512e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 1.3064655125952331,
+          "quantitative_bound_fraction_of_residual": 0.7654239552129825,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-06,
+          "residual_nats": 2.291500322826323e-13,
+          "residual_over_epsilon_squared": 0.2291500322826323,
+          "gram_difference_trace_norm": 1.185107161836365e-06,
+          "quantitative_lower_bound_nats": 1.755598731294805e-13,
+          "residual_minus_quantitative_bound_nats": 5.359015915315181e-14,
+          "lhs_entropy_nats": 1.235123087369122,
+          "rhs_entropy_nats": 1.2351230873688928,
+          "minimum_eigenvalue": 0.11612296153172852,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.7552150643453512e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 1.3052528929183465,
+          "quantitative_bound_fraction_of_residual": 0.7661350573712596,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-07,
+          "residual_nats": 2.220446049250313e-15,
+          "residual_over_epsilon_squared": 0.22204460492503134,
+          "gram_difference_trace_norm": 1.1851065156902244e-07,
+          "quantitative_lower_bound_nats": 1.7555968169142802e-15,
+          "residual_minus_quantitative_bound_nats": 4.648492323360329e-16,
+          "lhs_entropy_nats": 1.2351228272942252,
+          "rhs_entropy_nats": 1.235122827294223,
+          "minimum_eigenvalue": 0.11612285277505294,
+          "maximum_trace_error": 1.1102230246251565e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.7552150643453512e-14,
+          "positive_resolved": false,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-08,
+          "residual_nats": -2.220446049250313e-16,
+          "residual_over_epsilon_squared": -2.2204460492503126,
+          "gram_difference_trace_norm": 1.1851064460799349e-08,
+          "quantitative_lower_bound_nats": 1.755596610675267e-17,
+          "residual_minus_quantitative_bound_nats": -2.39600571031784e-16,
+          "lhs_entropy_nats": 1.235122801286723,
+          "rhs_entropy_nats": 1.2351228012867232,
+          "minimum_eigenvalue": 0.11612284189938628,
+          "maximum_trace_error": 1.1102230246251565e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.7552150643453512e-14,
+          "positive_resolved": false,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        }
+      ],
+      "slope_estimate": {
+        "fit_range_requested": [
+          0.0001,
+          0.01
+        ],
+        "resolved_epsilon_values": [
+          0.01,
+          0.001,
+          0.0001
+        ],
+        "resolved_point_count": 3,
+        "estimated_log_log_slope": 2.0008436181376714,
+        "adjacent_resolved_slopes": [
+          {
+            "epsilon_high": 0.01,
+            "epsilon_low": 0.001,
+            "slope": 2.0015287623844062
+          },
+          {
+            "epsilon_high": 0.001,
+            "epsilon_low": 0.0001,
+            "slope": 2.0001584738909317
+          }
+        ]
+      }
+    },
+    {
+      "path_id": "2x3__near_rank_one__interior_asymmetric__generic_complex_orthogonal_tangent",
+      "shape": [
+        2,
+        3
+      ],
+      "rank_kind": "near_rank_one",
+      "direction": "generic_complex_orthogonal_tangent",
+      "coefficient_regime": "interior_asymmetric",
+      "coefficients_alpha_beta_eta_delta": [
+        0.4,
+        0.1,
+        0.15,
+        0.35
+      ],
+      "K": 0.35355339059327373,
+      "u": 0.12500000000000003,
+      "X": {
+        "real": [
+          [
+            0.141939286294384,
+            -0.6375961099141889,
+            0.166175740595937
+          ],
+          [
+            0.030974201573261254,
+            0.02793234995564359,
+            -0.25158256881704066
+          ]
+        ],
+        "imag": [
+          [
+            -0.05490684491549584,
+            -0.140527369986154,
+            0.6037064995210399
+          ],
+          [
+            0.05831570593224959,
+            -0.28201934412488733,
+            0.10255137092913172
+          ]
+        ]
+      },
+      "H": {
+        "real": [
+          [
+            0.2313698459575891,
+            0.30156263291728674,
+            0.10652238203224845
+          ],
+          [
+            -0.2302183693028227,
+            -0.24265622138996773,
+            0.1830759514755381
+          ]
+        ],
+        "imag": [
+          [
+            -0.5460232263444692,
+            -0.22415210778266123,
+            0.05207314645280011
+          ],
+          [
+            0.5192956112576287,
+            -0.27930219907256276,
+            -0.0026110520135960848
+          ]
+        ]
+      },
+      "x_hilbert_schmidt_norm": 1.0,
+      "h_hilbert_schmidt_norm": 0.9999999999999999,
+      "x_h_complex_inner_product": {
+        "real": 0.0,
+        "imag": 0.0
+      },
+      "x_singular_values": [
+        0.9999999950000001,
+        9.999999949997354e-05
+      ],
+      "generic_tangent_gram_derivative_trace_norm": 0.444575884629166,
+      "quantitative_bound_prefactor": 0.03,
+      "baseline_residual_nats": 1.942890293094024e-15,
+      "baseline_lhs_entropy_nats": 0.4164957249064941,
+      "baseline_rhs_entropy_nats": 0.41649572490649217,
+      "gauge_max_absolute_residual_nats": 3.219646771412954e-15,
+      "roundoff_scale_nats": 1.4210854715202004e-14,
+      "numerical_floor_nats": 1.4210854715202004e-14,
+      "samples": [
+        {
+          "epsilon": 0.1,
+          "residual_nats": 0.0038922183747865935,
+          "residual_over_epsilon_squared": 0.3892218374786593,
+          "gram_difference_trace_norm": 0.03961186739488674,
+          "quantitative_lower_bound_nats": 4.707300115530274e-05,
+          "residual_minus_quantitative_bound_nats": 0.0038451453736312907,
+          "lhs_entropy_nats": 0.4367304971910898,
+          "rhs_entropy_nats": 0.4328382788163032,
+          "minimum_eigenvalue": 9.999999855958563e-09,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 82.68472965947993,
+          "quantitative_bound_fraction_of_residual": 0.012094131578083336,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 0.01,
+          "residual_nats": 4.3233639810902336e-05,
+          "residual_over_epsilon_squared": 0.43233639810902336,
+          "gram_difference_trace_norm": 0.004381679657750609,
+          "quantitative_lower_bound_nats": 5.759734986943647e-07,
+          "residual_minus_quantitative_bound_nats": 4.265766631220797e-05,
+          "lhs_entropy_nats": 0.4168214472422826,
+          "rhs_entropy_nats": 0.4167782136024717,
+          "minimum_eigenvalue": 9.999999855958563e-09,
+          "maximum_trace_error": 1.1102230246251565e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 75.0618559862663,
+          "quantitative_bound_fraction_of_residual": 0.013322345775502344,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 0.001,
+          "residual_nats": 4.3439642621878605e-07,
+          "residual_over_epsilon_squared": 0.43439642621878605,
+          "gram_difference_trace_norm": 0.00044392218945786516,
+          "quantitative_lower_bound_nats": 5.9120073087919415e-09,
+          "residual_minus_quantitative_bound_nats": 4.284844189099941e-07,
+          "lhs_entropy_nats": 0.4164999863624649,
+          "rhs_entropy_nats": 0.41649955196603866,
+          "minimum_eigenvalue": 9.999999855958563e-09,
+          "maximum_trace_error": 0.0,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 73.47697719736928,
+          "quantitative_bound_fraction_of_residual": 0.01360970521846404,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 0.0001,
+          "residual_nats": 3.557823424760187e-09,
+          "residual_over_epsilon_squared": 0.3557823424760187,
+          "gram_difference_trace_norm": 4.445103890673112e-05,
+          "quantitative_lower_bound_nats": 5.927684579663172e-11,
+          "residual_minus_quantitative_bound_nats": 3.4985465789635553e-09,
+          "lhs_entropy_nats": 0.4164957514984622,
+          "rhs_entropy_nats": 0.41649574794063876,
+          "minimum_eigenvalue": 2.4203872783482386e-09,
+          "maximum_trace_error": 0.0,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 60.02045785240403,
+          "quantitative_bound_fraction_of_residual": 0.016660985866837178,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-05,
+          "residual_nats": 3.79238862535658e-11,
+          "residual_over_epsilon_squared": 0.3792388625356579,
+          "gram_difference_trace_norm": 4.4456933381646105e-06,
+          "quantitative_lower_bound_nats": 5.929256777100359e-13,
+          "residual_minus_quantitative_bound_nats": 3.733096057585576e-11,
+          "lhs_entropy_nats": 0.4164957228919396,
+          "rhs_entropy_nats": 0.4164957228540157,
+          "minimum_eigenvalue": 1.4610683642969197e-09,
+          "maximum_trace_error": 0.0,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 63.960607002269306,
+          "quantitative_bound_fraction_of_residual": 0.01563462335441126,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-06,
+          "residual_nats": 3.829159211932165e-13,
+          "residual_over_epsilon_squared": 0.3829159211932165,
+          "gram_difference_trace_norm": 4.445752295979308e-07,
+          "quantitative_lower_bound_nats": 5.929414043161586e-15,
+          "residual_minus_quantitative_bound_nats": 3.769865071500549e-13,
+          "lhs_entropy_nats": 0.41649572465804147,
+          "rhs_entropy_nats": 0.41649572465765855,
+          "minimum_eigenvalue": 1.4631036012245896e-09,
+          "maximum_trace_error": 0.0,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-07,
+          "residual_nats": 5.440092820663267e-15,
+          "residual_over_epsilon_squared": 0.5440092820663268,
+          "gram_difference_trace_norm": 4.445758189023142e-08,
+          "quantitative_lower_bound_nats": 5.929429762579897e-17,
+          "residual_minus_quantitative_bound_nats": 5.380798523037468e-15,
+          "lhs_entropy_nats": 0.416495724881179,
+          "rhs_entropy_nats": 0.41649572488117353,
+          "minimum_eigenvalue": 1.46431962869908e-09,
+          "maximum_trace_error": 1.1102230246251565e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": false,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-08,
+          "residual_nats": 1.1102230246251565e-15,
+          "residual_over_epsilon_squared": 11.102230246251564,
+          "gram_difference_trace_norm": 4.445758827012974e-09,
+          "quantitative_lower_bound_nats": 5.929431464389132e-19,
+          "residual_minus_quantitative_bound_nats": 1.1096300814787176e-15,
+          "lhs_entropy_nats": 0.4164957249039569,
+          "rhs_entropy_nats": 0.4164957249039558,
+          "minimum_eigenvalue": 1.4644513325408947e-09,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": false,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        }
+      ],
+      "slope_estimate": {
+        "fit_range_requested": [
+          0.0001,
+          0.01
+        ],
+        "resolved_epsilon_values": [
+          0.01,
+          0.001,
+          0.0001
+        ],
+        "resolved_point_count": 3,
+        "estimated_log_log_slope": 2.042318704920274,
+        "adjacent_resolved_slopes": [
+          {
+            "epsilon_high": 0.01,
+            "epsilon_low": 0.001,
+            "slope": 1.9979355563786474
+          },
+          {
+            "epsilon_high": 0.001,
+            "epsilon_low": 0.0001,
+            "slope": 2.0867018534618986
+          }
+        ]
+      }
+    },
+    {
+      "path_id": "2x3__near_rank_one__u_zero_balanced__generic_complex_orthogonal_tangent",
+      "shape": [
+        2,
+        3
+      ],
+      "rank_kind": "near_rank_one",
+      "direction": "generic_complex_orthogonal_tangent",
+      "coefficient_regime": "u_zero_balanced",
+      "coefficients_alpha_beta_eta_delta": [
+        0.5,
+        0.0,
+        0.0,
+        0.5
+      ],
+      "K": 0.5,
+      "u": 0.0,
+      "X": {
+        "real": [
+          [
+            0.141939286294384,
+            -0.6375961099141889,
+            0.166175740595937
+          ],
+          [
+            0.030974201573261254,
+            0.02793234995564359,
+            -0.25158256881704066
+          ]
+        ],
+        "imag": [
+          [
+            -0.05490684491549584,
+            -0.140527369986154,
+            0.6037064995210399
+          ],
+          [
+            0.05831570593224959,
+            -0.28201934412488733,
+            0.10255137092913172
+          ]
+        ]
+      },
+      "H": {
+        "real": [
+          [
+            0.2313698459575891,
+            0.30156263291728674,
+            0.10652238203224845
+          ],
+          [
+            -0.2302183693028227,
+            -0.24265622138996773,
+            0.1830759514755381
+          ]
+        ],
+        "imag": [
+          [
+            -0.5460232263444692,
+            -0.22415210778266123,
+            0.05207314645280011
+          ],
+          [
+            0.5192956112576287,
+            -0.27930219907256276,
+            -0.0026110520135960848
+          ]
+        ]
+      },
+      "x_hilbert_schmidt_norm": 1.0,
+      "h_hilbert_schmidt_norm": 0.9999999999999999,
+      "x_h_complex_inner_product": {
+        "real": 0.0,
+        "imag": 0.0
+      },
+      "x_singular_values": [
+        0.9999999950000001,
+        9.999999949997354e-05
+      ],
+      "generic_tangent_gram_derivative_trace_norm": 0.444575884629166,
+      "quantitative_bound_prefactor": 0.0,
+      "baseline_residual_nats": 1.6275912782036752e-15,
+      "baseline_lhs_entropy_nats": 1.9420680633601807e-07,
+      "baseline_rhs_entropy_nats": 1.942068047084268e-07,
+      "gauge_max_absolute_residual_nats": 8.095893687769793e-15,
+      "roundoff_scale_nats": 1.4210854715202004e-14,
+      "numerical_floor_nats": 1.4210854715202004e-14,
+      "samples": [
+        {
+          "epsilon": 0.1,
+          "residual_nats": 0.008214931398092075,
+          "residual_over_epsilon_squared": 0.8214931398092074,
+          "gram_difference_trace_norm": 0.03961186739488674,
+          "quantitative_lower_bound_nats": 0.0,
+          "residual_minus_quantitative_bound_nats": 0.008214931398092075,
+          "lhs_entropy_nats": 0.026373518838020176,
+          "rhs_entropy_nats": 0.0181585874399281,
+          "minimum_eigenvalue": 3.267383420694972e-17,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 0.01,
+          "residual_nats": 0.0001259278169250395,
+          "residual_over_epsilon_squared": 1.2592781692503952,
+          "gram_difference_trace_norm": 0.004381679657750609,
+          "quantitative_lower_bound_nats": 0.0,
+          "residual_minus_quantitative_bound_nats": 0.0001259278169250395,
+          "lhs_entropy_nats": 0.0004399983525958524,
+          "rhs_entropy_nats": 0.0003140705356708129,
+          "minimum_eigenvalue": -5.035336457489315e-17,
+          "maximum_trace_error": 1.1102230246251565e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 0.001,
+          "residual_nats": 1.6813575285967667e-06,
+          "residual_over_epsilon_squared": 1.6813575285967668,
+          "gram_difference_trace_norm": 0.00044392218945786516,
+          "quantitative_lower_bound_nats": 0.0,
+          "residual_minus_quantitative_bound_nats": 1.6813575285967667e-06,
+          "lhs_entropy_nats": 6.127852718294121e-06,
+          "rhs_entropy_nats": 4.4464951896973545e-06,
+          "minimum_eigenvalue": -4.0113947922346106e-17,
+          "maximum_trace_error": 0.0,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 0.0001,
+          "residual_nats": 2.172323481723154e-08,
+          "residual_over_epsilon_squared": 2.172323481723154,
+          "gram_difference_trace_norm": 4.445103890673112e-05,
+          "quantitative_lower_bound_nats": 0.0,
+          "residual_minus_quantitative_bound_nats": 2.172323481723154e-08,
+          "lhs_entropy_nats": 2.415235357289494e-07,
+          "rhs_entropy_nats": 2.1980030091171784e-07,
+          "minimum_eigenvalue": 2.3762568538227082e-17,
+          "maximum_trace_error": 0.0,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-05,
+          "residual_nats": 2.8219247809378143e-10,
+          "residual_over_epsilon_squared": 2.8219247809378136,
+          "gram_difference_trace_norm": 4.4456933381646105e-06,
+          "quantitative_lower_bound_nats": 0.0,
+          "residual_minus_quantitative_bound_nats": 2.8219247809378143e-10,
+          "lhs_entropy_nats": 1.9220846774653783e-07,
+          "rhs_entropy_nats": 1.9192627526844405e-07,
+          "minimum_eigenvalue": 4.830923908852894e-17,
+          "maximum_trace_error": 0.0,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-06,
+          "residual_nats": 3.4809382668635964e-12,
+          "residual_over_epsilon_squared": 3.4809382668635966,
+          "gram_difference_trace_norm": 4.445752295979308e-07,
+          "quantitative_lower_bound_nats": 0.0,
+          "residual_minus_quantitative_bound_nats": 3.4809382668635964e-12,
+          "lhs_entropy_nats": 1.9393380381474696e-07,
+          "rhs_entropy_nats": 1.939303228764801e-07,
+          "minimum_eigenvalue": 1.2816743785814516e-16,
+          "maximum_trace_error": 0.0,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-07,
+          "residual_nats": 4.267229798470568e-14,
+          "residual_over_epsilon_squared": 4.267229798470568,
+          "gram_difference_trace_norm": 4.445758189023142e-08,
+          "quantitative_lower_bound_nats": 0.0,
+          "residual_minus_quantitative_bound_nats": 4.267229798470568e-14,
+          "lhs_entropy_nats": 1.9417871555579227e-07,
+          "rhs_entropy_nats": 1.9417867288349428e-07,
+          "minimum_eigenvalue": 1.0060232511042443e-17,
+          "maximum_trace_error": 1.1102230246251565e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": false,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-08,
+          "residual_nats": 2.3129503056617184e-15,
+          "residual_over_epsilon_squared": 23.12950305661718,
+          "gram_difference_trace_norm": 4.445758827012974e-09,
+          "quantitative_lower_bound_nats": 0.0,
+          "residual_minus_quantitative_bound_nats": 2.3129503056617184e-15,
+          "lhs_entropy_nats": 1.9420398880692048e-07,
+          "rhs_entropy_nats": 1.9420398649397017e-07,
+          "minimum_eigenvalue": -2.0594643678470085e-17,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": false,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        }
+      ],
+      "slope_estimate": {
+        "fit_range_requested": [
+          0.0001,
+          0.01
+        ],
+        "resolved_epsilon_values": [
+          0.01,
+          0.001,
+          0.0001
+        ],
+        "resolved_point_count": 3,
+        "estimated_log_log_slope": 1.8815985888994982,
+        "adjacent_resolved_slopes": [
+          {
+            "epsilon_high": 0.01,
+            "epsilon_low": 0.001,
+            "slope": 1.8744616016688112
+          },
+          {
+            "epsilon_high": 0.001,
+            "epsilon_low": 0.0001,
+            "slope": 1.8887355761301807
+          }
+        ]
+      }
+    },
+    {
+      "path_id": "3x2__full_rank__interior_asymmetric__generic_complex_orthogonal_tangent",
+      "shape": [
+        3,
+        2
+      ],
+      "rank_kind": "full_rank",
+      "direction": "generic_complex_orthogonal_tangent",
+      "coefficient_regime": "interior_asymmetric",
+      "coefficients_alpha_beta_eta_delta": [
+        0.4,
+        0.1,
+        0.15,
+        0.35
+      ],
+      "K": 0.35355339059327373,
+      "u": 0.12500000000000003,
+      "X": {
+        "real": [
+          [
+            -0.06180793500138389,
+            -0.39046661717587045
+          ],
+          [
+            0.025134741038890147,
+            0.27454430431647736
+          ],
+          [
+            -0.022914801442494213,
+            -0.11266733387095457
+          ]
+        ],
+        "imag": [
+          [
+            0.6495555532304396,
+            -0.26569543032551046
+          ],
+          [
+            0.14611987723726974,
+            -0.22484854106814098
+          ],
+          [
+            0.07004333534082265,
+            0.43030201179789335
+          ]
+        ]
+      },
+      "H": {
+        "real": [
+          [
+            -0.03169812233353961,
+            0.20600811072863684
+          ],
+          [
+            -0.49676083364464724,
+            0.2968148667872643
+          ],
+          [
+            -0.31800892769094147,
+            0.3405317839543519
+          ]
+        ],
+        "imag": [
+          [
+            -0.039574580553463676,
+            -0.09263952073683264
+          ],
+          [
+            -0.07768090757115696,
+            -0.5313357113652137
+          ],
+          [
+            -0.30858905117181257,
+            -0.10424265003584214
+          ]
+        ]
+      },
+      "x_hilbert_schmidt_norm": 0.9999999999999999,
+      "h_hilbert_schmidt_norm": 1.0,
+      "x_h_complex_inner_product": {
+        "real": -6.938893903907228e-18,
+        "imag": -1.6653345369377348e-16
+      },
+      "x_singular_values": [
+        0.8762159086766471,
+        0.4819187497721556
+      ],
+      "generic_tangent_gram_derivative_trace_norm": 1.8601085794514396,
+      "quantitative_bound_prefactor": 0.03,
+      "baseline_residual_nats": 5.551115123125783e-16,
+      "baseline_lhs_entropy_nats": 0.9584711485367439,
+      "baseline_rhs_entropy_nats": 0.9584711485367433,
+      "gauge_max_absolute_residual_nats": 5.662137425588298e-15,
+      "roundoff_scale_nats": 1.4210854715202004e-14,
+      "numerical_floor_nats": 1.4210854715202004e-14,
+      "samples": [
+        {
+          "epsilon": 0.1,
+          "residual_nats": 0.0066596293423026864,
+          "residual_over_epsilon_squared": 0.6659629342302685,
+          "gram_difference_trace_norm": 0.1834225888380025,
+          "quantitative_lower_bound_nats": 0.0010093153828810476,
+          "residual_minus_quantitative_bound_nats": 0.005650313959421639,
+          "lhs_entropy_nats": 0.9622215717595171,
+          "rhs_entropy_nats": 0.9555619424172144,
+          "minimum_eigenvalue": -2.304146067897673e-18,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 6.598164909855093,
+          "quantitative_bound_fraction_of_residual": 0.15155729110474167,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 0.01,
+          "residual_nats": 8.961849704547387e-05,
+          "residual_over_epsilon_squared": 0.8961849704547387,
+          "gram_difference_trace_norm": 0.01858512593225514,
+          "quantitative_lower_bound_nats": 1.0362207177533474e-05,
+          "residual_minus_quantitative_bound_nats": 7.925628986794039e-05,
+          "lhs_entropy_nats": 0.9585386551498223,
+          "rhs_entropy_nats": 0.9584490366527768,
+          "minimum_eigenvalue": 2.1362526722430016e-17,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 8.648591512412304,
+          "quantitative_bound_fraction_of_residual": 0.11562576386742486,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 0.001,
+          "residual_nats": 1.1175058008960903e-06,
+          "residual_over_epsilon_squared": 1.1175058008960903,
+          "gram_difference_trace_norm": 0.0018599591437632212,
+          "quantitative_lower_bound_nats": 1.0378344049405245e-07,
+          "residual_minus_quantitative_bound_nats": 1.0137223604020378e-06,
+          "lhs_entropy_nats": 0.9584728475305608,
+          "rhs_entropy_nats": 0.9584717300247599,
+          "minimum_eigenvalue": 2.1362526722430016e-17,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 10.76766963569811,
+          "quantitative_bound_fraction_of_residual": 0.09287060560297047,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 0.0001,
+          "residual_nats": 1.3391470266022054e-08,
+          "residual_over_epsilon_squared": 1.3391470266022054,
+          "gram_difference_trace_norm": 0.00018600937376671888,
+          "quantitative_lower_bound_nats": 1.0379846138726078e-09,
+          "residual_minus_quantitative_bound_nats": 1.2353485652149447e-08,
+          "lhs_entropy_nats": 0.9584712480760404,
+          "rhs_entropy_nats": 0.9584712346845702,
+          "minimum_eigenvalue": -2.8192542908739705e-17,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 12.901414998879352,
+          "quantitative_bound_fraction_of_residual": 0.07751087768952959,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-05,
+          "residual_nats": 1.560896967234271e-10,
+          "residual_over_epsilon_squared": 1.5608969672342707,
+          "gram_difference_trace_norm": 1.860107096301239e-05,
+          "quantitative_lower_bound_nats": 1.037999522913068e-11,
+          "residual_minus_quantitative_bound_nats": 1.4570970149429641e-10,
+          "lhs_entropy_nats": 0.9584711575876752,
+          "rhs_entropy_nats": 0.9584711574315855,
+          "minimum_eigenvalue": 2.1362526722430016e-17,
+          "maximum_trace_error": 4.440892098500626e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 15.03754994851761,
+          "quantitative_bound_fraction_of_residual": 0.06650019474073829,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-06,
+          "residual_nats": 1.7824630660356888e-12,
+          "residual_over_epsilon_squared": 1.7824630660356888,
+          "gram_difference_trace_norm": 1.8601084311673915e-06,
+          "quantitative_lower_bound_nats": 1.0380010127100043e-13,
+          "residual_minus_quantitative_bound_nats": 1.6786629647646884e-12,
+          "lhs_entropy_nats": 0.9584711494308107,
+          "rhs_entropy_nats": 0.9584711494290282,
+          "minimum_eigenvalue": 2.1362526722430016e-17,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-07,
+          "residual_nats": 1.787459069646502e-14,
+          "residual_over_epsilon_squared": 1.7874590696465023,
+          "gram_difference_trace_norm": 1.8601085651685828e-07,
+          "quantitative_lower_bound_nats": 1.0380011622640571e-15,
+          "residual_minus_quantitative_bound_nats": 1.6836589534200963e-14,
+          "lhs_entropy_nats": 0.958471148626018,
+          "rhs_entropy_nats": 0.9584711486260001,
+          "minimum_eigenvalue": 2.1362526722430016e-17,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": false,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-08,
+          "residual_nats": -6.661338147750939e-16,
+          "residual_over_epsilon_squared": -6.661338147750938,
+          "gram_difference_trace_norm": 1.8601085869879414e-08,
+          "quantitative_lower_bound_nats": 1.0380011866158827e-17,
+          "residual_minus_quantitative_bound_nats": -6.765138266412527e-16,
+          "lhs_entropy_nats": 0.9584711485456686,
+          "rhs_entropy_nats": 0.9584711485456693,
+          "minimum_eigenvalue": -1.2648137292781678e-16,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": false,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        }
+      ],
+      "slope_estimate": {
+        "fit_range_requested": [
+          0.0001,
+          0.01
+        ],
+        "resolved_epsilon_values": [
+          0.01,
+          0.001,
+          0.0001
+        ],
+        "resolved_point_count": 3,
+        "estimated_log_log_slope": 1.912784697455001,
+        "adjacent_resolved_slopes": [
+          {
+            "epsilon_high": 0.01,
+            "epsilon_low": 0.001,
+            "slope": 1.9041478700632966
+          },
+          {
+            "epsilon_high": 0.001,
+            "epsilon_low": 0.0001,
+            "slope": 1.9214215248466993
+          }
+        ]
+      }
+    },
+    {
+      "path_id": "3x2__full_rank__k_zero_maximum_u__generic_complex_orthogonal_tangent",
+      "shape": [
+        3,
+        2
+      ],
+      "rank_kind": "full_rank",
+      "direction": "generic_complex_orthogonal_tangent",
+      "coefficient_regime": "k_zero_maximum_u",
+      "coefficients_alpha_beta_eta_delta": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "K": 0.0,
+      "u": 0.25,
+      "X": {
+        "real": [
+          [
+            -0.06180793500138389,
+            -0.39046661717587045
+          ],
+          [
+            0.025134741038890147,
+            0.27454430431647736
+          ],
+          [
+            -0.022914801442494213,
+            -0.11266733387095457
+          ]
+        ],
+        "imag": [
+          [
+            0.6495555532304396,
+            -0.26569543032551046
+          ],
+          [
+            0.14611987723726974,
+            -0.22484854106814098
+          ],
+          [
+            0.07004333534082265,
+            0.43030201179789335
+          ]
+        ]
+      },
+      "H": {
+        "real": [
+          [
+            -0.03169812233353961,
+            0.20600811072863684
+          ],
+          [
+            -0.49676083364464724,
+            0.2968148667872643
+          ],
+          [
+            -0.31800892769094147,
+            0.3405317839543519
+          ]
+        ],
+        "imag": [
+          [
+            -0.039574580553463676,
+            -0.09263952073683264
+          ],
+          [
+            -0.07768090757115696,
+            -0.5313357113652137
+          ],
+          [
+            -0.30858905117181257,
+            -0.10424265003584214
+          ]
+        ]
+      },
+      "x_hilbert_schmidt_norm": 0.9999999999999999,
+      "h_hilbert_schmidt_norm": 1.0,
+      "x_h_complex_inner_product": {
+        "real": -6.938893903907228e-18,
+        "imag": -1.6653345369377348e-16
+      },
+      "x_singular_values": [
+        0.8762159086766471,
+        0.4819187497721556
+      ],
+      "generic_tangent_gram_derivative_trace_norm": 1.8601085794514396,
+      "quantitative_bound_prefactor": 0.125,
+      "baseline_residual_nats": 2.220446049250313e-16,
+      "baseline_lhs_entropy_nats": 1.2351227983970012,
+      "baseline_rhs_entropy_nats": 1.235122798397001,
+      "gauge_max_absolute_residual_nats": 2.220446049250313e-15,
+      "roundoff_scale_nats": 1.755215064345352e-14,
+      "numerical_floor_nats": 1.755215064345352e-14,
+      "samples": [
+        {
+          "epsilon": 0.1,
+          "residual_nats": 0.010493536211754861,
+          "residual_over_epsilon_squared": 1.049353621175486,
+          "gram_difference_trace_norm": 0.1834225888380025,
+          "quantitative_lower_bound_nats": 0.004205480762004365,
+          "residual_minus_quantitative_bound_nats": 0.006288055449750496,
+          "lhs_entropy_nats": 1.2423838833648349,
+          "rhs_entropy_nats": 1.23189034715308,
+          "minimum_eigenvalue": -2.304146067897673e-18,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.755215064345352e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 2.495204901794286,
+          "quantitative_bound_fraction_of_residual": 0.4007686900907041,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 0.01,
+          "residual_nats": 0.00015105433244788635,
+          "residual_over_epsilon_squared": 1.5105433244788635,
+          "gram_difference_trace_norm": 0.01858512593225514,
+          "quantitative_lower_bound_nats": 4.3175863239722806e-05,
+          "residual_minus_quantitative_bound_nats": 0.00010787846920816355,
+          "lhs_entropy_nats": 1.2352492839694864,
+          "rhs_entropy_nats": 1.2350982296370385,
+          "minimum_eigenvalue": 2.1362526722430016e-17,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.755215064345352e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 3.4985827986622122,
+          "quantitative_bound_fraction_of_residual": 0.2858300224829265,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 0.001,
+          "residual_nats": 1.9700743632000695e-06,
+          "residual_over_epsilon_squared": 1.9700743632000695,
+          "gram_difference_trace_norm": 0.0018599591437632212,
+          "quantitative_lower_bound_nats": 4.3243100205855184e-07,
+          "residual_minus_quantitative_bound_nats": 1.5376433611415176e-06,
+          "lhs_entropy_nats": 1.2351254145691608,
+          "rhs_entropy_nats": 1.2351234444947976,
+          "minimum_eigenvalue": 2.1362526722430016e-17,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.755215064345352e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 4.555812034340032,
+          "quantitative_bound_fraction_of_residual": 0.21949983723260938,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 0.0001,
+          "residual_nats": 2.431637757815963e-08,
+          "residual_over_epsilon_squared": 2.431637757815963,
+          "gram_difference_trace_norm": 0.00018600937376671888,
+          "quantitative_lower_bound_nats": 4.324935891135866e-09,
+          "residual_minus_quantitative_bound_nats": 1.9991441687023767e-08,
+          "lhs_entropy_nats": 1.2351229184331862,
+          "rhs_entropy_nats": 1.2351228941168086,
+          "minimum_eigenvalue": -2.8192542908739705e-17,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.755215064345352e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 5.622367172654987,
+          "quantitative_bound_fraction_of_residual": 0.17786102708901905,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-05,
+          "residual_nats": 2.893534301051659e-10,
+          "residual_over_epsilon_squared": 2.8935343010516585,
+          "gram_difference_trace_norm": 1.860107096301239e-05,
+          "quantitative_lower_bound_nats": 4.3249980121377834e-11,
+          "residual_minus_quantitative_bound_nats": 2.4610344998378806e-10,
+          "lhs_entropy_nats": 1.2351228085695125,
+          "rhs_entropy_nats": 1.235122808280159,
+          "minimum_eigenvalue": 2.1362526722430016e-17,
+          "maximum_trace_error": 4.440892098500626e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.755215064345352e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 6.690255794178798,
+          "quantitative_bound_fraction_of_residual": 0.14947111601773158,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-06,
+          "residual_nats": 3.353983757392598e-12,
+          "residual_over_epsilon_squared": 3.353983757392598,
+          "gram_difference_trace_norm": 1.8601084311673915e-06,
+          "quantitative_lower_bound_nats": 4.325004219625018e-13,
+          "residual_minus_quantitative_bound_nats": 2.921483335430096e-12,
+          "lhs_entropy_nats": 1.2351227993917828,
+          "rhs_entropy_nats": 1.2351227993884288,
+          "minimum_eigenvalue": 2.1362526722430016e-17,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.755215064345352e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 7.754868173708722,
+          "quantitative_bound_fraction_of_residual": 0.12895125714583947,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-07,
+          "residual_nats": 3.3084646133829665e-14,
+          "residual_over_epsilon_squared": 3.308464613382967,
+          "gram_difference_trace_norm": 1.8601085651685828e-07,
+          "quantitative_lower_bound_nats": 4.325004842766905e-15,
+          "residual_minus_quantitative_bound_nats": 2.875964129106276e-14,
+          "lhs_entropy_nats": 1.2351227984962085,
+          "rhs_entropy_nats": 1.2351227984961755,
+          "minimum_eigenvalue": 2.1362526722430016e-17,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.755215064345352e-14,
+          "positive_resolved": false,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-08,
+          "residual_nats": 4.440892098500626e-16,
+          "residual_over_epsilon_squared": 4.440892098500625,
+          "gram_difference_trace_norm": 1.8601085869879414e-08,
+          "quantitative_lower_bound_nats": 4.325004944232845e-17,
+          "residual_minus_quantitative_bound_nats": 4.0083916040773417e-16,
+          "lhs_entropy_nats": 1.2351227984069193,
+          "rhs_entropy_nats": 1.2351227984069189,
+          "minimum_eigenvalue": 1.595347124114401e-17,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.755215064345352e-14,
+          "positive_resolved": false,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        }
+      ],
+      "slope_estimate": {
+        "fit_range_requested": [
+          0.0001,
+          0.01
+        ],
+        "resolved_epsilon_values": [
+          0.01,
+          0.001,
+          0.0001
+        ],
+        "resolved_point_count": 3,
+        "estimated_log_log_slope": 1.8966171537919603,
+        "adjacent_resolved_slopes": [
+          {
+            "epsilon_high": 0.01,
+            "epsilon_low": 0.001,
+            "slope": 1.8846505664354403
+          },
+          {
+            "epsilon_high": 0.001,
+            "epsilon_low": 0.0001,
+            "slope": 1.9085837411484763
+          }
+        ]
+      }
+    },
+    {
+      "path_id": "3x2__near_rank_one__interior_asymmetric__generic_complex_orthogonal_tangent",
+      "shape": [
+        3,
+        2
+      ],
+      "rank_kind": "near_rank_one",
+      "direction": "generic_complex_orthogonal_tangent",
+      "coefficient_regime": "interior_asymmetric",
+      "coefficients_alpha_beta_eta_delta": [
+        0.4,
+        0.1,
+        0.15,
+        0.35
+      ],
+      "K": 0.35355339059327373,
+      "u": 0.12500000000000003,
+      "X": {
+        "real": [
+          [
+            0.19777868275532223,
+            0.06762595055247178
+          ],
+          [
+            -0.20649018487803736,
+            0.40017372831083026
+          ],
+          [
+            -0.3984199526259399,
+            0.09257995325350808
+          ]
+        ],
+        "imag": [
+          [
+            0.15154768417190817,
+            -0.12065904639320849
+          ],
+          [
+            0.6991390877696171,
+            0.0582658373452217
+          ],
+          [
+            0.11144708986701884,
+            0.20997017893101808
+          ]
+        ]
+      },
+      "H": {
+        "real": [
+          [
+            -0.21462429792024,
+            0.15416475054913145
+          ],
+          [
+            -0.20887457153408395,
+            -0.07966353429795271
+          ],
+          [
+            -0.2070128597864013,
+            0.49631381964322624
+          ]
+        ],
+        "imag": [
+          [
+            0.34490781914498,
+            0.2464755447759039
+          ],
+          [
+            -0.29335628192874086,
+            -0.15968113193101685
+          ],
+          [
+            0.5347932834099088,
+            0.1172246454978009
+          ]
+        ]
+      },
+      "x_hilbert_schmidt_norm": 1.0,
+      "h_hilbert_schmidt_norm": 0.9999999999999999,
+      "x_h_complex_inner_product": {
+        "real": -2.7755575615628914e-17,
+        "imag": -2.7755575615628914e-17
+      },
+      "x_singular_values": [
+        0.9999999950000003,
+        9.999999950002207e-05
+      ],
+      "generic_tangent_gram_derivative_trace_norm": 1.8765279093284901,
+      "quantitative_bound_prefactor": 0.03,
+      "baseline_residual_nats": 1.1102230246251565e-16,
+      "baseline_lhs_entropy_nats": 0.4164957249064952,
+      "baseline_rhs_entropy_nats": 0.4164957249064951,
+      "gauge_max_absolute_residual_nats": 2.942091015256665e-15,
+      "roundoff_scale_nats": 1.4210854715202004e-14,
+      "numerical_floor_nats": 1.4210854715202004e-14,
+      "samples": [
+        {
+          "epsilon": 0.1,
+          "residual_nats": 0.008291741623176085,
+          "residual_over_epsilon_squared": 0.8291741623176084,
+          "gram_difference_trace_norm": 0.18611034091763018,
+          "quantitative_lower_bound_nats": 0.0010391117698942958,
+          "residual_minus_quantitative_bound_nats": 0.00725262985328179,
+          "lhs_entropy_nats": 0.4266793667235277,
+          "rhs_entropy_nats": 0.4183876251003516,
+          "minimum_eigenvalue": -3.9761089578927624e-17,
+          "maximum_trace_error": 4.440892098500626e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 7.979643637391931,
+          "quantitative_bound_fraction_of_residual": 0.12531887956926863,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 0.01,
+          "residual_nats": 0.0001334283316989926,
+          "residual_over_epsilon_squared": 1.334283316989926,
+          "gram_difference_trace_norm": 0.018758195649373963,
+          "quantitative_lower_bound_nats": 1.0556097120605766e-05,
+          "residual_minus_quantitative_bound_nats": 0.00012287223457838682,
+          "lhs_entropy_nats": 0.4166529135139172,
+          "rhs_entropy_nats": 0.4165194851822182,
+          "minimum_eigenvalue": -1.494584282122197e-17,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 12.639930286216972,
+          "quantitative_bound_fraction_of_residual": 0.07911436039251224,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 0.001,
+          "residual_nats": 1.8124209874570418e-06,
+          "residual_over_epsilon_squared": 1.8124209874570418,
+          "gram_difference_trace_norm": 0.0018764412033151876,
+          "quantitative_lower_bound_nats": 1.0563094768496846e-07,
+          "residual_minus_quantitative_bound_nats": 1.7067900397720734e-06,
+          "lhs_entropy_nats": 0.41649756610658334,
+          "rhs_entropy_nats": 0.4164957536855959,
+          "minimum_eigenvalue": 2.8103009802319053e-17,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 17.158049105668997,
+          "quantitative_bound_fraction_of_residual": 0.058281684231198595,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 0.0001,
+          "residual_nats": 2.2649200737134834e-08,
+          "residual_over_epsilon_squared": 2.2649200737134834,
+          "gram_difference_trace_norm": 0.00018765193270062623,
+          "quantitative_lower_bound_nats": 1.0563974353884106e-09,
+          "residual_minus_quantitative_bound_nats": 2.1592803301746422e-08,
+          "lhs_entropy_nats": 0.4164957183400875,
+          "rhs_entropy_nats": 0.41649569569088674,
+          "minimum_eigenvalue": 3.630022202322566e-17,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 21.440037601764242,
+          "quantitative_bound_fraction_of_residual": 0.04664170924391069,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-05,
+          "residual_nats": 2.558807055130785e-10,
+          "residual_over_epsilon_squared": 2.5588070551307847,
+          "gram_difference_trace_norm": 1.8765270519848683e-05,
+          "quantitative_lower_bound_nats": 1.0564061330493062e-11,
+          "residual_minus_quantitative_bound_nats": 2.453166441825854e-10,
+          "lhs_entropy_nats": 0.41649572195107853,
+          "rhs_entropy_nats": 0.41649572169519783,
+          "minimum_eigenvalue": -4.505592912698571e-17,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": true,
+          "residual_over_quantitative_bound": 24.22181181156922,
+          "quantitative_bound_fraction_of_residual": 0.04128510318630927,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-06,
+          "residual_nats": 2.8311797350966117e-12,
+          "residual_over_epsilon_squared": 2.8311797350966117,
+          "gram_difference_trace_norm": 1.876527823565264e-06,
+          "quantitative_lower_bound_nats": 1.056407001784376e-13,
+          "residual_minus_quantitative_bound_nats": 2.725539034918174e-12,
+          "lhs_entropy_nats": 0.4164957245853278,
+          "rhs_entropy_nats": 0.4164957245824966,
+          "minimum_eigenvalue": -3.057369549707639e-17,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-07,
+          "residual_nats": 3.214095656289828e-14,
+          "residual_over_epsilon_squared": 3.2140956562898286,
+          "gram_difference_trace_norm": 1.8765278989515805e-07,
+          "quantitative_lower_bound_nats": 1.0564070866630898e-15,
+          "residual_minus_quantitative_bound_nats": 3.108454947623519e-14,
+          "lhs_entropy_nats": 0.41649572487409836,
+          "rhs_entropy_nats": 0.4164957248740662,
+          "minimum_eigenvalue": 3.650340624339613e-17,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": false,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-08,
+          "residual_nats": 9.43689570931383e-16,
+          "residual_over_epsilon_squared": 9.436895709313829,
+          "gram_difference_trace_norm": 1.8765279083235492e-08,
+          "quantitative_lower_bound_nats": 1.0564070972151464e-17,
+          "residual_minus_quantitative_bound_nats": 9.331254999592315e-16,
+          "lhs_entropy_nats": 0.41649572490325193,
+          "rhs_entropy_nats": 0.416495724903251,
+          "minimum_eigenvalue": 5.650460623409589e-18,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": false,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        }
+      ],
+      "slope_estimate": {
+        "fit_range_requested": [
+          0.0001,
+          0.01
+        ],
+        "resolved_epsilon_values": [
+          0.01,
+          0.001,
+          0.0001
+        ],
+        "resolved_point_count": 3,
+        "estimated_log_log_slope": 1.8850975875151539,
+        "adjacent_resolved_slopes": [
+          {
+            "epsilon_high": 0.01,
+            "epsilon_low": 0.001,
+            "slope": 1.866988973347446
+          },
+          {
+            "epsilon_high": 0.001,
+            "epsilon_low": 0.0001,
+            "slope": 1.9032062016828568
+          }
+        ]
+      }
+    },
+    {
+      "path_id": "3x2__near_rank_one__u_zero_balanced__generic_complex_orthogonal_tangent",
+      "shape": [
+        3,
+        2
+      ],
+      "rank_kind": "near_rank_one",
+      "direction": "generic_complex_orthogonal_tangent",
+      "coefficient_regime": "u_zero_balanced",
+      "coefficients_alpha_beta_eta_delta": [
+        0.5,
+        0.0,
+        0.0,
+        0.5
+      ],
+      "K": 0.5,
+      "u": 0.0,
+      "X": {
+        "real": [
+          [
+            0.19777868275532223,
+            0.06762595055247178
+          ],
+          [
+            -0.20649018487803736,
+            0.40017372831083026
+          ],
+          [
+            -0.3984199526259399,
+            0.09257995325350808
+          ]
+        ],
+        "imag": [
+          [
+            0.15154768417190817,
+            -0.12065904639320849
+          ],
+          [
+            0.6991390877696171,
+            0.0582658373452217
+          ],
+          [
+            0.11144708986701884,
+            0.20997017893101808
+          ]
+        ]
+      },
+      "H": {
+        "real": [
+          [
+            -0.21462429792024,
+            0.15416475054913145
+          ],
+          [
+            -0.20887457153408395,
+            -0.07966353429795271
+          ],
+          [
+            -0.2070128597864013,
+            0.49631381964322624
+          ]
+        ],
+        "imag": [
+          [
+            0.34490781914498,
+            0.2464755447759039
+          ],
+          [
+            -0.29335628192874086,
+            -0.15968113193101685
+          ],
+          [
+            0.5347932834099088,
+            0.1172246454978009
+          ]
+        ]
+      },
+      "x_hilbert_schmidt_norm": 1.0,
+      "h_hilbert_schmidt_norm": 0.9999999999999999,
+      "x_h_complex_inner_product": {
+        "real": -2.7755575615628914e-17,
+        "imag": -2.7755575615628914e-17
+      },
+      "x_singular_values": [
+        0.9999999950000003,
+        9.999999950002207e-05
+      ],
+      "generic_tangent_gram_derivative_trace_norm": 1.8765279093284901,
+      "quantitative_bound_prefactor": 0.0,
+      "baseline_residual_nats": 3.970734814424102e-16,
+      "baseline_lhs_entropy_nats": 1.942068080146577e-07,
+      "baseline_rhs_entropy_nats": 1.9420680761758422e-07,
+      "gauge_max_absolute_residual_nats": 2.194000410087613e-15,
+      "roundoff_scale_nats": 1.4210854715202004e-14,
+      "numerical_floor_nats": 1.4210854715202004e-14,
+      "samples": [
+        {
+          "epsilon": 0.1,
+          "residual_nats": 0.0015621425801910739,
+          "residual_over_epsilon_squared": 0.15621425801910735,
+          "gram_difference_trace_norm": 0.18611034091763018,
+          "quantitative_lower_bound_nats": 0.0,
+          "residual_minus_quantitative_bound_nats": 0.0015621425801910739,
+          "lhs_entropy_nats": 0.0036644481135059063,
+          "rhs_entropy_nats": 0.0021023055333148325,
+          "minimum_eigenvalue": -3.9761089578927624e-17,
+          "maximum_trace_error": 4.440892098500626e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 0.01,
+          "residual_nats": 2.5721097575285098e-05,
+          "residual_over_epsilon_squared": 0.25721097575285096,
+          "gram_difference_trace_norm": 0.018758195649373963,
+          "quantitative_lower_bound_nats": 0.0,
+          "residual_minus_quantitative_bound_nats": 2.5721097575285098e-05,
+          "lhs_entropy_nats": 5.2315610741902726e-05,
+          "rhs_entropy_nats": 2.6594513166617628e-05,
+          "minimum_eigenvalue": -2.1192624932850358e-17,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 0.001,
+          "residual_nats": 3.411163318207898e-07,
+          "residual_over_epsilon_squared": 0.3411163318207898,
+          "gram_difference_trace_norm": 0.0018764412033151876,
+          "quantitative_lower_bound_nats": 0.0,
+          "residual_minus_quantitative_bound_nats": 3.411163318207898e-07,
+          "lhs_entropy_nats": 5.672999180640381e-07,
+          "rhs_entropy_nats": 2.2618358624324832e-07,
+          "minimum_eigenvalue": -1.9517986311369474e-17,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 0.0001,
+          "residual_nats": 3.772313262679091e-09,
+          "residual_over_epsilon_squared": 0.3772313262679091,
+          "gram_difference_trace_norm": 0.00018765193270062623,
+          "quantitative_lower_bound_nats": 0.0,
+          "residual_minus_quantitative_bound_nats": 3.772313262679091e-09,
+          "lhs_entropy_nats": 1.6551733382299482e-07,
+          "rhs_entropy_nats": 1.6174502056031573e-07,
+          "minimum_eigenvalue": -6.609417513565487e-17,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-05,
+          "residual_nats": 3.747231715545354e-11,
+          "residual_over_epsilon_squared": 0.37472317155453533,
+          "gram_difference_trace_norm": 1.8765270519848683e-05,
+          "quantitative_lower_bound_nats": 0.0,
+          "residual_minus_quantitative_bound_nats": 3.747231715545354e-11,
+          "lhs_entropy_nats": 1.9067617187518667e-07,
+          "rhs_entropy_nats": 1.9063869955803122e-07,
+          "minimum_eigenvalue": -1.163252362652815e-16,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-06,
+          "residual_nats": 3.764973837692466e-13,
+          "residual_over_epsilon_squared": 0.3764973837692466,
+          "gram_difference_trace_norm": 1.876527823565264e-06,
+          "quantitative_lower_bound_nats": 0.0,
+          "residual_minus_quantitative_bound_nats": 3.764973837692466e-13,
+          "lhs_entropy_nats": 1.9384718579775867e-07,
+          "rhs_entropy_nats": 1.938468093003749e-07,
+          "minimum_eigenvalue": -5.72023082047691e-17,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": true,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-07,
+          "residual_nats": 6.349101871648964e-15,
+          "residual_over_epsilon_squared": 0.6349101871648966,
+          "gram_difference_trace_norm": 1.8765278989515805e-07,
+          "quantitative_lower_bound_nats": 0.0,
+          "residual_minus_quantitative_bound_nats": 6.349101871648964e-15,
+          "lhs_entropy_nats": 1.9417078188042103e-07,
+          "rhs_entropy_nats": 1.9417077553131915e-07,
+          "minimum_eigenvalue": -1.0504427771295464e-16,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": false,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        },
+        {
+          "epsilon": 1e-08,
+          "residual_nats": 4.797122127682467e-16,
+          "residual_over_epsilon_squared": 4.797122127682466,
+          "gram_difference_trace_norm": 1.8765279083235492e-08,
+          "quantitative_lower_bound_nats": 0.0,
+          "residual_minus_quantitative_bound_nats": 4.797122127682467e-16,
+          "lhs_entropy_nats": 1.9420320353925344e-07,
+          "rhs_entropy_nats": 1.9420320305954123e-07,
+          "minimum_eigenvalue": -6.444248750946558e-17,
+          "maximum_trace_error": 2.220446049250313e-16,
+          "maximum_hermitian_error": 0.0,
+          "numerical_floor_nats": 1.4210854715202004e-14,
+          "positive_resolved": false,
+          "negative_resolved": false,
+          "quantitative_bound_resolved": false,
+          "residual_over_quantitative_bound": null,
+          "quantitative_bound_fraction_of_residual": null,
+          "quantitative_bound_violation_resolved": false
+        }
+      ],
+      "slope_estimate": {
+        "fit_range_requested": [
+          0.0001,
+          0.01
+        ],
+        "resolved_epsilon_values": [
+          0.01,
+          0.001,
+          0.0001
+        ],
+        "resolved_point_count": 3,
+        "estimated_log_log_slope": 1.9168408732181748,
+        "adjacent_resolved_slopes": [
+          {
+            "epsilon_high": 0.01,
+            "epsilon_low": 0.001,
+            "slope": 1.8773869840702702
+          },
+          {
+            "epsilon_high": 0.001,
+            "epsilon_low": 0.0001,
+            "slope": 1.9562947623660742
+          }
+        ]
+      }
+    }
+  ]
+}

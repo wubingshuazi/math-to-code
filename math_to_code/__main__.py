@@ -3,8 +3,10 @@
 import argparse
 import csv
 import json
+import math
 from pathlib import Path
 from .gad import optimize
+from .thermal import gap_lower_bound
 
 
 def main() -> None:
@@ -17,10 +19,20 @@ def main() -> None:
     sweep = commands.add_parser("sweep", help="Write a GAD parameter grid as CSV")
     sweep.add_argument("--points", type=int, default=41)
     sweep.add_argument("--output", type=Path, required=True)
+    thermal = commands.add_parser("thermal-bound", help="Quantitative thermal entropy gap from Gram trace norm")
+    thermal.add_argument("--coefficients", type=float, nargs=4, required=True,
+                         metavar=("ALPHA", "BETA", "ETA", "DELTA"))
+    thermal.add_argument("--gram-trace-norm", type=float, required=True)
     args = parser.parse_args()
     try:
         if args.command == "gad":
             print(json.dumps(optimize(args.gamma, args.nu, args.tolerance).as_dict(), indent=2))
+        elif args.command == "thermal-bound":
+            bound = gap_lower_bound(args.coefficients, args.gram_trace_norm)
+            print(json.dumps({"coefficients_alpha_beta_eta_delta": args.coefficients,
+                              "gram_difference_trace_norm": args.gram_trace_norm,
+                              "gap_lower_bound_nats": bound,
+                              "gap_lower_bound_bits": bound / math.log(2.0)}, indent=2))
         else:
             if not 2 <= args.points <= 1001:
                 parser.error("--points must be between 2 and 1001")
