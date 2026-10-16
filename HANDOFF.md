@@ -3,6 +3,17 @@
 Last checkpoint: 2026-10-17 (Asia/Shanghai). Read `PROJECT_STATE.json` for
 current status and `worklogs/` for evidence, failed approaches and decisions.
 
+Repository: https://github.com/wubingshuazi/math-to-code
+
+First release: https://github.com/wubingshuazi/math-to-code/releases/tag/v0.1.0
+
+The initial engineering phase is complete and published. All four CI jobs
+(Windows/Linux, Python 3.10/3.14) passed for code commit
+`4572d1eda3a0e014b475264e5f23838ed68bdad7`:
+https://github.com/wubingshuazi/math-to-code/actions/runs/38949983630
+The following checkpoint commit changes only logs and documentation; code
+and recorded numerical reports remain the tested version.
+
 ## User goal and standing authorization
 
 Use the user's spare compute to implement genuinely useful applications
@@ -47,7 +58,8 @@ actual construction and inspect existing code. Exclude impractical hidden
 constants or unrestricted-oracle claims from the first performance pilot.
 For #276, a useful next step may be a targeted adversarial search near
 thermal-lemma equality cases or an independent formal-proof audit; neither
-is completed by the initial random experiments. Do not rerun all easy tests
+is completed by the initial random experiments. See
+`docs/NEXT_RESEARCH.md` for a bounded proposed next experiment. Do not rerun all easy tests
 just to consume compute. Preserve counterexamples if a check fails.
 
 ## Claims to avoid

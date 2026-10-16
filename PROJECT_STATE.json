@@ -6,7 +6,16 @@
   "new_engineering_attribution": "100% GPT-generated; human authorization, compute and hosting acknowledged",
   "github_owner": "wubingshuazi",
   "intended_repository": "math-to-code",
-  "publication_status": "pending_final_verification",
+  "publication_status": "released_v0.1.0_with_initial_CI_passed",
+  "repository_url": "https://github.com/wubingshuazi/math-to-code",
+  "release_url": "https://github.com/wubingshuazi/math-to-code/releases/tag/v0.1.0",
+  "validated_code_commit": "4572d1eda3a0e014b475264e5f23838ed68bdad7",
+  "ci": {
+    "url": "https://github.com/wubingshuazi/math-to-code/actions/runs/38949983630",
+    "status": "success",
+    "jobs_passed": 4,
+    "matrix": "Windows/Linux x Python 3.10/3.14; NumPy audits on 3.14"
+  },
   "upstream_repository": "openai/math",
   "upstream_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
   "catalogue": {
@@ -18,8 +27,8 @@
     "useful_and_unimplemented_count": null
   },
   "first_pilot": "276: GAD scalar optimizer and independent finite numerical entropy-inequality audits",
-  "completed": ["source_verification", "metadata_catalogue", "prior_art_search", "runtime_calculator", "15_unit_tests", "initial_quantum_audit", "local_benchmark", "handoff_logs"],
-  "next": ["review_thermal_audit", "review_code", "final_validation_and_packaging", "publish_repository", "record_remote_commit_and_CI"],
+  "completed": ["source_verification", "metadata_catalogue", "prior_art_search", "runtime_calculator", "15_unit_tests", "quantum_audit", "10240_case_thermal_audit", "independent_code_review", "clean_export_source_hash_check", "wheel_installation_and_CLI_check", "local_benchmark", "handoff_logs", "public_repository", "four_CI_jobs_passed"],
+  "next": ["inspect_docs_NEXT_RESEARCH", "choose_bounded_adversarial_or_next_family_study", "preserve_failures_and_publish_completed_results"],
   "research_limits": ["no_global_novelty_claim", "no_new_mathematical_proof", "no_certified_arithmetic", "no_speedup_claim"],
-  "logs": ["worklogs/2026-10-17-01-source-triage.md", "worklogs/2026-10-17-02-engineering.md"]
+  "logs": ["worklogs/2026-10-17-01-source-triage.md", "worklogs/2026-10-17-02-engineering.md", "worklogs/2026-10-17-03-publication.md"]
 }

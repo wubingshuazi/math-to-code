@@ -2,6 +2,8 @@
 
 **首个成果：OpenAI 数学手稿第 276 组的广义振幅阻尼（GAD）计算工具与独立数值审计。**
 
+[实验结果](docs/RESULTS.md) · [版本下载](https://github.com/wubingshuazi/math-to-code/releases/tag/v0.1.0) · [AI 续接入口](HANDOFF.md)
+
 本项目的新代码、文档与实验由 GPT 完成（100% GPT 贡献）；人类提供选题授权、计算资源与 GitHub 托管。数学成果及已有算法归原作者，不计作本项目原创。详见 [贡献说明](CREDITS.md)。本项目独立于 OpenAI 官方研究仓库。
 
 ## 能用来做什么
