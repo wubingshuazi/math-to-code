@@ -39,7 +39,7 @@ print(sampler.statistics())
 python -m math_to_code graph-bound --vertices 6 --states 70 --backend curveball --epsilon 0.25
 ```
 
-[网络实验报告](docs/GRAPH_RESULTS.md) 展示了忽略失败交换为什么会把一个类别的概率从 `1/7` 改成 `1/5`。
+[网络实验报告](docs/GRAPH_RESULTS.md) 展示了在 `switch` 后端中，只记录成功改变网络的时刻，为什么会把一个类别的概率从 `1/7` 改成 `1/5`。
 
 ### GAD 公式计算
 

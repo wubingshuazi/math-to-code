@@ -39,7 +39,7 @@ def main():
     bias = data["jump_chain_bias"]
     probabilities = [bias["uniform_two_triangles_probability"]["decimal"], bias["jump_two_triangles_probability"]["decimal"]]
     bars = axes[1].bar([0, 1], probabilities, color=["#2367A2", "#D77A3A"], width=.58)
-    axes[1].set_xticks([0, 1], ["All attempted steps\n(correct uniform target)", "Only changed states\n(jump-chain target)"])
+    axes[1].set_xticks([0, 1], ["All switch attempts\n(correct uniform target)", "Only changed switch states\n(jump-chain target)"])
     axes[1].set(title="(b) Probability of two disjoint triangles", ylabel="Stationary probability")
     axes[1].set_ylim(0, .25)
     axes[1].yaxis.set_major_formatter(PercentFormatter(1))
