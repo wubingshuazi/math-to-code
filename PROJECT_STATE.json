@@ -6,17 +6,20 @@
   "new_engineering_attribution": "100% GPT-generated; human authorization, compute and hosting acknowledged",
   "github_owner": "wubingshuazi",
   "intended_repository": "math-to-code",
-  "publication_status": "v0.3.0_published_and_assets_verified",
+  "publication_status": "v0.3.0_runtime_and_scs_aho_trim_v0.1.0_component_published",
   "repository_url": "https://github.com/wubingshuazi/math-to-code",
   "release_url": "https://github.com/wubingshuazi/math-to-code/releases/tag/v0.3.0",
   "release_confirmed_published": true,
   "release_asset_count": 7,
-  "validated_code_commit": "501615c6da380f08e6cdf1e3dd6336f8fe30407f",
+  "validated_code_commit": "3c3cb6b54cbd11c9dbfde5b8b820fe35f5c08314",
   "ci": {
-    "url": "https://github.com/wubingshuazi/math-to-code/actions/runs/38982929854",
+    "urls": [
+      "https://github.com/wubingshuazi/math-to-code/actions/runs/39038657473",
+      "https://github.com/wubingshuazi/math-to-code/actions/runs/39038657493"
+    ],
     "status": "success",
-    "jobs_passed": 6,
-    "matrix": "4 runtime/audit Windows/Linux x Python3.10/3.14,2research Windows/Linux Python3.14"
+    "jobs_passed": 8,
+    "matrix": "2 native Windows/Linux,4runtime Windows/Linux x Python3.10/3.14,2research Windows/LinuxPython3.14"
   },
   "upstream_repository": "openai/math",
   "upstream_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
@@ -68,12 +71,16 @@
     "heldout_Adobe_batch_native_speedup",
     "1440_equal_output_and_certificate_checks",
     "independent_native_artifact_review",
-    "hash_checked_patch_reconstruction"
+    "hash_checked_patch_reconstruction",
+    "native_cross_platform_CI",
+    "eight_CI_jobs_passed",
+    "scs_native_component_release",
+    "six_component_asset_server_digests_verified"
   ],
   "next": [
-    "publish_scs_component_after_windows_linux_CI",
-    "verify_release_assets_and_write_publication_checkpoint",
-    "then_validate_independent_real_dictionaries_and_mixed_input_batches"
+    "validate_independent_real_dictionaries_with_frozen_heldout_splits",
+    "test_mixed_input_batches_and_single_call_latency",
+    "measure_peak_memory_before_generalizing_or_integrating"
   ],
   "research_limits": [
     "no_global_novelty_claim",
@@ -93,9 +100,10 @@
     "worklogs/2026-10-17-08-v0.3-publication.md",
     "worklogs/2026-10-17-09-speed-project-selection.md",
     "worklogs/2026-10-17-10-native-screen-checkpoint.md",
-    "worklogs/2026-10-17-11-aho-trim-results.md"
+    "worklogs/2026-10-17-11-aho-trim-results.md",
+    "worklogs/2026-10-17-12-scs-publication.md"
   ],
-  "current_phase": "stage_4_native_speedup_publication",
+  "current_phase": "stage_4_first_native_speedup_published",
   "current_version": "0.3.0",
   "second_phase": {
     "quantitative_bound": "R >= beta*eta/(2*U0*U1)*trace_norm(A-B)^2, nats",
@@ -144,7 +152,7 @@
     "compare_uncertainty_and_dependence_with_small_state_exact_results"
   ],
   "fourth_phase": {
-    "status": "heldout_native_batch_gate_passed_publication_in_progress",
+    "status": "first_scoped_native_speedup_published",
     "plan": "docs/LONG_TERM_SPEED_PROJECT.md",
     "primary_family": "128",
     "primary_upstream_software": "nurric-ai/lazy-scs",
@@ -181,7 +189,7 @@
     "source_index": "experiments/patches/lazy-scs/source_index.json",
     "final_sam_sha256": "9ea0e06dd0c6d8062aed1c9ef252404c230f80d6ec2ad741b5e5b90d77907213",
     "component_version": "scs-aho-trim-v0.1.0",
-    "component_publication_status": "pending_CI",
+    "component_publication_status": "published",
     "runtime_version_unchanged": "0.3.0",
     "rust_tests_passed": 6,
     "independent_review_hashes_verified": 112,
@@ -190,6 +198,12 @@
     "rejected_count_optimization": "native counts only3.8-9.3%internal work; no stable whole-program gate pass",
     "local_toolchain_helper": ".buildcheck/native_cargo.py",
     "local_ascii_workspace": "C:/Users/lenovo/math-speed-native",
-    "local_ascii_builds": "C:/Users/lenovo/math-speed-build-targets"
+    "local_ascii_builds": "C:/Users/lenovo/math-speed-build-targets",
+    "component_release_url": "https://github.com/wubingshuazi/math-to-code/releases/tag/scs-aho-trim-v0.1.0",
+    "component_release_code_commit": "3c3cb6b54cbd11c9dbfde5b8b820fe35f5c08314",
+    "component_asset_count": 6,
+    "component_artifact_manifest": "results/scs_release_artifacts.json",
+    "component_ci_jobs_passed": 8,
+    "download_roundtrip_limit": "All6assets match cryptographic GitHub server digests and local sizes. Direct download roundtrip verified3smallassets; larger CDNdownloads stalled locally and an alternative API attempt also failed/stalled. Partial files retained; no broader delivery assertion."
   }
 }

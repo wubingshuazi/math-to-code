@@ -5,8 +5,8 @@ current status and `worklogs/` for evidence, failed approaches and decisions.
 
 Repository: https://github.com/wubingshuazi/math-to-code
 
-Current work: stage 11, publish the first measured native speedup.
-Read docs/SCS_SPEED_RESULTS.md and the latest stage11 worklog before doing
+Current checkpoint: stage 12, first measured native speedup published.
+Read docs/SCS_SPEED_RESULTS.md and the latest stage12 worklog before doing
 more experiments. Aho–Corasick trim replaces two output-sized suffix
 automata in pinned lazy-scs. Final clean-build heldout Adobe batches show
 19.33%/21.06% native process wall-time reduction; same dictionary, nested
@@ -17,6 +17,7 @@ Final source falls back to the old trim on matcher BuildError. Earlier v1
 and rejected event-sweep experiments are retained. Publication/CI status
 and exact next steps are in PROJECT_STATE.json.
 
+Native release: https://github.com/wubingshuazi/math-to-code/releases/tag/scs-aho-trim-v0.1.0
 Native component tag: scs-aho-trim-v0.1.0. Python runtime stays0.3.0.
 Upstream mathematical/software credit and dependency licenses remain.
 
@@ -29,9 +30,10 @@ See docs/GRAPH_RESULTS.md and worklogs/2026-10-17-08-v0.3-publication.md.
 44 local tests pass. Seven release assets have verified SHA-256 hashes in
 results/graph_release_artifacts.json. Publication/CI status is in state JSON.
 
-Current validated code: `501615c6da380f08e6cdf1e3dd6336f8fe30407f`.
-All six CI jobs passed:
-https://github.com/wubingshuazi/math-to-code/actions/runs/38982929854
+Current validated code: `3c3cb6b54cbd11c9dbfde5b8b820fe35f5c08314`.
+All eight CI jobs passed (two native, six runtime/research):
+https://github.com/wubingshuazi/math-to-code/actions/runs/39038657473
+https://github.com/wubingshuazi/math-to-code/actions/runs/39038657493
 The older v0.2.0 release has nine attachments, including full search journals.
 
 Second phase: see `docs/SHARPNESS_RESULTS.md` and stage05 in `worklogs/`.
@@ -127,7 +129,7 @@ The graph pilot is published as v0.3.0. Its edge-list-to-null-model report
 extension is deferred after the user's newer speedup-project steering.
 Native profiling rejected count event-sweep as the main target (3.8–9.3%
 internal share). The Aho trim patch passed the narrow real-corpus batch
-gate. Finish/preserve its release before expanding to independent corpora,
+gate. Its release is complete; preserve it before expanding to independent corpora,
 mixed-input batches, single-call latency and memory. Do not rerun frozen
 benchmarks without a question; keep failures and all earlier versions.
 Windows GNU needs ASCII source/sysroot AND actual ASCII target paths;

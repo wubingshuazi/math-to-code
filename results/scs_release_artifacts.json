@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "component_version": "scs-aho-trim-v0.1.0",
+  "source_code_commit": "3c3cb6b54cbd11c9dbfde5b8b820fe35f5c08314",
+  "release_url": "https://github.com/wubingshuazi/math-to-code/releases/tag/scs-aho-trim-v0.1.0",
+  "published_at": "2026-10-17T13:59:39Z",
+  "is_draft": false,
+  "asset_count": 6,
+  "new_engineering": "100% GPT-generated; original upstream/data/dependency credit retained",
+  "ci": {
+    "native": "https://github.com/wubingshuazi/math-to-code/actions/runs/39038657473",
+    "runtime_research": "https://github.com/wubingshuazi/math-to-code/actions/runs/39038657493",
+    "all_jobs_passed": 8
+  },
+  "tag_points_to_source_code_commit_verified": true,
+  "artifacts": [
+    {
+      "name": "aho-trim.patch",
+      "bytes": 10570,
+      "sha256": "d67b1f8d341ac2908f9ff7fa15ef05a46338bfb8a0a0f13e2e07022835cb3bd3",
+      "download_url": "https://github.com/wubingshuazi/math-to-code/releases/download/scs-aho-trim-v0.1.0/aho-trim.patch",
+      "github_asset_digest": "sha256:d67b1f8d341ac2908f9ff7fa15ef05a46338bfb8a0a0f13e2e07022835cb3bd3",
+      "server_digest_matches_local": true,
+      "download_roundtrip_verified": true
+    },
+    {
+      "name": "build-provenance.json",
+      "bytes": 9663,
+      "sha256": "92769fde270e71517c5f6d1fb8bf53eb0b004116865592043c8e0d12d674e4a2",
+      "download_url": "https://github.com/wubingshuazi/math-to-code/releases/download/scs-aho-trim-v0.1.0/build-provenance.json",
+      "github_asset_digest": "sha256:92769fde270e71517c5f6d1fb8bf53eb0b004116865592043c8e0d12d674e4a2",
+      "server_digest_matches_local": true,
+      "download_roundtrip_verified": true
+    },
+    {
+      "name": "scs-aho-trim-reproduction-v0.1.0.zip",
+      "bytes": 2700540,
+      "sha256": "17546c0acd60be63682695a02b2b53e6b96f364d6755a51118d590db2b9abd7d",
+      "download_url": "https://github.com/wubingshuazi/math-to-code/releases/download/scs-aho-trim-v0.1.0/scs-aho-trim-reproduction-v0.1.0.zip",
+      "github_asset_digest": "sha256:17546c0acd60be63682695a02b2b53e6b96f364d6755a51118d590db2b9abd7d",
+      "server_digest_matches_local": true,
+      "download_roundtrip_verified": false
+    },
+    {
+      "name": "scs-aho-trim-windows-x86_64-v0.1.0.zip",
+      "bytes": 1872386,
+      "sha256": "d7d9cc594b186ffe40c989e77ea206011d44694b3275d417e4a8a399b9ce677f",
+      "download_url": "https://github.com/wubingshuazi/math-to-code/releases/download/scs-aho-trim-v0.1.0/scs-aho-trim-windows-x86_64-v0.1.0.zip",
+      "github_asset_digest": "sha256:d7d9cc594b186ffe40c989e77ea206011d44694b3275d417e4a8a399b9ce677f",
+      "server_digest_matches_local": true,
+      "download_roundtrip_verified": false
+    },
+    {
+      "name": "scs-heldout-final.json",
+      "bytes": 2096262,
+      "sha256": "0dbc960ae9c31c19f1aa0634ddc0d49613d4d64b20471ea3f2adc3033229b16d",
+      "download_url": "https://github.com/wubingshuazi/math-to-code/releases/download/scs-aho-trim-v0.1.0/scs-heldout-final.json",
+      "github_asset_digest": "sha256:0dbc960ae9c31c19f1aa0634ddc0d49613d4d64b20471ea3f2adc3033229b16d",
+      "server_digest_matches_local": true,
+      "download_roundtrip_verified": false
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "bytes": 466,
+      "sha256": "9135b99db68151e616a6c7bb89b9ed813fef8a0d90f0462b1fd106c605974541",
+      "download_url": "https://github.com/wubingshuazi/math-to-code/releases/download/scs-aho-trim-v0.1.0/SHA256SUMS.txt",
+      "github_asset_digest": "sha256:9135b99db68151e616a6c7bb89b9ed813fef8a0d90f0462b1fd106c605974541",
+      "server_digest_matches_local": true,
+      "download_roundtrip_verified": true
+    }
+  ],
+  "packaging_notes": "Windows package amended before publication with project LICENSE/NOTICE/CREDITS and correct root-relative license link. Executable bytes unchanged. ZIP CRC/per-file SHA checked; extracted binaries passed31tinycases.",
+  "delivery_check_limit": "All6assets match cryptographic GitHub server digests and local sizes. Direct download roundtrip verified3smallassets; larger CDNdownloads stalled locally and an alternative API attempt also failed/stalled. Partial files retained; no broader delivery assertion."
+}

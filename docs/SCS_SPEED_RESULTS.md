@@ -65,6 +65,7 @@ python experiments/benchmark_scs_batch.py --inputs .verification/replay-holdout 
 
 - [最终报告](../results/scs_aho_trim_batch_heldout_final.json) 与[逐次日志](../results/scs_aho_trim_batch_heldout_final.jsonl)
 - [构建和实验溯源](../results/scs_native_build_provenance.json)
+- [发布文件校验与跨平台检查](../results/scs_release_artifacts.json)，Windows/Linux 共 8 项 CI 通过；[31 个原生小例检查](../results/scs_native_correctness.json)
 - [补丁、固定源码索引和第三方声明](../experiments/patches/lazy-scs/README.md)
 - [开发集批处理](../results/scs_aho_trim_batch_development.json)、[首次留出测试](../results/scs_aho_trim_batch_heldout.json)、[单进程开发筛查](../results/scs_native_aho_trim_screen.json)
 - [未通过性能门槛的计数尝试](../results/scs_native_screen.json)
