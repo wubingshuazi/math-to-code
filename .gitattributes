@@ -16,3 +16,9 @@ results/thermal_sharpness.svg -whitespace linguist-generated=true
 results/graph_sampling.svg -whitespace linguist-generated=true
 results/*.json linguist-generated=true
 results/*.csv linguist-generated=true
+# Native reports refer to hashes of their original Windows-written journals.
+# Preserve those exact bytes, including the stage10 journal's original CRLF.
+results/scs*.json -text -whitespace
+results/scs*.jsonl -text -whitespace linguist-generated=true
+experiments/patches/lazy-scs/* -text -whitespace
+experiments/patches/lazy-scs/licenses/* -text

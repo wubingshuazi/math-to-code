@@ -5,14 +5,20 @@ current status and `worklogs/` for evidence, failed approaches and decisions.
 
 Repository: https://github.com/wubingshuazi/math-to-code
 
-Current work: stage 09, practical software acceleration feasibility.
-The user now wants a one-to-two-month project that makes useful programs
-faster. Read docs/LONG_TERM_SPEED_PROJECT.md and
-worklogs/2026-10-17-09-speed-project-selection.md before
-continuing the graph-report extension. Primary bounded pilot: profile the
-existing family-128 lazy-scs implementation and test exact event-sweep count
-aggregation. Python structural checks passed; no native or whole-solver
-speedup has yet been established. State JSON has the immediate next steps.
+Current work: stage 11, publish the first measured native speedup.
+Read docs/SCS_SPEED_RESULTS.md and the latest stage11 worklog before doing
+more experiments. Aho–Corasick trim replaces two output-sized suffix
+automata in pinned lazy-scs. Final clean-build heldout Adobe batches show
+19.33%/21.06% native process wall-time reduction; same dictionary, nested
+512/2092 sizes, SAME input repeated40times/process,9repeats/variant. All
+1,440 solves have identical output/certificates; six Rust tests pass.
+This is a scoped batch-throughput result, not general/single-call speedup.
+Final source falls back to the old trim on matcher BuildError. Earlier v1
+and rejected event-sweep experiments are retained. Publication/CI status
+and exact next steps are in PROJECT_STATE.json.
+
+Native component tag: scs-aho-trim-v0.1.0. Python runtime stays0.3.0.
+Upstream mathematical/software credit and dependency licenses remain.
 
 First release: https://github.com/wubingshuazi/math-to-code/releases/tag/v0.1.0
 
@@ -119,14 +125,19 @@ are saved. Read stage05 before doing more runs. Preserve useful failures.
 
 The graph pilot is published as v0.3.0. Its edge-list-to-null-model report
 extension is deferred after the user's newer speedup-project steering.
-The immediate next step is same-commit native lazy-scs profiling and an
-exactly equivalent event-sweep patch. Read the staged stop/go criteria in
-docs/LONG_TERM_SPEED_PROJECT.md; do not commit a month before that gate.
-Preserve existing mathematical/software credit and independent checkers.
+Native profiling rejected count event-sweep as the main target (3.8–9.3%
+internal share). The Aho trim patch passed the narrow real-corpus batch
+gate. Finish/preserve its release before expanding to independent corpora,
+mixed-input batches, single-call latency and memory. Do not rerun frozen
+benchmarks without a question; keep failures and all earlier versions.
+Windows GNU needs ASCII source/sysroot AND actual ASCII target paths;
+.buildcheck/native_cargo.py handles this local setup. Portable reconstruction
+uses experiments/prepare_scs_native.py and public patches/source_index.json.
 
 ## Claims to avoid
 
 No global novelty count, first-GAD-implementation claim, certified arithmetic
-or benchmark speedup. The quantitative corollary has a written derivation;
+or universal speedup. The scoped native SCS result is documented separately.
+The quantitative corollary has a written derivation;
 do not inflate it into an independent proof of the source theorem or a
 historical-priority claim. Preserve original mathematical attribution.

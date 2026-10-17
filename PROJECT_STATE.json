@@ -60,19 +60,27 @@
     "seven_graph_release_assets_verified",
     "practical_speedup_source_feasibility_screen",
     "505_case_event_sweep_structural_probe",
-    "lazy_scs_windows_wheel_functional_smoke_check"
+    "lazy_scs_windows_wheel_functional_smoke_check",
+    "native_same_commit_baseline",
+    "rejected_event_sweep_hotspot",
+    "exact_aho_trim_patch",
+    "six_Rust_trim_tests",
+    "heldout_Adobe_batch_native_speedup",
+    "1440_equal_output_and_certificate_checks",
+    "independent_native_artifact_review",
+    "hash_checked_patch_reconstruction"
   ],
   "next": [
-    "build_same_commit_lazy_scs_native_baseline",
-    "profile_stages_and_actual_count_tables",
-    "implement_event_sweep_with_full_native_parity",
-    "apply_real_workload_stop_go_gate_before_month_commitment"
+    "publish_scs_component_after_windows_linux_CI",
+    "verify_release_assets_and_write_publication_checkpoint",
+    "then_validate_independent_real_dictionaries_and_mixed_input_batches"
   ],
   "research_limits": [
     "no_global_novelty_claim",
     "no_independent_proof_of_source_endpoint_theorem",
     "no_certified_arithmetic",
-    "no_speedup_claim"
+    "native_speedup_scope_is_repeated_same_case_Adobe_batch_throughput",
+    "no_single_call_or_universal_speedup_claim"
   ],
   "logs": [
     "worklogs/2026-10-17-01-source-triage.md",
@@ -83,9 +91,11 @@
     "worklogs/2026-10-17-06-v0.2-publication.md",
     "worklogs/2026-10-17-07-network-pilot.md",
     "worklogs/2026-10-17-08-v0.3-publication.md",
-    "worklogs/2026-10-17-09-speed-project-selection.md"
+    "worklogs/2026-10-17-09-speed-project-selection.md",
+    "worklogs/2026-10-17-10-native-screen-checkpoint.md",
+    "worklogs/2026-10-17-11-aho-trim-results.md"
   ],
-  "current_phase": "stage_4_practical_speedup_feasibility",
+  "current_phase": "stage_4_native_speedup_publication",
   "current_version": "0.3.0",
   "second_phase": {
     "quantitative_bound": "R >= beta*eta/(2*U0*U1)*trace_norm(A-B)^2, nats",
@@ -134,16 +144,21 @@
     "compare_uncertainty_and_dependence_with_small_state_exact_results"
   ],
   "fourth_phase": {
-    "status": "candidate_selected_for_bounded_native_pilot",
+    "status": "heldout_native_batch_gate_passed_publication_in_progress",
     "plan": "docs/LONG_TERM_SPEED_PROJECT.md",
     "primary_family": "128",
     "primary_upstream_software": "nurric-ai/lazy-scs",
     "software_commit": "4ee86724b770c54bad400fe077b297288b087c4b",
-    "candidate_change": "exact event sweep for successor step-function aggregation",
+    "candidate_change": "Aho-Corasick trim with original SAM fallback on matcher BuildError",
     "persisted_differential_cases": 505,
     "independent_reviewer_cases": 1005,
     "model_results": "results/scs_event_sweep_probe.json",
-    "native_solver_speedup": null,
+    "native_solver_speedup": {
+      "scope": "same Adobe dictionary, nested heldout sizes; each process solves same case40times,9processes/variant",
+      "time_reduction_fraction_512": 0.1932865566381219,
+      "time_reduction_fraction_2092": 0.21060201757535235,
+      "exact_output_and_certificates": true
+    },
     "whole_application_speedup": null,
     "wheel_smoke_test": {
       "version": "1.0.0",
@@ -158,7 +173,23 @@
       "result": "abcde",
       "lower_bound": 5
     },
-    "optional_scope_preference": "pending: allow methods outside this collection versus collection-only",
-    "long_phase_gate": "named real workload: >=15% median end-to-end time reduction or >=25% peak-memory reduction, same quality and no material regressions"
+    "optional_scope_preference": "confirmed: practical speedup first, mature methods outside the collection allowed",
+    "long_phase_gate": "named real workload: >=15% median end-to-end time reduction or >=25% peak-memory reduction, same quality and no material regressions",
+    "results": "docs/SCS_SPEED_RESULTS.md",
+    "final_report": "results/scs_aho_trim_batch_heldout_final.json",
+    "provenance": "results/scs_native_build_provenance.json",
+    "source_index": "experiments/patches/lazy-scs/source_index.json",
+    "final_sam_sha256": "9ea0e06dd0c6d8062aed1c9ef252404c230f80d6ec2ad741b5e5b90d77907213",
+    "component_version": "scs-aho-trim-v0.1.0",
+    "component_publication_status": "pending_CI",
+    "runtime_version_unchanged": "0.3.0",
+    "rust_tests_passed": 6,
+    "independent_review_hashes_verified": 112,
+    "solves_individually_checked": 1440,
+    "native_gate_scope": "narrow real-corpus batch gate passed; independent applications and peak memory unmeasured",
+    "rejected_count_optimization": "native counts only3.8-9.3%internal work; no stable whole-program gate pass",
+    "local_toolchain_helper": ".buildcheck/native_cargo.py",
+    "local_ascii_workspace": "C:/Users/lenovo/math-speed-native",
+    "local_ascii_builds": "C:/Users/lenovo/math-speed-build-targets"
   }
 }

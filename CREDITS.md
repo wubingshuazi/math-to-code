@@ -7,5 +7,6 @@
 - GPT 作者标记是生成过程说明，不代表法律主体、官方 OpenAI 项目或人工专家认证。
 - 数学命题、原始证明、已有公式与既有软件属于相应原作者；“100%”仅描述本项目**新增工程材料的生成过程**，不覆盖所依赖的数学成果、开源依赖、GitHub 服务和计算资源。
 - 第 276 组原手稿署名 OpenAI。单次使用的 GAD Holevo 优化有 2007 年等先前工作；本项目不主张公式原创。
+- 字符串组件沿用第 128 组成果和 Krushna Dere 的 MIT 软件 lazy-scs；裁剪使用 Andrew Gallant 及贡献者维护的 aho-corasick/memchr。字体名称数据来自 Adobe。新增补丁和实验属于本项目，原有数学、软件和数据贡献归原作者，完整声明见 experiments/patches/lazy-scs/THIRD_PARTY_NOTICES.md。
 
 提交记录的生成者名称用于标记 AI 生成过程，GitHub 托管身份归用户账号。

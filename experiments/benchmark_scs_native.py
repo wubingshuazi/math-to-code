@@ -28,6 +28,8 @@ def sha(path: Path) -> str:
 
 
 def main() -> None:
+    if sys.flags.optimize:
+        raise SystemExit('Run without Python -O: benchmark integrity assertions must remain enabled.')
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--inputs', type=Path, required=True)
     parser.add_argument('--base', type=Path, required=True)
@@ -59,13 +61,14 @@ def main() -> None:
     report = {
         'scope': 'native development-set screen, not a general speedup or held-out adoption result',
         'target_commit': manifest['target_commit'],
-        'environment': {'python': sys.version, 'platform': platform.platform()},
+        'environment': {'python': sys.version, 'platform': platform.platform(), 'optimize': sys.flags.optimize},
         'input_manifest_sha256': sha(manifest_path),
         'benchmark_script_sha256': sha(Path(__file__)),
         'input_validator_sha256': sha(Path(__file__).with_name('scs_native_cases.py')),
         'binaries': {name: {'name': path.name, 'sha256': sha(path), 'bytes': path.stat().st_size}
                      for name, path in binaries.items()},
         'repeats': args.repeats, 'seed': args.seed,
+        'timeout_seconds': args.timeout,
         'timing_scope': 'sequential unprofiled process wall time; --verify enabled for both variants',
         'cases': [], 'failures': [],
     }
@@ -87,6 +90,15 @@ def main() -> None:
                                         '--verify', '-o', str(output.absolute())],
                                        env=env, capture_output=True, timeout=args.timeout)
         except subprocess.TimeoutExpired as error:
+            failure = {'case': row['name'], 'variant': variant, 'mode': mode,
+                       'index': index, 'failure': 'timeout', 'timeout_seconds': args.timeout,
+                       'elapsed_ns': perf_counter_ns() - start,
+                       'stdout_partial': (error.stdout or b'')[:20000].decode('utf-8', errors='replace'),
+                       'stderr_partial': (error.stderr or b'')[:20000].decode('utf-8', errors='replace')}
+            with journal.open('a', encoding='utf-8') as stream:
+                stream.write(json.dumps(failure) + '\n')
+                stream.flush()
+                os.fsync(stream.fileno())
             raise RuntimeError(f'{variant} timed out on {row["name"]}') from error
         wall_ns = perf_counter_ns() - start
         if completed.returncode:

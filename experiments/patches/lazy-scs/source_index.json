@@ -1,0 +1,200 @@
+{
+  "repository": "nurric-ai/lazy-scs",
+  "commit": "4ee86724b770c54bad400fe077b297288b087c4b",
+  "files": [
+    {
+      "path": "LICENSE",
+      "sha256": "af59ef4a8b9f8bec95a3b7a4d06a935c6062225797d1ccd5c2237f905f3163c1",
+      "bytes": 1069
+    },
+    {
+      "path": "scs/scs-rs/Cargo.lock",
+      "sha256": "c4eee95c8b5575dd376ba31a57b3b0dc6ffa3d221f4929eb9f9242488e819f0d",
+      "bytes": 4684
+    },
+    {
+      "path": "scs/scs-rs/Cargo.toml",
+      "sha256": "f1d6fed8abbd8febde4a24a73c44f4b7172dd8fa6d7c0c0c65a638839195a366",
+      "bytes": 582
+    },
+    {
+      "path": "scs/scs-rs/src/approx.rs",
+      "sha256": "47a36c696ff21209af8a597349f1965220fae958501edbf44a36720250c21aa7",
+      "bytes": 26452
+    },
+    {
+      "path": "scs/scs-rs/src/counts.rs",
+      "sha256": "50f72103258ee5d2e4e5eb2f3d31ccace0ead6d90597173725c971e02a059274",
+      "bytes": 10950
+    },
+    {
+      "path": "scs/scs-rs/src/lib.rs",
+      "sha256": "f14d1730894a8d7062d78272fea8aaf488109329f4d055a6030b0243a7d21d22",
+      "bytes": 3074
+    },
+    {
+      "path": "scs/scs-rs/src/main.rs",
+      "sha256": "36febba36354ffd100b34c0d44cdd57176dfaacd90ed2088ec811077b7896242",
+      "bytes": 2461
+    },
+    {
+      "path": "scs/scs-rs/src/python.rs",
+      "sha256": "3d62294ef0c145dd155dd518b60afb34183f1963ccb8ba14719ec0a11d933b52",
+      "bytes": 1429
+    },
+    {
+      "path": "scs/scs-rs/src/sam.rs",
+      "sha256": "a674285d74e6aa307dc2274803fe3a942f5305867f252ef6255e808215b87d39",
+      "bytes": 8083
+    },
+    {
+      "path": "scs/scs-rs/src/verify.rs",
+      "sha256": "6df58e838e02c59e524f6f5e617f56371601da8683f3815f9eecbea7dd9e0e70",
+      "bytes": 5596
+    },
+    {
+      "path": "scs/test_compressed.py",
+      "sha256": "13d4448afe18c3cf0febf4ad5528620f38a8531b17b4aeb33062ad80b8b61712",
+      "bytes": 1087
+    },
+    {
+      "path": "scs/test_lazy_c.py",
+      "sha256": "1760a7d8e311ab7fbc79f2930947c0ee347c63477b7078cd851c4a51f4f1f580",
+      "bytes": 912
+    },
+    {
+      "path": "scs/test_rust.py",
+      "sha256": "121eb2d5be9e0dcd6ed6ff84207230b00d86b3859b09bea6e7ab4df79558ae70",
+      "bytes": 1724
+    }
+  ],
+  "variants": {
+    "original": {
+      "patches": [],
+      "file_sha256": {
+        "LICENSE": "af59ef4a8b9f8bec95a3b7a4d06a935c6062225797d1ccd5c2237f905f3163c1",
+        "scs/scs-rs/Cargo.lock": "c4eee95c8b5575dd376ba31a57b3b0dc6ffa3d221f4929eb9f9242488e819f0d",
+        "scs/scs-rs/Cargo.toml": "f1d6fed8abbd8febde4a24a73c44f4b7172dd8fa6d7c0c0c65a638839195a366",
+        "scs/scs-rs/src/approx.rs": "47a36c696ff21209af8a597349f1965220fae958501edbf44a36720250c21aa7",
+        "scs/scs-rs/src/counts.rs": "50f72103258ee5d2e4e5eb2f3d31ccace0ead6d90597173725c971e02a059274",
+        "scs/scs-rs/src/lib.rs": "f14d1730894a8d7062d78272fea8aaf488109329f4d055a6030b0243a7d21d22",
+        "scs/scs-rs/src/main.rs": "36febba36354ffd100b34c0d44cdd57176dfaacd90ed2088ec811077b7896242",
+        "scs/scs-rs/src/python.rs": "3d62294ef0c145dd155dd518b60afb34183f1963ccb8ba14719ec0a11d933b52",
+        "scs/scs-rs/src/sam.rs": "a674285d74e6aa307dc2274803fe3a942f5305867f252ef6255e808215b87d39",
+        "scs/scs-rs/src/verify.rs": "6df58e838e02c59e524f6f5e617f56371601da8683f3815f9eecbea7dd9e0e70",
+        "scs/test_compressed.py": "13d4448afe18c3cf0febf4ad5528620f38a8531b17b4aeb33062ad80b8b61712",
+        "scs/test_lazy_c.py": "1760a7d8e311ab7fbc79f2930947c0ee347c63477b7078cd851c4a51f4f1f580",
+        "scs/test_rust.py": "121eb2d5be9e0dcd6ed6ff84207230b00d86b3859b09bea6e7ab4df79558ae70"
+      }
+    },
+    "profile-original": {
+      "patches": [
+        "profiling.patch"
+      ],
+      "file_sha256": {
+        "LICENSE": "af59ef4a8b9f8bec95a3b7a4d06a935c6062225797d1ccd5c2237f905f3163c1",
+        "scs/scs-rs/Cargo.lock": "c4eee95c8b5575dd376ba31a57b3b0dc6ffa3d221f4929eb9f9242488e819f0d",
+        "scs/scs-rs/Cargo.toml": "f1d6fed8abbd8febde4a24a73c44f4b7172dd8fa6d7c0c0c65a638839195a366",
+        "scs/scs-rs/src/approx.rs": "47a36c696ff21209af8a597349f1965220fae958501edbf44a36720250c21aa7",
+        "scs/scs-rs/src/counts.rs": "50f72103258ee5d2e4e5eb2f3d31ccace0ead6d90597173725c971e02a059274",
+        "scs/scs-rs/src/lib.rs": "a31281cf31484cd3a5765c98c173574da4f1cfa0002ac5eb815a1a88f347b6ef",
+        "scs/scs-rs/src/main.rs": "7e2c1d2a2d3a2da5cbe131eee8a8232cd546623215fa89122d6e16939c857895",
+        "scs/scs-rs/src/python.rs": "3d62294ef0c145dd155dd518b60afb34183f1963ccb8ba14719ec0a11d933b52",
+        "scs/scs-rs/src/sam.rs": "a674285d74e6aa307dc2274803fe3a942f5305867f252ef6255e808215b87d39",
+        "scs/scs-rs/src/verify.rs": "6df58e838e02c59e524f6f5e617f56371601da8683f3815f9eecbea7dd9e0e70",
+        "scs/test_compressed.py": "13d4448afe18c3cf0febf4ad5528620f38a8531b17b4aeb33062ad80b8b61712",
+        "scs/test_lazy_c.py": "1760a7d8e311ab7fbc79f2930947c0ee347c63477b7078cd851c4a51f4f1f580",
+        "scs/test_rust.py": "121eb2d5be9e0dcd6ed6ff84207230b00d86b3859b09bea6e7ab4df79558ae70"
+      }
+    },
+    "event-sweep": {
+      "patches": [
+        "profiling.patch",
+        "event-sweep.patch"
+      ],
+      "file_sha256": {
+        "LICENSE": "af59ef4a8b9f8bec95a3b7a4d06a935c6062225797d1ccd5c2237f905f3163c1",
+        "scs/scs-rs/Cargo.lock": "c4eee95c8b5575dd376ba31a57b3b0dc6ffa3d221f4929eb9f9242488e819f0d",
+        "scs/scs-rs/Cargo.toml": "f1d6fed8abbd8febde4a24a73c44f4b7172dd8fa6d7c0c0c65a638839195a366",
+        "scs/scs-rs/src/approx.rs": "47a36c696ff21209af8a597349f1965220fae958501edbf44a36720250c21aa7",
+        "scs/scs-rs/src/counts.rs": "46ba03500c1b1463b27dc67486d35544a80928aa6a51261f93f232ac25320a24",
+        "scs/scs-rs/src/lib.rs": "a31281cf31484cd3a5765c98c173574da4f1cfa0002ac5eb815a1a88f347b6ef",
+        "scs/scs-rs/src/main.rs": "7e2c1d2a2d3a2da5cbe131eee8a8232cd546623215fa89122d6e16939c857895",
+        "scs/scs-rs/src/python.rs": "3d62294ef0c145dd155dd518b60afb34183f1963ccb8ba14719ec0a11d933b52",
+        "scs/scs-rs/src/sam.rs": "a674285d74e6aa307dc2274803fe3a942f5305867f252ef6255e808215b87d39",
+        "scs/scs-rs/src/verify.rs": "6df58e838e02c59e524f6f5e617f56371601da8683f3815f9eecbea7dd9e0e70",
+        "scs/test_compressed.py": "13d4448afe18c3cf0febf4ad5528620f38a8531b17b4aeb33062ad80b8b61712",
+        "scs/test_lazy_c.py": "1760a7d8e311ab7fbc79f2930947c0ee347c63477b7078cd851c4a51f4f1f580",
+        "scs/test_rust.py": "121eb2d5be9e0dcd6ed6ff84207230b00d86b3859b09bea6e7ab4df79558ae70"
+      }
+    },
+    "aho-trim": {
+      "patches": [
+        "aho-trim.patch"
+      ],
+      "file_sha256": {
+        "LICENSE": "af59ef4a8b9f8bec95a3b7a4d06a935c6062225797d1ccd5c2237f905f3163c1",
+        "scs/scs-rs/Cargo.lock": "221bb1a4cd08d54f880f6a180918534d1873bf128e747516518ccc7705f81536",
+        "scs/scs-rs/Cargo.toml": "38faa059473f3cc72c9f8e59a84e9d751fdc89700fbf44d8b9a1e7896ab0ca08",
+        "scs/scs-rs/src/approx.rs": "47a36c696ff21209af8a597349f1965220fae958501edbf44a36720250c21aa7",
+        "scs/scs-rs/src/counts.rs": "50f72103258ee5d2e4e5eb2f3d31ccace0ead6d90597173725c971e02a059274",
+        "scs/scs-rs/src/lib.rs": "f14d1730894a8d7062d78272fea8aaf488109329f4d055a6030b0243a7d21d22",
+        "scs/scs-rs/src/main.rs": "36febba36354ffd100b34c0d44cdd57176dfaacd90ed2088ec811077b7896242",
+        "scs/scs-rs/src/python.rs": "3d62294ef0c145dd155dd518b60afb34183f1963ccb8ba14719ec0a11d933b52",
+        "scs/scs-rs/src/sam.rs": "9ea0e06dd0c6d8062aed1c9ef252404c230f80d6ec2ad741b5e5b90d77907213",
+        "scs/scs-rs/src/verify.rs": "6df58e838e02c59e524f6f5e617f56371601da8683f3815f9eecbea7dd9e0e70",
+        "scs/test_compressed.py": "13d4448afe18c3cf0febf4ad5528620f38a8531b17b4aeb33062ad80b8b61712",
+        "scs/test_lazy_c.py": "1760a7d8e311ab7fbc79f2930947c0ee347c63477b7078cd851c4a51f4f1f580",
+        "scs/test_rust.py": "121eb2d5be9e0dcd6ed6ff84207230b00d86b3859b09bea6e7ab4df79558ae70"
+      }
+    },
+    "aho-trim-v1": {
+      "patches": [
+        "aho-trim-v1.patch"
+      ],
+      "file_sha256": {
+        "LICENSE": "af59ef4a8b9f8bec95a3b7a4d06a935c6062225797d1ccd5c2237f905f3163c1",
+        "scs/scs-rs/Cargo.lock": "221bb1a4cd08d54f880f6a180918534d1873bf128e747516518ccc7705f81536",
+        "scs/scs-rs/Cargo.toml": "38faa059473f3cc72c9f8e59a84e9d751fdc89700fbf44d8b9a1e7896ab0ca08",
+        "scs/scs-rs/src/approx.rs": "47a36c696ff21209af8a597349f1965220fae958501edbf44a36720250c21aa7",
+        "scs/scs-rs/src/counts.rs": "50f72103258ee5d2e4e5eb2f3d31ccace0ead6d90597173725c971e02a059274",
+        "scs/scs-rs/src/lib.rs": "f14d1730894a8d7062d78272fea8aaf488109329f4d055a6030b0243a7d21d22",
+        "scs/scs-rs/src/main.rs": "36febba36354ffd100b34c0d44cdd57176dfaacd90ed2088ec811077b7896242",
+        "scs/scs-rs/src/python.rs": "3d62294ef0c145dd155dd518b60afb34183f1963ccb8ba14719ec0a11d933b52",
+        "scs/scs-rs/src/sam.rs": "906c0c3c664e7e2f33a6deb6609e9917256e60cec2f8ebac1d2b0c3ce5e53cbe",
+        "scs/scs-rs/src/verify.rs": "6df58e838e02c59e524f6f5e617f56371601da8683f3815f9eecbea7dd9e0e70",
+        "scs/test_compressed.py": "13d4448afe18c3cf0febf4ad5528620f38a8531b17b4aeb33062ad80b8b61712",
+        "scs/test_lazy_c.py": "1760a7d8e311ab7fbc79f2930947c0ee347c63477b7078cd851c4a51f4f1f580",
+        "scs/test_rust.py": "121eb2d5be9e0dcd6ed6ff84207230b00d86b3859b09bea6e7ab4df79558ae70"
+      }
+    },
+    "profile-aho-trim-v1": {
+      "patches": [
+        "profiling.patch",
+        "aho-trim-v1.patch"
+      ],
+      "file_sha256": {
+        "LICENSE": "af59ef4a8b9f8bec95a3b7a4d06a935c6062225797d1ccd5c2237f905f3163c1",
+        "scs/scs-rs/Cargo.lock": "221bb1a4cd08d54f880f6a180918534d1873bf128e747516518ccc7705f81536",
+        "scs/scs-rs/Cargo.toml": "38faa059473f3cc72c9f8e59a84e9d751fdc89700fbf44d8b9a1e7896ab0ca08",
+        "scs/scs-rs/src/approx.rs": "47a36c696ff21209af8a597349f1965220fae958501edbf44a36720250c21aa7",
+        "scs/scs-rs/src/counts.rs": "50f72103258ee5d2e4e5eb2f3d31ccace0ead6d90597173725c971e02a059274",
+        "scs/scs-rs/src/lib.rs": "a31281cf31484cd3a5765c98c173574da4f1cfa0002ac5eb815a1a88f347b6ef",
+        "scs/scs-rs/src/main.rs": "7e2c1d2a2d3a2da5cbe131eee8a8232cd546623215fa89122d6e16939c857895",
+        "scs/scs-rs/src/python.rs": "3d62294ef0c145dd155dd518b60afb34183f1963ccb8ba14719ec0a11d933b52",
+        "scs/scs-rs/src/sam.rs": "906c0c3c664e7e2f33a6deb6609e9917256e60cec2f8ebac1d2b0c3ce5e53cbe",
+        "scs/scs-rs/src/verify.rs": "6df58e838e02c59e524f6f5e617f56371601da8683f3815f9eecbea7dd9e0e70",
+        "scs/test_compressed.py": "13d4448afe18c3cf0febf4ad5528620f38a8531b17b4aeb33062ad80b8b61712",
+        "scs/test_lazy_c.py": "1760a7d8e311ab7fbc79f2930947c0ee347c63477b7078cd851c4a51f4f1f580",
+        "scs/test_rust.py": "121eb2d5be9e0dcd6ed6ff84207230b00d86b3859b09bea6e7ab4df79558ae70"
+      }
+    }
+  },
+  "patch_sha256": {
+    "aho-trim-v1.patch": "a7d5a920ffdacf765dec5e1be413ea9c5bb8dca01d3f1c458cb2d91ffad4b92d",
+    "aho-trim.patch": "d67b1f8d341ac2908f9ff7fa15ef05a46338bfb8a0a0f13e2e07022835cb3bd3",
+    "event-sweep.patch": "7a1f34407b7d682e6bae2fdc9475fa73e8ef253ca45c126ccc6c80c47d8b091a",
+    "profiling.patch": "032d53a120229c9e72ef70ded8d9157cf93f5b20db0cc6e1399209286ee80f48"
+  },
+  "attribution": "Original lazy-scs MIT code retained; new experimental patches and tests generated by GPT."
+}

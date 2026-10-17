@@ -1,0 +1,275 @@
+--- a/scs/scs-rs/src/lib.rs
++++ b/scs/scs-rs/src/lib.rs
+@@ -10,18 +10,122 @@
+ #[cfg(feature = "python")]
+ mod python;
+ 
++/// Local benchmark instrumentation, 100% GPT-generated. Disabled unless
++/// LAZY_SCS_PROFILE is exactly "1" (timings) or "stats" (timings plus tables).
++/// The normal solver takes a separate path with no stage timers or scans.
++#[derive(Default)]
++pub struct SolveProfile {
++    pub preprocess_ns: u128,
++    pub sam_ns: u128,
++    pub count_ns: u128,
++    pub construct_ns: u128,
++    pub verify_lower_bound_ns: u128,
++    pub trim_ns: u128,
++    pub stats_collection_ns: u128,
++    pub solve_total_ns: u128,
++    pub input_strings: usize,
++    pub input_chars: usize,
++    pub reduced_strings: usize,
++    pub reduced_chars: usize,
++    pub sam_states: usize,
++    pub sam_edges: usize,
++    pub count_calls: usize,
++    pub periodic_fixpoint_passes: usize,
++    pub enabled_rules: usize,
++    pub collect_tables: bool,
++    rounds: Vec<CountRoundProfile>,
++}
++
++#[derive(Default)]
++struct SegmentProfile {
++    total: usize,
++    max: usize,
++    // Segment counts: 0, 1, 2, 3, 4, 5..=8, 9..=16, 17..=64, >=65.
++    histogram: [usize; 9],
++}
++
++impl SegmentProfile {
++    fn add(&mut self, len: usize) {
++        self.total += len;
++        self.max = self.max.max(len);
++        let bin = match len {
++            0..=4 => len,
++            5..=8 => 5,
++            9..=16 => 6,
++            17..=64 => 7,
++            _ => 8,
++        };
++        self.histogram[bin] += 1;
++    }
++
++    fn json(&self) -> String {
++        format!("{{\"total\":{},\"max_per_state\":{},\"histogram\":{:?}}}",
++                self.total, self.max, self.histogram)
++    }
++}
++
++struct CountRoundProfile {
++    round: usize,
++    elapsed_ns: u128,
++    periodic_fixpoint_passes: usize,
++    f: Option<SegmentProfile>,
++    r: Option<SegmentProfile>,
++}
++
++impl SolveProfile {
++    /// Emit one record per instance. CLI total starts immediately before the
++    /// input clone and ends after coverage; it excludes parsing, output and JSON.
++    pub fn json(&self, coverage_verify_ns: u128, cli_total_ns: u128,
++                instance_index: usize, check: bool, verify_lb: bool) -> String {
++        let rounds: Vec<String> = self.rounds.iter().map(|r| {
++            let f = r.f.as_ref().map_or_else(|| "null".to_owned(), SegmentProfile::json);
++            let rev = r.r.as_ref().map_or_else(|| "null".to_owned(), SegmentProfile::json);
++            format!("{{\"round\":{},\"count_ns\":{},\"periodic_fixpoint_passes\":{},\"f_segments\":{},\"r_segments\":{}}}",
++                    r.round, r.elapsed_ns, r.periodic_fixpoint_passes, f, rev)
++        }).collect();
++        let sam_edges = if self.collect_tables { self.sam_edges.to_string() } else { "null".to_owned() };
++        format!(concat!(
++            "{{\"kind\":\"lazy_scs_stage_profile\",\"schema_version\":1,",
++            "\"mode\":\"{}\",\"instance_index\":{},\"check\":{},\"verify_lower_bound\":{},",
++            "\"timings_ns\":{{\"preprocess\":{},\"sam\":{},\"count\":{},\"construct\":{},",
++            "\"verify_lower_bound\":{},\"trim\":{},\"stats_collection\":{},\"solve_total\":{},",
++            "\"coverage_verify\":{},\"cli_total\":{}}},",
++            "\"cli_total_scope\":\"input_clone_solve_and_coverage_excludes_parse_and_output\",",
++            "\"counts\":{{\"input_strings\":{},\"input_chars\":{},\"reduced_strings\":{},",
++            "\"reduced_chars\":{},\"sam_states\":{},\"sam_edges\":{},\"count_calls\":{},",
++            "\"periodic_fixpoint_passes\":{},\"enabled_rules\":{}}},",
++            "\"histogram_bins\":[\"0\",\"1\",\"2\",\"3\",\"4\",\"5-8\",\"9-16\",\"17-64\",\"65+\"],",
++            "\"histogram_includes_root\":true,\"count_rounds\":[{}]}}"),
++            if self.collect_tables { "stats" } else { "timings" }, instance_index, check, verify_lb,
++            self.preprocess_ns, self.sam_ns, self.count_ns, self.construct_ns,
++            self.verify_lower_bound_ns, self.trim_ns, self.stats_collection_ns, self.solve_total_ns,
++            coverage_verify_ns, cli_total_ns, self.input_strings, self.input_chars,
++            self.reduced_strings, self.reduced_chars, self.sam_states, sam_edges,
++            self.count_calls, self.periodic_fixpoint_passes, self.enabled_rules, rounds.join(","))
++    }
++}
++
+ pub struct Solved {
+     pub superstring: Vec<u8>,
+     pub w_ext: u64,
+     pub w: u64,
+     pub rounds: usize,
+     pub stats: std::collections::BTreeMap<&'static str, u64>,
++    pub profile: Option<SolveProfile>,
+ }
+ 
+ pub fn solve(strings: Vec<Vec<u8>>, check: bool, verify_lb: bool) -> Solved {
++    match std::env::var("LAZY_SCS_PROFILE").as_deref() {
++        Ok("1") => solve_profiled(strings, check, verify_lb, false),
++        Ok("stats") => solve_profiled(strings, check, verify_lb, true),
++        _ => solve_unprofiled(strings, check, verify_lb),
++    }
++}
++
++fn solve_unprofiled(strings: Vec<Vec<u8>>, check: bool, verify_lb: bool) -> Solved {
+     let req = sam::reduce_inputs(strings);
+     if req.is_empty() {
+-        return Solved { superstring: vec![], w_ext: 0, w: 0, rounds: 0, stats: Default::default() };
++        return Solved { superstring: vec![], w_ext: 0, w: 0, rounds: 0, stats: Default::default(), profile: None };
+     }
+     let s = sam::Sam::build(req);
+     let order = s.order_desc();
+@@ -44,7 +148,106 @@
+                 }
+                 stats.insert("untrimmed_length", o.superstring.len() as u64);
+                 let trimmed = sam::trim(&o.superstring, &s.strings);
+-                return Solved { superstring: trimmed, w_ext, w: o.w, rounds: round, stats };
++                return Solved { superstring: trimmed, w_ext, w: o.w, rounds: round, stats, profile: None };
++            }
++            Err(approx::NeedRule(p, g)) => {
++                assert!(!texts.iter().any(|t| t.0 == p && t.1 == g), "rule enabled but still missing");
++                texts.push((p, g));
++            }
++        }
++    }
++    unreachable!()
++}
++
++fn solve_profiled(strings: Vec<Vec<u8>>, check: bool, verify_lb: bool, collect_tables: bool) -> Solved {
++    let start = std::time::Instant::now();
++    let mut result = solve_profiled_inner(strings, check, verify_lb, collect_tables);
++    // Include destruction of the final SAM/count tables and temporary rules.
++    result.profile.as_mut().unwrap().solve_total_ns = start.elapsed().as_nanos();
++    result
++}
++
++fn solve_profiled_inner(strings: Vec<Vec<u8>>, check: bool, verify_lb: bool, collect_tables: bool) -> Solved {
++    use std::time::Instant;
++    let total_start = Instant::now();
++    let stats_start = Instant::now();
++    let mut profile = SolveProfile {
++        input_strings: strings.len(),
++        input_chars: strings.iter().map(Vec::len).sum(),
++        collect_tables,
++        ..Default::default()
++    };
++    profile.stats_collection_ns += stats_start.elapsed().as_nanos();
++    let start = Instant::now();
++    let req = sam::reduce_inputs(strings);
++    profile.preprocess_ns = start.elapsed().as_nanos();
++    let stats_start = Instant::now();
++    profile.reduced_strings = req.len();
++    profile.reduced_chars = req.iter().map(Vec::len).sum();
++    profile.stats_collection_ns += stats_start.elapsed().as_nanos();
++    if req.is_empty() {
++        profile.solve_total_ns = total_start.elapsed().as_nanos();
++        return Solved { superstring: vec![], w_ext: 0, w: 0, rounds: 0,
++                        stats: Default::default(), profile: Some(profile) };
++    }
++    let start = Instant::now();
++    let s = sam::Sam::build(req);
++    let order = s.order_desc();
++    profile.sam_ns = start.elapsed().as_nanos();
++    let stats_start = Instant::now();
++    profile.sam_states = s.n();
++    // This one linear metadata scan is restricted to the optional stats mode.
++    if collect_tables {
++        profile.sam_edges = s.next.iter().map(Vec::len).sum();
++    }
++    profile.stats_collection_ns += stats_start.elapsed().as_nanos();
++    let mut texts: Vec<(usize, Vec<u8>)> = Vec::new();
++    let mut w_ext = 0;
++    for round in 1.. {
++        let start = Instant::now();
++        let c = counts::Counts::new(&s, &order, &texts);
++        let count_ns = start.elapsed().as_nanos();
++        profile.count_ns += count_ns;
++        profile.count_calls += 1;
++        profile.periodic_fixpoint_passes += c.passes;
++        let stats_start = Instant::now();
++        let (f, r) = if collect_tables {
++            let mut f = SegmentProfile::default();
++            let mut r = SegmentProfile::default();
++            for x in 0..s.n() {
++                f.add(c.f(x as u32).len());
++                r.add(c.r(x as u32).len());
++            }
++            (Some(f), Some(r))
++        } else { (None, None) };
++        profile.rounds.push(CountRoundProfile {
++            round, elapsed_ns: count_ns, periodic_fixpoint_passes: c.passes, f, r,
++        });
++        profile.stats_collection_ns += stats_start.elapsed().as_nanos();
++        if round == 1 { w_ext = c.w; }
++        let start = Instant::now();
++        let outcome = approx::run(&s, &c, check);
++        profile.construct_ns += start.elapsed().as_nanos();
++        match outcome {
++            Ok(o) => {
++                let mut stats = o.stats;
++                stats.insert("count_passes", c.passes as u64);
++                if verify_lb {
++                    let start = Instant::now();
++                    let rep = verify::verify(&s, &c, &texts);
++                    profile.verify_lower_bound_ns += start.elapsed().as_nanos();
++                    stats.insert("verify_points", rep.checked_points);
++                    stats.insert("verify_unjustified", rep.unjustified);
++                    stats.insert("verify_ext_violations", rep.ext_violations);
++                }
++                stats.insert("untrimmed_length", o.superstring.len() as u64);
++                let start = Instant::now();
++                let trimmed = sam::trim(&o.superstring, &s.strings);
++                profile.trim_ns = start.elapsed().as_nanos();
++                profile.enabled_rules = texts.len();
++                profile.solve_total_ns = total_start.elapsed().as_nanos();
++                return Solved { superstring: trimmed, w_ext, w: o.w, rounds: round,
++                                stats, profile: Some(profile) };
+             }
+             Err(approx::NeedRule(p, g)) => {
+                 assert!(!texts.iter().any(|t| t.0 == p && t.1 == g), "rule enabled but still missing");
+--- a/scs/scs-rs/src/main.rs
++++ b/scs/scs-rs/src/main.rs
+@@ -13,15 +13,23 @@
+     let check = args.iter().any(|a| a == "--check");
+     let batch = args.iter().any(|a| a == "--batch");
+     let verify_lb = args.iter().any(|a| a == "--verify");
++    let profile_requested = matches!(std::env::var("LAZY_SCS_PROFILE").as_deref(), Ok("1") | Ok("stats"));
+     let path = args.iter().skip(1).find(|a| !a.starts_with("--") && !a.starts_with('-')).expect("input file");
+     let lines: Vec<String> = std::io::BufReader::new(std::fs::File::open(path).unwrap()).lines().map(|l| l.unwrap()).collect();
+     if batch {
+         let out = std::io::stdout();
+         let mut out = out.lock();
+-        for chunk in lines.split(|l| l.trim() == "---") {
++        for (instance_index, chunk) in lines.split(|l| l.trim() == "---").enumerate() {
+             let strings = read_strings(chunk);
++            let profile_start = profile_requested.then(Instant::now);
+             let r = solve(strings.clone(), check, verify_lb);
++            let coverage_start = r.profile.as_ref().map(|_| Instant::now());
+             assert!(covers(&r.superstring, &strings), "output misses an input");
++            let coverage_ns = coverage_start.map_or(0, |start| start.elapsed().as_nanos());
++            if let Some(profile) = &r.profile {
++                let cli_ns = profile_start.unwrap().elapsed().as_nanos();
++                eprintln!("{}", profile.json(coverage_ns, cli_ns, instance_index, check, verify_lb));
++            }
+             let st: Vec<String> = r.stats.iter().filter(|(k, v)| **v > 0 || k.starts_with("verify_")).map(|(k, v)| format!("{k}={v}")).collect();
+             writeln!(out, "{} {} {} {} {}", r.w_ext, r.w, r.superstring.len(), r.rounds, st.join(",")).unwrap();
+             writeln!(out, "{}", String::from_utf8_lossy(&r.superstring)).unwrap();
+@@ -33,7 +41,13 @@
+     let t0 = Instant::now();
+     let r = solve(strings.clone(), check, verify_lb);
+     let secs = t0.elapsed().as_secs_f64();
++    let coverage_start = r.profile.as_ref().map(|_| Instant::now());
+     assert!(covers(&r.superstring, &strings), "output misses an input");
++    let coverage_ns = coverage_start.map_or(0, |start| start.elapsed().as_nanos());
++    if let Some(profile) = &r.profile {
++        let cli_ns = t0.elapsed().as_nanos();
++        eprintln!("{}", profile.json(coverage_ns, cli_ns, 0, check, verify_lb));
++    }
+     if let Some(i) = args.iter().position(|a| a == "-o") {
+         std::fs::write(&args[i + 1], &r.superstring).unwrap();
+     }

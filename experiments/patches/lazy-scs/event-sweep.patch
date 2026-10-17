@@ -1,0 +1,359 @@
+--- a/scs/scs-rs/src/counts.rs
++++ b/scs/scs-rs/src/counts.rs
+@@ -84,7 +84,178 @@
+         c
+     }
+ 
++    // Experimental engineering change (100% GPT-generated), preserving the
++    // original lazy-scs algorithm and MIT attribution. Only aggregation changes.
++    // Every emitted point is retained, even if its total change is zero.
++    fn aggregate_successors(&self, row: &[(u8, u32)], lo: u32, hi: u32,
++                            out: &mut Vec<(u32, u32)>, events: &mut Vec<(u32, i64)>) {
++        out.clear();
++        if row.is_empty() {
++            out.push((lo, 0));
++            return;
++        }
++        if row.len() == 1 {
++            // The one successor is already sorted: neither sort nor events needed.
++            let f = self.f(row[0].1);
++            let first = f.partition_point(|s| s.0 <= lo + 1);
++            out.push((lo, f[first - 1].1));
++            for &(start, value) in &f[first..] {
++                if start > hi + 1 {
++                    break;
++                }
++                out.push((start - 1, value));
++            }
++            return;
++        }
++        events.clear();
++        let mut total = 0i64;
++        for &(_, y) in row {
++            let f = self.f(y);
++            let first = f.partition_point(|s| s.0 <= lo + 1);
++            let mut previous = f[first - 1].1;
++            total += previous as i64;
++            // Changes at lo are already incorporated by the initial evaluation.
++            for &(start, value) in &f[first..] {
++                if start > hi + 1 {
++                    break;
++                }
++                events.push((start - 1, value as i64 - previous as i64));
++                previous = value;
++            }
++        }
++        debug_assert!(total >= 0 && total <= u32::MAX as i64);
++        out.push((lo, total as u32));
++        events.sort_unstable_by_key(|event| event.0);
++        let mut i = 0;
++        while i < events.len() {
++            let position = events[i].0;
++            loop {
++                total += events[i].1;
++                i += 1;
++                if i == events.len() || events[i].0 != position {
++                    break;
++                }
++            }
++            debug_assert!(total >= 0 && total <= u32::MAX as i64);
++            out.push((position, total as u32));
++        }
++    }
++
+     fn compute(&mut self, sam: &Sam, order: &[u32]) {
++        let n = sam.n();
++        self.f_segs.clear();
++        self.r_segs.clear();
++        self.children_sum = vec![0; n];
++        let mut bump_at: FxMap<u32, Vec<u32>> = FxMap::default();
++        for &k in self.bumps.keys() {
++            bump_at.entry(kx(k)).or_default().push(kl(k));
++        }
++        let mut events: Vec<(u32, i64)> = Vec::new();
++        let mut r: Vec<(u32, u32)> = Vec::new();
++        let mut segs: Vec<(u32, u32)> = Vec::new();
++        for &x in order {
++            if x == 0 {
++                continue;
++            }
++            let xi = x as usize;
++            let lo = sam.len[sam.link[xi] as usize] + 1;
++            let hi = sam.len[xi];
++            self.aggregate_successors(&sam.next[xi], lo, hi, &mut r, &mut events);
++            let ro = self.r_segs.len() as u32;
++            self.r_segs.extend_from_slice(&r);
++            self.r_idx[xi] = (ro, r.len() as u32);
++
++            let mut evalpts: Vec<(u32, u32)>;
++            let bl = bump_at.get(&x);
++            if let Some(bl) = bl {
++                let mut cut: Vec<u32> = r.iter().map(|&(l, _)| l).collect();
++                for &l in bl {
++                    cut.push(l);
++                    if l < hi {
++                        cut.push(l + 1);
++                    }
++                }
++                cut.sort_unstable();
++                cut.dedup();
++                evalpts = cut.iter().map(|&l| (l, ev(&r, l))).collect();
++            } else {
++                evalpts = std::mem::take(&mut r);
++            }
++            let mut cur = self.children_sum[xi].max(self.is_req[xi] as u32);
++            segs.clear();
++            for &(l, val) in evalpts.iter().rev() {
++                let v = if bl.is_some() { val.max(*self.bumps.get(&key(x, l)).unwrap_or(&0)) } else { val };
++                cur = cur.max(v);
++                segs.push((l, cur));
++            }
++            segs.reverse();
++            let fo = self.f_segs.len() as u32;
++            for &(l, v) in &segs {
++                if self.f_segs.len() as u32 == fo || self.f_segs.last().unwrap().1 != v {
++                    self.f_segs.push((l, v));
++                }
++            }
++            self.f_idx[xi] = (fo, self.f_segs.len() as u32 - fo);
++            let first = self.f_segs[fo as usize].1;
++            self.children_sum[sam.link[xi] as usize] += first;
++            if bl.is_none() {
++                r = std::mem::take(&mut evalpts);
++            }
++        }
++        self.w = sam.next[0].iter().map(|&(_, y)| ev(self.f(y), 1) as u64).sum();
++    }
++
++    #[cfg(test)]
++    fn new_reference(sam: &Sam, order: &[u32], texts: &[(usize, Vec<u8>)]) -> Counts {
++        let n = sam.n();
++        let mut is_req = vec![false; n];
++        for s in &sam.strings {
++            is_req[sam.walk(s.iter().copied()).unwrap() as usize] = true;
++        }
++        let mut c = Counts {
++            f_segs: Vec::new(),
++            f_idx: vec![(0, 0); n],
++            r_segs: Vec::new(),
++            r_idx: vec![(0, 0); n],
++            children_sum: vec![0; n],
++            is_req,
++            w: 0,
++            bumps: FxMap::default(),
++            passes: 0,
++        };
++        c.compute_reference(sam, order);
++        if texts.is_empty() {
++            return c;
++        }
++        let maxlen = sam.strings.iter().map(|s| s.len()).max().unwrap_or(0);
++        let mut sigma: Vec<u8> = sam.next[0].iter().map(|e| e.0).collect();
++        sigma.sort_unstable();
++        let rules = rules(sam, texts);
++        for pass in 1..=100_000 {
++            c.passes = pass;
++            let mut changed = false;
++            let mut cache: FxMap<(usize, usize, u32), u64> = FxMap::default();
++            for r in &rules {
++                let tx = &texts[r.ti].1;
++                let bv = c.blocking(sam, tx, r.ti, r.pi, r.vl, maxlen, &sigma, &mut cache);
++                if c.m(key(r.vx, r.vl)) as u64 > bv {
++                    let need = c.blocking(sam, tx, r.ti, r.pi, r.wl, maxlen, &sigma, &mut cache) + r.k + 1;
++                    if (c.m(key(r.wx, r.wl)) as u64) < need {
++                        c.bumps.insert(key(r.wx, r.wl), need as u32);
++                        changed = true;
++                    }
++                }
++            }
++            if !changed {
++                break;
++            }
++            c.compute_reference(sam, order);
++        }
++        c
++    }
++
++    #[cfg(test)]
++    fn compute_reference(&mut self, sam: &Sam, order: &[u32]) {
+         let n = sam.n();
+         self.f_segs.clear();
+         self.r_segs.clear();
+@@ -315,3 +486,177 @@
+     }
+     out
+ }
++
++#[cfg(test)]
++mod event_sweep_tests {
++    use super::*;
++
++    fn blank(n: usize) -> Counts {
++        Counts {
++            f_segs: Vec::new(), f_idx: vec![(0, 0); n],
++            r_segs: Vec::new(), r_idx: vec![(0, 0); n],
++            children_sum: vec![0; n], is_req: vec![false; n],
++            w: 0, bumps: FxMap::default(), passes: 0,
++        }
++    }
++
++    fn same(actual: &Counts, expected: &Counts) {
++        assert_eq!(actual.f_segs, expected.f_segs, "complete f buffer");
++        assert_eq!(actual.f_idx, expected.f_idx, "complete f index");
++        assert_eq!(actual.r_segs, expected.r_segs, "complete r buffer");
++        assert_eq!(actual.r_idx, expected.r_idx, "complete r index");
++        assert_eq!(actual.children_sum, expected.children_sum, "children sums");
++        assert_eq!(actual.is_req, expected.is_req, "required states");
++        assert_eq!(actual.w, expected.w, "W");
++        assert_eq!(actual.bumps, expected.bumps, "point lower bounds");
++        assert_eq!(actual.passes, expected.passes, "fixed-point passes");
++    }
++
++    fn table_case(tables: &[Vec<(u32, u32)>], lo: u32, hi: u32) {
++        let mut c = blank(tables.len());
++        let mut row = Vec::new();
++        for (i, table) in tables.iter().enumerate() {
++            let offset = c.f_segs.len() as u32;
++            c.f_segs.extend_from_slice(table);
++            c.f_idx[i] = (offset, table.len() as u32);
++            row.push((i as u8, i as u32));
++        }
++        // Same union/all-successor loop as the original Rust implementation.
++        let mut points = vec![lo];
++        for &(_, y) in &row {
++            for &(start, _) in c.f(y) {
++                if start >= 1 && start - 1 >= lo && start - 1 <= hi {
++                    points.push(start - 1);
++                }
++            }
++        }
++        points.sort_unstable();
++        points.dedup();
++        let expected: Vec<(u32, u32)> = points.iter().map(|&length| {
++            (length, row.iter().map(|&(_, y)| ev(c.f(y), length + 1)).sum())
++        }).collect();
++        let mut actual = Vec::new();
++        let mut events = Vec::new();
++        c.aggregate_successors(&row, lo, hi, &mut actual, &mut events);
++        assert_eq!(actual, expected, "exact breakpoint list, lo={lo}, hi={hi}");
++        for length in lo..=hi {
++            // Linear lookup is independent of ev/partition_point.
++            let direct: u32 = tables.iter().map(|table| {
++                table.iter().rev().find(|&&(start, _)| start <= length + 1).unwrap().1
++            }).sum();
++            assert_eq!(ev(&actual, length), direct, "integer length {length}");
++        }
++    }
++
++    #[test]
++    fn boundary_and_zero_net_events() {
++        table_case(&[], 1, 1);
++        table_case(&[vec![(1, 5)]], 1, 10);
++        table_case(&[vec![(0, 9), (2, 7), (3, 7)]], 1, 2);
++        table_case(&[vec![(1, 10), (7, 8), (8, 5)]], 6, 6);
++        table_case(&[vec![(1, 5), (2, 3), (4, 0)],
++                     vec![(1, 0), (2, 2), (4, 5)]], 1, 4);
++        table_case(&[vec![(1, 9), (7, 5), (8, 2)],
++                     vec![(1, 9), (7, 5), (8, 2)]], 6, 7);
++        table_case(&[vec![(1, u32::MAX), (3, 0)],
++                     vec![(1, 0), (3, u32::MAX)]], 1, 4);
++    }
++
++    struct Rng(u64);
++    impl Rng {
++        fn below(&mut self, maximum: u32) -> u32 {
++            self.0 ^= self.0 << 13;
++            self.0 ^= self.0 >> 7;
++            self.0 ^= self.0 << 17;
++            (self.0 % maximum as u64) as u32
++        }
++    }
++
++    #[test]
++    fn randomized_step_tables_match_all_integer_lengths() {
++        let mut rng = Rng(1282026);
++        for case in 0..1000 {
++            let lo = 1 + rng.below(8);
++            let hi = lo + rng.below(101);
++            let mut tables = Vec::new();
++            for _ in 0..rng.below(33) {
++                let mut starts = vec![1];
++                for start in 2..hi + 5 {
++                    if rng.below(5) == 0 { starts.push(start); }
++                }
++                let mut values: Vec<u32> = starts.iter().map(|_| rng.below(1001)).collect();
++                if case % 2 == 0 { values.sort_unstable_by(|a, b| b.cmp(a)); }
++                tables.push(starts.into_iter().zip(values).collect());
++            }
++            table_case(&tables, lo, hi);
++        }
++    }
++
++    fn sam_case(strings: Vec<Vec<u8>>, texts: &[(usize, Vec<u8>)]) {
++        let sam = Sam::build(strings);
++        let order = sam.order_desc();
++        let actual = Counts::new(&sam, &order, texts);
++        let expected = Counts::new_reference(&sam, &order, texts);
++        same(&actual, &expected);
++        assert_eq!(actual.edges(&sam), expected.edges(&sam), "edge multiplicities");
++
++        // Recompute a complete pass with additional interior point bounds, so
++        // the bump-cut branch is tested even on inputs needing no lazy rule.
++        let mut a = blank(sam.n());
++        a.is_req = actual.is_req.clone();
++        a.bumps = actual.bumps.clone();
++        for x in 1..sam.n() as u32 {
++            let lo = sam.len[sam.link[x as usize] as usize] + 1;
++            let hi = sam.len[x as usize];
++            a.bumps.insert(key(x, lo + (hi - lo) / 2), 1 + (x % 7));
++        }
++        let mut b = blank(sam.n());
++        b.is_req = a.is_req.clone();
++        b.bumps = a.bumps.clone();
++        a.compute(&sam, &order);
++        b.compute_reference(&sam, &order);
++        same(&a, &b);
++    }
++
++    #[test]
++    fn exhaustive_small_binary_pairs_complete_state_parity() {
++        let mut words = vec![vec![]];
++        for length in 1..=4 {
++            for mask in 0..(1 << length) {
++                words.push((0..length).map(|i| b'a' + ((mask >> i) & 1) as u8).collect());
++            }
++        }
++        for a in &words {
++            for b in &words {
++                sam_case(vec![a.clone(), b.clone()], &[]);
++            }
++        }
++    }
++
++    #[test]
++    fn periodic_fixed_point_and_complete_state_parity() {
++        let texts = vec![(1, b"a".to_vec()), (1, b"b".to_vec()), (2, b"ab".to_vec())];
++        for words in [
++            vec![b"aaaaaa".to_vec()],
++            vec![b"abababab".to_vec(), b"babababa".to_vec()],
++            vec![b"cabababab".to_vec(), b"babababa".to_vec(), b"ababababc".to_vec()],
++            vec![b"baaaaac".to_vec(), b"caaaaab".to_vec()],
++            vec![vec![], b"a".to_vec(), b"ab".to_vec(), b"ba".to_vec()],
++        ] {
++            sam_case(words, &texts);
++        }
++    }
++
++    #[test]
++    fn randomized_real_automata_complete_state_parity() {
++        let mut rng = Rng(1282027);
++        for case in 0..100 {
++            let alphabet = [2, 4, 16, 128][case % 4];
++            let mut strings = Vec::new();
++            for _ in 0..1 + rng.below(12) {
++                strings.push((0..rng.below(33)).map(|_| rng.below(alphabet) as u8).collect());
++            }
++            sam_case(strings, &[]);
++        }
++    }
++}

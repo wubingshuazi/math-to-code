@@ -1,15 +1,16 @@
 # Math to Code · 从数学手稿到可复现实验
 
-**当前成果：保留节点连接数的网络采样器、GAD 计算工具，以及可调用的熵差下界。**
+**新增成果：字符串拼接程序在留出的真实字体名称数据上，批处理耗时降低约 19%～21%，输出保持一致。**
 
-[网络采样与偏差实验](docs/GRAPH_RESULTS.md) · [熵的定量分析](docs/SHARPNESS_RESULTS.md) · [版本下载](https://github.com/wubingshuazi/math-to-code/releases/tag/v0.3.0) · [AI 续接入口](HANDOFF.md)
+[字符串加速结果](docs/SCS_SPEED_RESULTS.md) · [加速组件下载](https://github.com/wubingshuazi/math-to-code/releases/tag/scs-aho-trim-v0.1.0) · [网络采样](docs/GRAPH_RESULTS.md) · [熵的定量分析](docs/SHARPNESS_RESULTS.md) · [AI 续接入口](HANDOFF.md)
 
 本项目的新代码、文档与实验由 GPT 完成（100% GPT 贡献）；人类提供选题授权、计算资源与 GitHub 托管。数学成果及已有算法归原作者，不计作本项目原创。详见 [贡献说明](CREDITS.md)。本项目独立于 OpenAI 官方研究仓库。
 
-后续研究转向[真实软件加速项目](docs/LONG_TERM_SPEED_PROJECT.md)：已审查论文构造与现有软件，并验证一个字符串计数优化的结构模型。原生程序与整体性能仍待测量，当前发布版仍为 v0.3.0。
+[真实软件加速项目](docs/LONG_TERM_SPEED_PROJECT.md) 已完成首个可复现补丁：优化第 128 组成果的已有实现 lazy-scs，在同一 Adobe 字典的两种留出规模上验证了批处理收益。采用成熟的多词匹配方法，保持原拼接算法和校验器。上述数字来自每进程重复同一输入 40 次的完整原生处理耗时，范围见[实验报告](docs/SCS_SPEED_RESULTS.md)。该 Rust 组件单独发布；Python 工具包仍为 [v0.3.0](https://github.com/wubingshuazi/math-to-code/releases/tag/v0.3.0)。
 
 ## 能用来做什么
 
+- 用同次编译的原版和修改版拼接字符串，比较输出与批量处理速度；提供固定源码补丁、独立小例检查及留出集复现。当前收益验证针对真实字体名称字典的重复批处理。
 - 为网络分析生成随机对照网络，精确保留每个节点的连接数。提供论文原始交换规则和 Curveball 两种后端，并用可穷举的小网络检查整个采样分布。
 - 输入阻尼强度 `gamma` 与平衡激发态占据率 `nu`，计算单次使用的 Holevo 信息最优值（bit/次）和对应的两种信号态。
 - 批量扫描噪声参数，导出 CSV，供量子通信仿真、参数敏感性分析使用。

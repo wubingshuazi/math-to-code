@@ -1,0 +1,53 @@
+name: Native SCS correctness
+
+on: [push, pull_request, workflow_dispatch]
+
+permissions:
+  contents: read
+
+jobs:
+  native-scs:
+    name: SCS exact checks (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.14'
+      - uses: dtolnay/rust-toolchain@683b588c487a69d01f6c6ddf40f036ff682cc2c8
+        with:
+          toolchain: '1.99.1'
+      - name: Check workload generator and CLI filtering
+        run: python experiments/check_scs_native.py --self-test
+      - name: Fetch and verify pinned original source
+        run: python experiments/prepare_scs_native.py --directory .ci_results/scs-original --variant original
+      - name: Fetch and verify pinned Aho trim source and patches
+        run: python experiments/prepare_scs_native.py --directory .ci_results/scs-aho-trim --variant aho-trim
+      - name: Test Aho trim parity and fallback
+        run: cargo test --manifest-path .ci_results/scs-aho-trim/scs/scs-rs/Cargo.toml --target-dir .ci_results/scs-aho-target --release --locked
+      - name: Build original native executable
+        run: cargo build --manifest-path .ci_results/scs-original/scs/scs-rs/Cargo.toml --target-dir .ci_results/scs-original-target --release --locked
+      - name: Build Aho trim native executable
+        run: cargo build --manifest-path .ci_results/scs-aho-trim/scs/scs-rs/Cargo.toml --target-dir .ci_results/scs-aho-target --release --locked
+      - name: Compare exact tiny cases, outputs and certificates
+        run: >-
+          python experiments/check_scs_native.py
+          --base .ci_results/scs-original-target/release/scs-rs${{ runner.os == 'Windows' && '.exe' || '' }}
+          --candidate .ci_results/scs-aho-target/release/scs-rs${{ runner.os == 'Windows' && '.exe' || '' }}
+          --output .ci_results/scs-native-check.json
+          --timeout 30
+      - name: Preserve correctness report
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: scs-native-check-${{ matrix.os }}
+          path: .ci_results/scs-native-check.json
+          if-no-files-found: ignore
