@@ -5,6 +5,15 @@ current status and `worklogs/` for evidence, failed approaches and decisions.
 
 Repository: https://github.com/wubingshuazi/math-to-code
 
+Current work: stage 09, practical software acceleration feasibility.
+The user now wants a one-to-two-month project that makes useful programs
+faster. Read docs/LONG_TERM_SPEED_PROJECT.md and
+worklogs/2026-10-17-09-speed-project-selection.md before
+continuing the graph-report extension. Primary bounded pilot: profile the
+existing family-128 lazy-scs implementation and test exact event-sweep count
+aggregation. Python structural checks passed; no native or whole-solver
+speedup has yet been established. State JSON has the immediate next steps.
+
 First release: https://github.com/wubingshuazi/math-to-code/releases/tag/v0.1.0
 
 Current published release: https://github.com/wubingshuazi/math-to-code/releases/tag/v0.3.0
@@ -108,12 +117,12 @@ the screened list. The constrained search used its evaluation budget on
 127/128 starts, so targeted refinement is possible; all best feasible points
 are saved. Read stage05 before doing more runs. Preserve useful failures.
 
-The graph pilot is published as v0.3.0. The next useful extension is an
-edge-list-to-null-model workflow: preserve isolated vertex labels, compute
-observed and simulated network statistics, and assess dependence before
-reporting uncertainty. Check the workflow against small-state exact results
-first, then use openly licensed data. Large-state sparse spectral checks
-are another option. Keep clock and state-space definitions explicit.
+The graph pilot is published as v0.3.0. Its edge-list-to-null-model report
+extension is deferred after the user's newer speedup-project steering.
+The immediate next step is same-commit native lazy-scs profiling and an
+exactly equivalent event-sweep patch. Read the staged stop/go criteria in
+docs/LONG_TERM_SPEED_PROJECT.md; do not commit a month before that gate.
+Preserve existing mathematical/software credit and independent checkers.
 
 ## Claims to avoid
 

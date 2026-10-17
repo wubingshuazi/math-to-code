@@ -2,7 +2,7 @@
   "schema_version": 1,
   "checkpoint_client_date": "2026-10-17",
   "timezone": "Asia/Shanghai",
-  "user_goal": "Turn OpenAI math manuscripts into useful tested open-source engineering artifacts; publish completed results on user GitHub.",
+  "user_goal": "Turn mathematical manuscripts into useful tested open-source software; new priority is a one-to-two-month practical acceleration project with measured real-program benefit.",
   "new_engineering_attribution": "100% GPT-generated; human authorization, compute and hosting acknowledged",
   "github_owner": "wubingshuazi",
   "intended_repository": "math-to-code",
@@ -57,11 +57,16 @@
     "graph_benchmark",
     "44_local_tests",
     "v0.3.0_public_release",
-    "seven_graph_release_assets_verified"
+    "seven_graph_release_assets_verified",
+    "practical_speedup_source_feasibility_screen",
+    "505_case_event_sweep_structural_probe",
+    "lazy_scs_windows_wheel_functional_smoke_check"
   ],
   "next": [
-    "edge_list_input_and_null_model_statistics",
-    "compare_uncertainty_and_dependence_with_small_state_exact_results"
+    "build_same_commit_lazy_scs_native_baseline",
+    "profile_stages_and_actual_count_tables",
+    "implement_event_sweep_with_full_native_parity",
+    "apply_real_workload_stop_go_gate_before_month_commitment"
   ],
   "research_limits": [
     "no_global_novelty_claim",
@@ -77,9 +82,10 @@
     "worklogs/2026-10-17-05-sharpness-study.md",
     "worklogs/2026-10-17-06-v0.2-publication.md",
     "worklogs/2026-10-17-07-network-pilot.md",
-    "worklogs/2026-10-17-08-v0.3-publication.md"
+    "worklogs/2026-10-17-08-v0.3-publication.md",
+    "worklogs/2026-10-17-09-speed-project-selection.md"
   ],
-  "current_phase": "stage_3_degree_preserving_network_sampling",
+  "current_phase": "stage_4_practical_speedup_feasibility",
   "current_version": "0.3.0",
   "second_phase": {
     "quantitative_bound": "R >= beta*eta/(2*U0*U1)*trace_norm(A-B)^2, nats",
@@ -122,5 +128,37 @@
     "artifact_manifest": "results/graph_release_artifacts.json",
     "wheel_sha256": "ab8d219dfc344b9c6ce5281f12ba07c6e79df9b6082ca56a4594ac63ceb5a9af"
   },
-  "previous_release_url": "https://github.com/wubingshuazi/math-to-code/releases/tag/v0.2.0"
+  "previous_release_url": "https://github.com/wubingshuazi/math-to-code/releases/tag/v0.2.0",
+  "deferred_next_directions": [
+    "edge_list_input_and_null_model_statistics",
+    "compare_uncertainty_and_dependence_with_small_state_exact_results"
+  ],
+  "fourth_phase": {
+    "status": "candidate_selected_for_bounded_native_pilot",
+    "plan": "docs/LONG_TERM_SPEED_PROJECT.md",
+    "primary_family": "128",
+    "primary_upstream_software": "nurric-ai/lazy-scs",
+    "software_commit": "4ee86724b770c54bad400fe077b297288b087c4b",
+    "candidate_change": "exact event sweep for successor step-function aggregation",
+    "persisted_differential_cases": 505,
+    "independent_reviewer_cases": 1005,
+    "model_results": "results/scs_event_sweep_probe.json",
+    "native_solver_speedup": null,
+    "whole_application_speedup": null,
+    "wheel_smoke_test": {
+      "version": "1.0.0",
+      "platform": "cp39-abi3-win_amd64",
+      "sha256": "060dc44fa38a41e67406bf94bf59953fa62a24c05fceaf6614e7eee51f8b4988",
+      "source_commit_mapping_verified": false,
+      "input": [
+        "abc",
+        "bcd",
+        "cde"
+      ],
+      "result": "abcde",
+      "lower_bound": 5
+    },
+    "optional_scope_preference": "pending: allow methods outside this collection versus collection-only",
+    "long_phase_gate": "named real workload: >=15% median end-to-end time reduction or >=25% peak-memory reduction, same quality and no material regressions"
+  }
 }

@@ -1,0 +1,200 @@
+{
+  "scope": "Python structural toy model; no Rust solver or whole-application speedup established",
+  "target_repository": "https://github.com/nurric-ai/lazy-scs",
+  "target_commit": "4ee86724b770c54bad400fe077b297288b087c4b",
+  "target_function": "scs/scs-rs/src/counts.rs::Counts::compute",
+  "experimental_script_sha256": "cb71bf5ed24fb85b7ffc181a41adb46ad816640d6abbce7f6c7df8b90b9e5005",
+  "environment": {
+    "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "correctness": {
+    "seed": 1282026,
+    "random_cases": 500,
+    "boundary_cases": 5,
+    "all_breakpoint_lists_and_integer_length_values_match": true
+  },
+  "benchmark": [
+    {
+      "successors": 1,
+      "segments_per_successor": 128,
+      "union_breakpoints": 128,
+      "reference_step_function_queries": 128,
+      "candidate_initial_step_function_queries": 1,
+      "reference_median_ns": 70100,
+      "event_sweep_median_ns": 67800,
+      "python_model_speed_ratio": 1.0339233038348083,
+      "raw_times_ns": {
+        "reference": [
+          70100,
+          88100,
+          124000,
+          93400,
+          68200,
+          61600,
+          59700
+        ],
+        "event_sweep": [
+          79100,
+          74700,
+          98800,
+          67800,
+          57600,
+          55200,
+          56000
+        ]
+      }
+    },
+    {
+      "successors": 4,
+      "segments_per_successor": 8,
+      "union_breakpoints": 29,
+      "reference_step_function_queries": 116,
+      "candidate_initial_step_function_queries": 4,
+      "reference_median_ns": 25900,
+      "event_sweep_median_ns": 15100,
+      "python_model_speed_ratio": 1.7152317880794703,
+      "raw_times_ns": {
+        "reference": [
+          27500,
+          28600,
+          25900,
+          26800,
+          24300,
+          24500,
+          24200
+        ],
+        "event_sweep": [
+          17400,
+          14700,
+          15100,
+          15400,
+          15100,
+          14000,
+          14100
+        ]
+      }
+    },
+    {
+      "successors": 4,
+      "segments_per_successor": 64,
+      "union_breakpoints": 249,
+      "reference_step_function_queries": 996,
+      "candidate_initial_step_function_queries": 4,
+      "reference_median_ns": 240000,
+      "event_sweep_median_ns": 117600,
+      "python_model_speed_ratio": 2.0408163265306123,
+      "raw_times_ns": {
+        "reference": [
+          240800,
+          227400,
+          240000,
+          234900,
+          226500,
+          299100,
+          286200
+        ],
+        "event_sweep": [
+          127000,
+          119200,
+          127600,
+          116000,
+          112800,
+          117600,
+          117200
+        ]
+      }
+    },
+    {
+      "successors": 16,
+      "segments_per_successor": 32,
+      "union_breakpoints": 475,
+      "reference_step_function_queries": 7600,
+      "candidate_initial_step_function_queries": 16,
+      "reference_median_ns": 1089800,
+      "event_sweep_median_ns": 233100,
+      "python_model_speed_ratio": 4.675246675246675,
+      "raw_times_ns": {
+        "reference": [
+          1079500,
+          1122700,
+          1089300,
+          1089800,
+          1087400,
+          1091000,
+          1095400
+        ],
+        "event_sweep": [
+          221700,
+          217500,
+          256000,
+          217800,
+          233100,
+          234600,
+          266700
+        ]
+      }
+    },
+    {
+      "successors": 64,
+      "segments_per_successor": 32,
+      "union_breakpoints": 1571,
+      "reference_step_function_queries": 100544,
+      "candidate_initial_step_function_queries": 64,
+      "reference_median_ns": 14097600,
+      "event_sweep_median_ns": 980000,
+      "python_model_speed_ratio": 14.385306122448979,
+      "raw_times_ns": {
+        "reference": [
+          12761900,
+          14255800,
+          14785400,
+          14471500,
+          14097600,
+          12897000,
+          11538100
+        ],
+        "event_sweep": [
+          965700,
+          938600,
+          1003300,
+          990400,
+          980000,
+          1080400,
+          859700
+        ]
+      }
+    },
+    {
+      "successors": 128,
+      "segments_per_successor": 64,
+      "union_breakpoints": 3536,
+      "reference_step_function_queries": 452608,
+      "candidate_initial_step_function_queries": 128,
+      "reference_median_ns": 62396900,
+      "event_sweep_median_ns": 3549600,
+      "python_model_speed_ratio": 17.578572233491098,
+      "raw_times_ns": {
+        "reference": [
+          61295000,
+          62967200,
+          61657200,
+          61599500,
+          63034700,
+          62756700,
+          62396900
+        ],
+        "event_sweep": [
+          5828400,
+          4482200,
+          3549600,
+          2969500,
+          2863200,
+          2751400,
+          3713400
+        ]
+      }
+    }
+  ],
+  "required_next_gate": "Native Rust patch parity and staged full-solver profiles on representative data"
+}
